@@ -1,570 +1,402 @@
 /* =========================================================
-   RESET BÁSICO
+   RESET GENERAL
    ========================================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/* =========================================================
+   ESTILOS BASE (MOBILE FIRST)
+   ========================================================= */
 
-html {
-  scroll-behavior: smooth;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: "Lato", Arial, sans-serif;
-  color: #222;
-  background-color: #ffffff;
-  line-height: 1.5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f4f4f6;
+  color: #222222;
 }
 
-/* Imágenes responsivas */
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+/* Links generales */
+a {
+  color: #5b21b6;
+  text-decoration: none;
 }
 
-/* Clase de accesibilidad para labels ocultos */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+a:hover {
+  text-decoration: underline;
 }
 
 /* =========================================================
-   PALETA / UTILITARIOS
+   NAVBAR (Bootstrap + pequeños ajustes)
    ========================================================= */
 
-:root {
-  /* No hace falta que lo uses en todos lados, pero ayuda */
-  --yb-violeta: #5b4df2;
-  --yb-violeta-oscuro: #4338d6;
-  --yb-gris-texto: #333333;
-  --yb-gris-suave: #f7f7ff;
+.navbar {
+  border-bottom: 1px solid #e5e7eb;
 }
 
-/* =========================================================
-   NAVBAR / HEADER
-   ========================================================= */
-
-/* El header envuelve la navbar de Bootstrap */
-.header {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-/* Marca */
-.Marca .logo {
-  height: 48px;
+.navbar-brand img {
+  height: 40px;
   width: auto;
 }
 
-/* Links del menú */
-.navbar-nav .nav-link {
+.nav-main .nav-link {
   font-weight: 500;
-  color: #333 !important;
-  padding: 6px 10px;
-  border-radius: 4px;
+  color: #4b5563;
 }
 
-/* Hover */
-.navbar-nav .nav-link:hover {
-  color: var(--yb-violeta) !important;
-  background-color: rgba(91, 77, 242, 0.06);
+.nav-main .nav-link.active {
+  color: #5b21b6;
 }
 
-/* Activo */
-.navbar-nav .nav-link.is-active {
-  color: var(--yb-violeta) !important;
-  border-bottom: 2px solid var(--yb-violeta);
+.nav-main .nav-link:hover {
+  color: #5b21b6;
 }
 
-/* Visited */
-.navbar-nav .nav-link:visited {
-  color: #5c4eff !important;
+/* Botones derecha */
+.navbar .btn-sm {
+  border-radius: 999px;
 }
 
-/* Último link del menú un poco más fuerte (ejemplo de :last-child) */
-.nav__list li:last-child .nav-link {
+/* =========================================================
+   HERO CON FLEXBOX
+   ========================================================= */
+
+.hero-landing {
+  background-color: #5b21b6;       /* violeta simple */
+  color: #ffffff;
+}
+
+/* Capa interior para poder jugar con padding */
+.hero-overlay {
+  padding: 1.5rem 0 2.5rem;
+}
+
+/* Contenido del hero:
+   usamos flexbox en la columna principal para alinear texto y buscador */
+.hero-landing .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Título y subtítulo */
+.hero-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 0.98rem;
+  max-width: 28rem;
+  margin: 0;
+}
+
+.hero-badge {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-bottom: 0.25rem;
+}
+
+/* Caja del buscador principal */
+.hero-search {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 0.75rem 0.75rem 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Inputs y select: estilos simples basados en box model */
+.hero-search .form-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.hero-search .form-select,
+.hero-search .form-control {
+  font-size: 0.9rem;
+}
+
+/* Atajos del buscador: botones tipo pill */
+.hero-shortcuts {
+  margin-top: 0.75rem;
+}
+
+.hero-shortcuts .btn {
+  font-size: 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.hero-shortcuts .btn:hover {
+  background-color: #e5e7eb;
+}
+
+/* =========================================================
+   SECCIÓN: LO MÁS BUSCADO (GRID)
+   ========================================================= */
+
+.section-most-searched {
+  padding: 2.5rem 0;
+}
+
+/* Tags de palabras clave (box model básico) */
+.section-tags {
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.section-tags li {
+  margin: 0.2rem;
+}
+
+.section-tags a.badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  color: #4b5563;
+  font-size: 0.8rem;
+}
+
+/* :hover simple */
+.section-tags a.badge:hover {
+  border-color: #5b21b6;
+  color: #5b21b6;
+}
+
+/* GRID para rubros */
+.section-most-searched .row.g-3 {
+  display: grid;                     /* grid principal */
+  grid-template-columns: 1fr;        /* mobile */
+  gap: 0.9rem;
+}
+
+/* Tarjetas de rubros: box model (padding, border, margin) */
+.card-rubro {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-rubro .card-body {
+  padding: 0.9rem 1rem;
+}
+
+.card-rubro p {
+  margin: 0 0 0.15rem;
   font-weight: 600;
 }
 
-/* Botones header */
-.acciones .btn {
+.card-rubro span {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* :hover para tarjetas de rubros */
+.card-rubro:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.1);
+}
+
+/* Cards de ranking a la derecha */
+.card-ranking {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  padding: 1rem 1.1rem;
+}
+
+.card-ranking h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-ranking li {
   font-size: 0.85rem;
 }
 
 /* =========================================================
-   BOTONES GENERALES (Afinando Bootstrap)
+   INFLUENCERS DESTACADOS (TARJETAS)
    ========================================================= */
 
-.btn-primary {
-  background-color: var(--yb-violeta);
-  border-color: var(--yb-violeta);
+.section-influencers {
+  padding: 2.5rem 0;
 }
 
-.btn-primary:hover {
-  background-color: var(--yb-violeta-oscuro);
-  border-color: var(--yb-violeta-oscuro);
-}
-
-/* Botones outline */
-.btn-outline-primary {
-  color: var(--yb-violeta);
-  border-color: var(--yb-violeta);
-}
-
-.btn-outline-primary:hover {
-  background-color: var(--yb-violeta);
-  color: #fff;
-}
-
-/* Feedback físico al hacer clic */
-.btn:active {
-  transform: scale(0.97);
-}
-
-/* Deshabilitado */
-.btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* =========================================================
-   HERO / BUSCADOR
-   ========================================================= */
-
-.hero {
-  background-color: var(--yb-gris-suave);
-  padding: 60px 20px 40px;
-  text-align: center;
-}
-
-.contenedor-hero {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.contenedor-hero h1 {
-  font-size: 2.1rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.contenedor-hero p {
-  color: #555;
-  margin-bottom: 22px;
-}
-
-/* Formulario de búsqueda */
-.buscador {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.campo-ubicacion,
-.campo-busqueda {
-  padding: 10px 14px;
-  border-radius: 8px;
-  border: 1px solid #cccccc;
-  font-size: 1rem;
-}
-
-/* Foco accesible */
-.campo-ubicacion:focus-visible,
-.campo-busqueda:focus-visible {
-  outline: 3px solid var(--yb-violeta);
-  outline-offset: 2px;
-  border-color: var(--yb-violeta);
-}
-
-/* Placeholders */
-.campo-busqueda::placeholder {
-  color: #999;
-}
-
-/* Atajos */
-.atajos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.tarjeta {
-  padding: 6px 14px;
-  background-color: #eaeaea;
-  border: 1px solid #dddddd;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.15s ease-in-out;
-}
-
-.tarjeta.link {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* hover y active */
-.tarjeta:hover {
-  background-color: var(--yb-violeta);
-  color: #ffffff;
-  border-color: var(--yb-violeta);
-}
-
-.tarjeta:active {
-  transform: scale(0.96);
-}
-
-/* =========================================================
-   ACCIONES RÁPIDAS
-   ========================================================= */
-
-.acciones-rapidas h2 {
-  font-weight: 600;
-}
-
-.acciones-rapidas p {
-  color: #555;
-}
-
-/* Ejemplo :visited en botones tipo enlace */
-.acciones-rapidas a.btn:visited {
-  opacity: 0.95;
-}
-
-/* =========================================================
-   CAROUSEL (Bootstrap)
-   ========================================================= */
-
-.hero-carousel {
-  background-color: #ffffff;
-}
-
-/* Oscurezco un poco el caption para legibilidad */
-.carousel-caption {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 10px 16px;
-  border-radius: 8px;
-}
-
-/* Indicadores más visibles */
-.carousel-indicators [data-bs-target] {
-  background-color: #dddddd;
-}
-
-.carousel-indicators .active {
-  background-color: var(--yb-violeta);
-}
-
-/* =========================================================
-   SECCIÓN: MÁS BUSCADOS
-   ========================================================= */
-
-.mas-buscados {
-  padding: 50px 20px;
-}
-
-.mas-buscados .bloque {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.mas-buscados h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.bloque__lead {
-  text-align: center;
-  color: #555;
-  margin: 6px 0 22px;
-}
-
-/* Lista de palabras clave */
-.tags {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-/* Alternar estilo con nth-child */
-.tags li:nth-child(even) a {
-  background-color: #f0f0ff;
-}
-
-/* Último item con un estilo distinto (last-child) */
-.tags li:last-child a {
-  font-weight: 600;
-  border-style: dashed;
-}
-
-.tags a {
-  text-decoration: none;
-  background: #efefef;
-  padding: 6px 12px;
-  border-radius: 18px;
-  font-size: 0.9rem;
-  color: #333;
-  border: 1px solid #dddddd;
-}
-
-/* Hover y visited */
-.tags a:hover {
-  background-color: var(--yb-violeta);
-  color: #ffffff !important;
-}
-
-.tags a:visited {
-  color: #5d4cff;
-}
-
-/* Rubros (Gastronomía, Salud, etc.) */
-.rubro-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 14px;
-  margin-top: 10px;
-}
-
-.rubro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 14px;
-  text-decoration: none;
-  background: #f3f3ff;
-  border: 1px solid #dddddd;
-  border-radius: 10px;
-  color: #333;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.rubro:hover {
-  background-color: var(--yb-violeta);
-  color: #ffffff;
-  border-color: var(--yb-violeta);
-}
-
-/* =========================================================
-   INFLUENCERS DESTACADOS
-   ========================================================= */
-
-.influencers-destacados-contenedor {
-  padding: 50px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.influencers-destacados-contenedor h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.influencers-destacados-contenedor > p {
-  text-align: center;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-/* Grilla de tarjetas */
-.grid-influencers {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-/* Tarjeta influencer */
+/* Tarjeta principal de influencer */
 .influencer-card {
   background-color: #ffffff;
-  border: 1px solid #eeeeee;
-  border-radius: 12px;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* hover card */
-.influencer-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* Header e imagen */
+/* Imagen */
 .influencer-header {
   position: relative;
 }
 
 .influencer-img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  background: #f1f1f1;
-}
-
-/* Etiqueta categoría */
-.categoria {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background: rgba(91, 77, 242, 0.95);
-  color: #ffffff;
-  padding: 4px 10px;
-  border-radius: 18px;
-  font-size: 0.85rem;
-}
-
-/* Cuerpo */
-.influencer-body {
-  padding: 16px;
-}
-
-.nombre {
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 2px;
-}
-
-.usuario {
-  font-size: 0.9rem;
-  color: #777;
-}
-
-.descripcion {
-  font-size: 0.95rem;
-  color: #444;
-  margin: 8px 0 12px;
-}
-
-/* Métricas */
-.metricas {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.dato strong {
   display: block;
-  font-size: 1rem;
-}
-
-.dato span {
-  font-size: 0.78rem;
-  color: #777;
-}
-
-/* Chips de redes */
-.redes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.redes .chip {
-  background: #eaeaea;
-  border-radius: 14px;
-  padding: 4px 10px;
-  border: 1px solid #dddddd;
-  font-size: 0.85rem;
-  text-decoration: none;
-  color: #333;
-}
-
-.redes .chip:hover {
-  background: var(--yb-violeta);
-  color: #ffffff;
-}
-
-/* Botones en la tarjeta */
-.influencer-card .acciones {
-  margin-top: 14px;
-  display: flex;
-  gap: 10px;
-}
-
-/* =========================================================
-   COMERCIOS DESTACADOS (cards Bootstrap)
-   ========================================================= */
-
-.comercios {
-  background-color: #fafafa;
-}
-
-/* Ajustes generales para cards de comercios */
-.comercios .card {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  border-color: #eeeeee;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.comercios .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-}
-
-.card-img-top {
+  width: 100%;
   height: 220px;
   object-fit: cover;
 }
 
+/* Categoría sobre la imagen */
+.categoria {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background-color: rgba(17, 24, 39, 0.85);
+  color: #f9fafb;
+  font-size: 0.75rem;
+}
+
+/* Cuerpo de la card */
+.influencer-body {
+  padding: 1rem 1.2rem 1.2rem;
+}
+
+/* Usuario y descripción */
+.usuario {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.35rem;
+}
+
+.descripcion {
+  font-size: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+/* Métricas (usamos flexbox interno) */
+.metricas {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 0.9rem;
+}
+
+.metricas .fw-semibold {
+  font-size: 0.95rem;
+}
+
+.metricas span {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Redes y botones */
+.redes {
+  margin-bottom: 0.8rem;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background-color: #f3f4f6;
+  font-size: 0.8rem;
+  color: #374151;
+}
+
+.chip:hover {
+  background-color: #e5e7eb;
+}
+
+.acciones .btn {
+  border-radius: 999px;
+}
+
+/* :hover de tarjeta completa */
+.influencer-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+}
+
 /* =========================================================
-   CTA PUBLICAR
+   COMERCIOS DESTACADOS (GRID)
    ========================================================= */
 
-.cta {
-  background-color: var(--yb-violeta);
+.section-comercios {
+  padding: 2.5rem 0;
+}
+
+/* Usamos grid para las cards, encima de la row de Bootstrap */
+.section-comercios .row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+/* Card simple con box model */
+.section-comercios .card {
+  border-radius: 0.9rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.section-comercios .card-img-top {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.section-comercios .card-body {
+  padding: 0.9rem 1rem 1.1rem;
+}
+
+/* :hover tarjetas de comercios */
+.section-comercios .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 18px rgba(15, 23, 42, 0.14);
+}
+
+/* =========================================================
+   CTA FINAL
+   ========================================================= */
+
+.section-cta {
+  padding: 2.5rem 0 3rem;
+}
+
+.cta-box {
+  background-color: #5b21b6;
   color: #ffffff;
-  padding: 50px 20px;
-  margin: 40px 20px;
-  border-radius: 16px;
+  border-radius: 1.2rem;
 }
 
-.cta__inner {
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.cta__title {
-  font-size: 1.8rem;
-  margin-bottom: 8px;
-}
-
-.cta__text {
-  margin-bottom: 16px;
-}
-
-/* Botón blanco dentro de CTA */
-.cta .btn-primary {
-  background-color: #ffffff;
-  color: var(--yb-violeta);
-  border: none;
-}
-
-.cta .btn-primary:hover {
-  background-color: #e9e9ff;
+.cta-box .btn-lg {
+  border-radius: 999px;
 }
 
 /* =========================================================
@@ -572,61 +404,69 @@ img {
    ========================================================= */
 
 .footer {
-  background-color: #222222;
-  color: #cccccc;
-  padding: 24px 20px;
-  margin-top: 40px;
+  background-color: #ffffff;
 }
 
-.footer__inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.footer__nav a {
-  color: #cccccc;
-  text-decoration: none;
-  margin: 0 8px;
-  font-size: 0.9rem;
-}
-
-/* hover y visited en footer */
-.footer__nav a:hover {
-  color: #ffffff;
-}
-
-.footer__nav a:visited {
-  color: #dddddd;
+.footer-nav a {
+  color: #6b7280;
 }
 
 /* =========================================================
-   RESPONSIVE
+   MEDIA QUERIES (MOBILE FIRST -> DESKTOP)
    ========================================================= */
 
-@media (max-width: 768px) {
-  .buscador {
-    flex-direction: column;
-    max-width: 100%;
+/* Tablets en adelante */
+@media (min-width: 768px) {
+  .hero-overlay {
+    padding: 2.5rem 0 3.5rem;
   }
 
-  .campo-ubicacion,
-  .campo-busqueda {
-    width: 100%;
+  .hero-title {
+    font-size: 2.3rem;
   }
 
-  .cta {
-    margin: 30px 10px;
+  .hero-landing .container {
+    min-height: 260px;
   }
 
-  .footer__inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+  /* GRID de rubros: 3 columnas en tablet */
+  .section-most-searched .row.g-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Grid de comercios: 3 columnas */
+  .section-comercios .row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .influencer-img {
+    height: 260px;
   }
 }
 
+/* Desktop ancho */
+@media (min-width: 992px) {
+  .hero-overlay {
+    padding: 3rem 0 4rem;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  /* Un poco más de ancho para la parte central */
+  .section-most-searched {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .section-influencers {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .section-comercios {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
