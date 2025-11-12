@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yo Busco — Inicio</title>
+    <!-- Favicon -->
+  <link rel="icon" href="/Assent/favicon.png" type="image/png">
+   
+    <!-- CCS  -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+  <header class="header">
+
+    <!-- Marca -->
+  <a class="Marca" href="./index.html" aria-label="Inicio Yo Busco">
+    <img src="./Assent/logoprincipal.png" alt="Yo Busco" class="logo">
+  </a>
+
+    <!-- Navegación -->
+    <nav class="nav" role="navigation" aria-label="Navegación principal">
+      <a class="nav-link is-active" href="./index.html">Inicio</a>
+      <a class="nav-link" href="./Pages/influencers.html">Influencers</a>
+      <a class="nav-link" href="./Pages/beneficios.html">Beneficios & Descuentos</a>
+      <a class="nav-link" href="./Pages/about.html">Sobre Nosotros</a>
+      <a class="nav-link" href="./Pages/contacto.html">Contacto</a>
+    </nav>
+
+    <!-- Acciones -->
+    <div class="acciones">
+      <a class="btn" href="./Pages/login.html">Ingresar</a>
+      <a class="btn btn-primary" href="./Pages/publicar.html">Publicar</a>
+    </div>
+</header>
+<!-- =========================
+     BUSCADOR PRINCIPAL
+     ========================= -->
+<section class="hero">
+  <div class="contenedor-hero">
+    <h1>Encontrá lo que necesitás cerca tuyo</h1>
+    <p>Gastronomía, Viajes, Servicios, Empleo, Influencers, Compras y más.</p>
+
+    <!-- Formulario de búsqueda -->
+    <form class="buscador" action="./Pages/resultados.html" method="get">
+      
+      <!-- Selección de ubicación -->
+      <select name="loc" class="campo-ubicacion">
+        <option value="">📍 Seleccionar ubicación</option>
+        <option>Buenos Aires</option>
+        <option>CABA</option>
+        <option>Catamarca</option>
+        <option>Chaco</option>
+        <option>Chubut</option>
+        <option>Córdoba</option>
+        <option>Corrientes</option>
+        <option>Entre Ríos</option>
+        <option>Formosa</option>
+        <option>Jujuy</option>
+        <option>La Pampa</option>
+        <option>La Rioja</option>
+        <option>Mendoza</option>
+        <option>Misiones</option>
+        <option>Neuquén</option>
+        <option>Río Negro</option>
+        <option>Salta</option>
+        <option>San Juan</option>
+        <option>San Luis</option>
+        <option>Santa Cruz</option>
+        <option>Santa Fe</option>
+        <option>Santiago del Estero</option>
+        <option>Tierra del Fuego</option>
+        <option>Tucumán</option>
+      </select>
+
+      <!-- Campo de texto -->
+      <input
+        type="text"
+        name="q"
+        placeholder="Ej: plomero, café, empleo, hotel..."
+        class="campo-busqueda"
+        required
+      >
+
+      <!-- Botón buscar -->
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+    <!-- Atajos más buscados -->
+    <div class="atajos">
+      <button type="button" class="tarjeta">Café</button>
+      <button type="button" class="tarjeta">Plomero</button>
+      <button type="button" class="tarjeta">Empleo</button>
+      <button type="button" class="tarjeta">Hotel</button>
+      <button type="button" class="tarjeta">Gimnasio</button>
+      <a href="./Pages/resultados.html" class="tarjeta link">Ver todos</a>
+    </div>
+  </div>
+</section>
+<!-- =========================
+     INFLUENCERS DESTACADOS DEL MES
+     ========================= -->
+<section class="influencers-destacados-contenedor" aria-labelledby="destacados-titulo">
+  <h2 id="destacados-titulo">Influencers destacados del mes</h2>
+  <p>Los creadores con mayor impacto, calidad de contenido y participación.</p>
+
+  <div class="grid-influencers">
+    <!-- ====================== Tarjeta de influencer 1 ======================-->
+    <article class="influencer-card" itemscope itemtype="https://schema.org/Person">
+      <!-- Imagen superior -->
+      <div class="influencer-header">
+        <!-- Sugerencia: definí ancho/alto para evitar CLS -->
+        <img
+          src="./Assent/influencer/influencer1.png"
+          alt="María Fernández, creadora de viajes"
+          class="influencer-img"
+          width="640" height="400"
+          loading="lazy" decoding="async"
+          itemprop="image">
+        <span class="categoria">🧳 Viajes · Buenos Aires</span>
+      </div>
+
+      <!-- Cuerpo principal -->
+      <div class="influencer-body">
+        <h3 class="nombre" itemprop="name">
+          María Fernández
+          <!-- Badge verificado azul (SVG inline) -->
+          <span class="verificado" aria-label="Cuenta verificada" title="Cuenta verificada">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                 width="16" height="16" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="10" fill="#0095F6"/>
+              <path fill="#fff" d="M9 16.2l-3.5-3.5 1.4-1.4L9 13.4l7.1-7.1 1.4 1.4z"/>
+            </svg>
+          </span>
+        </h3>
+
+        <p class="usuario" itemprop="alternateName">@ViajesConMari</p>
+        <p class="descripcion" itemprop="description">Historias de viaje y tips low cost.</p>
+
+        <!-- Métricas -->
+        <div class="metricas" aria-label="Métricas del perfil">
+          <div class="dato">
+            <strong>92k</strong>
+            <span>Seguidores</span>
+          </div>
+          <div class="dato">
+            <strong>3.4%</strong>
+            <span>Engagement</span>
+          </div>
+          <div class="dato" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+            <strong itemprop="ratingValue">4.8</strong>
+            <span>Rating</span>
+            <meta itemprop="ratingCount" content="320">
+            <meta itemprop="bestRating" content="5">
+            <meta itemprop="worstRating" content="1">
+          </div>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="redes">
+          <a href="https://www.instagram.com/viajesconmari"
+             class="chip"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Instagram de Viajes con Mari">Instagram</a>
+
+          <a href="https://www.tiktok.com/@viajesconmari"
+             class="chip"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="TikTok de Viajes con Mari">TikTok</a>
+
+          <a href="https://www.youtube.com/@viajesconmari"
+             class="chip"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="YouTube de Viajes con Mari">YouTube</a>
+        </div>
+
+        <!-- Botones -->
+        <div class="acciones">
+          <a href="./Pages/influencers/viajesconmari.html"
+             class="btn btn-primary"
+             aria-label="Ver perfil de María Fernández">
+            Ver perfil
+          </a>
+
+          <a href="https://wa.me/5493425083275?text=%C2%A1Hola!%20Te%20contacto%20desde%20Yo%20Busco%20%F0%9F%98%8A"
+             class="btn"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Contactar por WhatsApp">
+            Contactar
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ====================== Tarjeta de influencer 2 ======================-->
+<article class="influencer-card" itemscope itemtype="https://schema.org/Person">
+  <!-- Imagen superior -->
+  <div class="influencer-header">
+    <img
+      src="./Assent/influencer/influencer5.jpeg"
+      alt="Lucía Romero, creadora de estilo y moda"
+      class="influencer-img"
+      width="640" height="400"
+      loading="lazy" decoding="async"
+      itemprop="image">
+    <span class="categoria">👗 Moda · Córdoba</span>
+  </div>
+
+  <!-- Cuerpo principal -->
+  <div class="influencer-body">
+    <h3 class="nombre" itemprop="name">
+      Lucía Romero
+      <span class="verificado" aria-label="Cuenta verificada" title="Cuenta verificada">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="10" fill="#0095F6"/>
+          <path fill="#fff" d="M9 16.2l-3.5-3.5 1.4-1.4L9 13.4l7.1-7.1 1.4 1.4z"/>
+        </svg>
+      </span>
+    </h3>
+
+    <p class="usuario" itemprop="alternateName">@LuciaRomStyle</p>
+    <p class="descripcion" itemprop="description">Tips de moda accesible, outfits urbanos y tendencias.</p>
+
+    <!-- Métricas -->
+    <div class="metricas" aria-label="Métricas del perfil">
+      <div class="dato">
+        <strong>128k</strong>
+        <span>Seguidores</span>
+      </div>
+      <div class="dato">
+        <strong>4.1%</strong>
+        <span>Engagement</span>
+      </div>
+      <div class="dato" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+        <strong itemprop="ratingValue">4.9</strong>
+        <span>Rating</span>
+        <meta itemprop="ratingCount" content="410">
+        <meta itemprop="bestRating" content="5">
+        <meta itemprop="worstRating" content="1">
+      </div>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="redes">
+      <a href="https://www.instagram.com/luciaromstyle"
+         class="chip"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Instagram de Lucía Romero">Instagram</a>
+
+      <a href="https://www.tiktok.com/@luciaromstyle"
+         class="chip"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="TikTok de Lucía Romero">TikTok</a>
+
+      <a href="https://www.youtube.com/@luciaromstyle"
+         class="chip"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="YouTube de Lucía Romero">YouTube</a>
+    </div>
+
+    <!-- Botones -->
+    <div class="acciones">
+      <a href="./Pages/influencers/luciaromstyle.html"
+         class="btn btn-primary"
+         aria-label="Ver perfil de Lucía Romero">
+        Ver perfil
+      </a>
+
+      <a href="https://wa.me/5493515028831?text=%C2%A1Hola%20Luc%C3%ADa!%20Te%20contacto%20desde%20Yo%20Busco%20%F0%9F%91%99"
+         class="btn"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Contactar por WhatsApp">
+        Contactar
+      </a>
+    </div>
+  </div>
+</article>
+  </div>
+</section>
