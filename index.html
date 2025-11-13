@@ -1,78 +1,76 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Yo Busco — Inicio</title>
-  <meta name="description" content="Buscá gastronomía, viajes, servicios, empleo, influencers y comercios cerca tuyo.">
+  <meta name="description" content="Buscá gastronomía, viajes, servicios, actividades, influencers, empleos y mucho más cerca tuyo.">
 
   <!-- Favicon -->
   <link rel="icon" href="./Assets/favicon.png" type="image/png">
 
-  <!-- Bootstrap 5  -->
+  <!-- Bootstrap -->
   <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
   >
-
   <!-- CSS  -->
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+
   <!-- =========================================================
-       HEADER / NAVBAR BOOTSTRAP
-       ========================================================= -->
+       HEADER / NAVBAR
+  ========================================================= -->
   <header>
-    <!-- NAVBAR BOOTSTRAP 5 (OFICIAL) -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg yb-navbar sticky-top">
       <div class="container">
 
-        <!-- LOGO -->
+        <!-- Logo -->
         <a class="navbar-brand d-flex align-items-center" href="./index.html">
-          <img src="./Assets/logoprincipal.png" alt="Yo Busco" height="48">
+          <img src="./Assets/logo-principal.png" alt="Yo Busco" height="46">
         </a>
 
-        <!-- BOTÓN MOBILE -->
-        <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarYoBusco"
-                aria-controls="navbarYoBusco" aria-expanded="false"
-                aria-label="Toggle navigation">
+        <!-- Botón mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarYoBusco" aria-controls="navbarYoBusco"
+          aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- ITEMS -->
+        <!-- Menú -->
         <div class="collapse navbar-collapse" id="navbarYoBusco">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
 
-          <!-- LINKS CENTRALES -->
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-main">
             <li class="nav-item">
-              <a class="nav-link active" href="./index.html">Inicio</a>
+              <a class="nav-link fw-semibold active" href="./index.html">Inicio</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="./Pages/influencers.html">Influencers</a>
+              <a class="nav-link fw-semibold" href="./Pages/influencers.html">Influencers</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="./Pages/beneficios.html">Beneficios & Descuentos</a>
+              <a class="nav-link fw-semibold" href="./Pages/beneficios.html">Beneficios &amp; Descuentos</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="./Pages/about.html">Sobre Nosotros</a>
+              <a class="nav-link fw-semibold" href="./Pages/about.html">Sobre Nosotros</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="./Pages/contacto.html">Contacto</a>
+              <a class="nav-link fw-semibold" href="./Pages/contacto.html">Contacto</a>
             </li>
+
           </ul>
 
-          <!-- BOTONES DERECHA -->
+          <!-- Botones derecha -->
           <div class="d-flex gap-2">
-            <a href="./Pages/login.html" class="btn btn-outline-secondary btn-sm">Ingresar</a>
-            <a href="./Pages/publicar.html" class="btn btn-primary btn-sm">Publicar</a>
+            <a href="./Pages/login.html" class="btn btn-ingresar btn-sm px-3">Ingresar</a>
+            <a href="./Pages/publicar.html" class="btn btn-publicar btn-sm px-3">Publicar</a>
           </div>
 
         </div>
@@ -80,486 +78,546 @@
     </nav>
   </header>
 
-  <main>
-    <!-- =========================================================
-         HERO / BUSCADOR PRINCIPAL
-         ========================================================= -->
-    <section class="hero-landing text-white">
-      <div class="hero-overlay">
-        <div class="container py-5 py-lg-6">
-          <div class="row align-items-center">
-            <div class="col-lg-7">
-              <p class="hero-badge mb-2">● Yo Busco</p>
-              <h1 class="hero-title mb-3">
-                El Buscador Inteligente
-              </h1>
-              <p class="hero-subtitle mb-4">
-                Encontrá hoteles, gastronomía, actividades, empleos, servicios, influencers y mucho más cerca tuyo.
-              </p>
-            </div>
-          </div>
+<main>
+  <!-- =========================================================
+       HERO + BUSCADOR PRINCIPAL
+  ========================================================= -->
+  <section class="yb-hero">
+    <div class="container">
 
-          <!-- Buscador principal -->
-          <form class="hero-search bg-white shadow-lg rounded-4 p-3 p-md-4 mt-3"
-                action="./Pages/resultados.html"
-                method="get"
-                role="search"
-                aria-label="Buscador principal">
-            <div class="row g-2 g-md-3 align-items-center">
-              <div class="col-12 col-md-3">
-                <label for="loc" class="form-label small mb-1">Ubicación</label>
-                <select id="loc" name="loc" class="form-select">
-                  <option value="">Santa Fe</option>
-                  <option>Buenos Aires</option>
-                  <option>CABA</option>
-                  <option>Catamarca</option>
-                  <option>Chaco</option>
-                  <option>Chubut</option>
-                  <option>Córdoba</option>
-                  <option>Corrientes</option>
-                  <option>Entre Ríos</option>
-                  <option>Formosa</option>
-                  <option>Jujuy</option>
-                  <option>La Pampa</option>
-                  <option>La Rioja</option>
-                  <option>Mendoza</option>
-                  <option>Misiones</option>
-                  <option>Neuquén</option>
-                  <option>Río Negro</option>
-                  <option>Salta</option>
-                  <option>San Juan</option>
-                  <option>San Luis</option>
-                  <option>Santa Cruz</option>
+      <!-- Texto principal -->
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-7">
+
+          <span class="yb-hero-tag">Beta · Proyecto Yo Busco</span>
+
+          <h1 class="yb-hero-title">
+            Encontrá lo que necesitás, <span>cerca tuyo</span>.
+          </h1>
+
+          <p class="yb-hero-subtitle">
+            Buscá comercios, servicios, actividades, influencers, beneficios 
+            y empleo en un solo lugar, filtrando por ciudad o zona.
+          </p>
+
+          <ul class="yb-hero-bullets">
+            <li>🔍 Búsqueda rápida por rubro, nombre o palabra clave.</li>
+            <li>📍 Filtrá por ubicación para ver resultados cerca tuyo.</li>
+          </ul>
+
+        </div>
+      </div>
+
+      <!-- Buscador principal -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-10 col-xl-9">
+
+          <div class="yb-search-box">
+
+            <form class="yb-search-flex">
+
+              <!-- Ubicación -->
+              <div class="yb-input-wrap">
+                <span class="yb-icon">📍</span>
+                <select class="form-select yb-select">
+                  <option>Todas Las Localidades</option>
                   <option>Santa Fe</option>
-                  <option>Santiago del Estero</option>
-                  <option>Tierra del Fuego</option>
-                  <option>Tucumán</option>
+                  <option>Rosario</option>
+                  <option>Córdoba</option>
+                  <option>Buenos Aires</option>
+                  <option>Otra Localidad</option>
                 </select>
               </div>
 
-              <div class="col-12 col-md-7">
-                <label for="q" class="form-label small mb-1">¿Qué estás buscando?</label>
-                <div class="input-group">
-                  <span class="input-group-text" id="search-icon" aria-hidden="true">🔍</span>
-                  <input
-                    id="q"
-                    type="text"
-                    name="q"
-                    class="form-control"
-                    placeholder="Hotel 5 estrellas, café de especialidad, plomero, empleo..."
-                    aria-label="Término de búsqueda"
-                    required
-                  >
-                </div>
+              <!-- Texto -->
+              <div class="yb-input-wrap flex-grow-1">
+                <span class="yb-icon">🔍</span>
+                <input
+                  type="text"
+                  class="form-control yb-input"
+                  placeholder="Hotel 5 estrellas, café de especialidad, plomero, empleo…"
+                >
               </div>
 
-              <div class="col-12 col-md-2 d-grid">
-                <label class="form-label small mb-1 invisible">Buscar</label>
-                <button type="submit" class="btn btn-primary">
-                  Buscar
-                </button>
-              </div>
+              <!-- Botón -->
+              <button type="submit" class="yb-search-btn2">
+                Buscar
+              </button>
+
+            </form>
+
+            <!-- TAGS -->
+            <div class="yb-tags">
+              <button class="yb-tag2">Hoteles 5★</button>
+              <button class="yb-tag2">Café de especialidad</button>
+              <button class="yb-tag2">Plomeros</button>
+              <button class="yb-tag2">Viajes a Europa</button>
+              <button class="yb-tag2">Restaurantes</button>
+              <button class="yb-tag2">Empleos</button>
             </div>
 
-            <!-- Atajos de categorías -->
-            <div class="hero-shortcuts d-flex flex-wrap gap-2 mt-3">
-              <a href="./Pages/resultados.html?q=Hotel%205%20estrellas" class="btn btn-outline-secondary btn-sm">
-                🏨 Hoteles 5★
-              </a>
-              <a href="./Pages/resultados.html?q=Caf%C3%A9%20de%20especialidad" class="btn btn-outline-secondary btn-sm">
-                ☕ Café de especialidad
-              </a>
-              <a href="./Pages/resultados.html?q=Plomero" class="btn btn-outline-secondary btn-sm">
-                🧰 Plomeros
-              </a>
-              <a href="./Pages/resultados.html?q=Viajes%20a%20Europa" class="btn btn-outline-secondary btn-sm">
-                ✈️ Viajes a Europa
-              </a>
-              <a href="./Pages/resultados.html?q=Restaurante" class="btn btn-outline-secondary btn-sm">
-                🍽️ Restaurantes
-              </a>
-              <a href="./Pages/resultados.html?q=Empleo" class="btn btn-outline-secondary btn-sm">
-                💼 Empleos
-              </a>
-            </div>
-          </form>
+          </div>
+
         </div>
       </div>
-    </section>
 
-    <!-- =========================================================
-         LO MÁS BUSCADO + RANKINGS
-         ========================================================= -->
-    <section class="section-most-searched py-5">
-      <div class="container">
-        <div class="row g-4">
-          <!-- Columna izquierda: Lo más buscado -->
-          <div class="col-lg-8">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <div>
-                <h2 class="h4 mb-1">Lo más buscado</h2>
-                <p class="text-muted mb-0">Tendencias de la semana en tu zona</p>
-              </div>
-            </div>
-
-            <!-- Tags de palabras clave -->
-            <ul class="list-unstyled d-flex flex-wrap gap-2 mb-4 section-tags">
-              <li><a href="./Pages/resultados.html?q=Delivery" class="badge rounded-pill text-bg-light">Delivery</a></li>
-              <li><a href="./Pages/resultados.html?q=Fletes" class="badge rounded-pill text-bg-light">Fletes</a></li>
-              <li><a href="./Pages/resultados.html?q=Reparaci%C3%B3n+de+celulares" class="badge rounded-pill text-bg-light">Reparación de celulares</a></li>
-              <li><a href="./Pages/resultados.html?q=Electricista" class="badge rounded-pill text-bg-light">Electricista</a></li>
-              <li><a href="./Pages/resultados.html?q=Depilaci%C3%B3n" class="badge rounded-pill text-bg-light">Depilación</a></li>
-              <li><a href="./Pages/resultados.html?q=Kinesi%C3%B3logo" class="badge rounded-pill text-bg-light">Kinesiólogo</a></li>
-              <li><a href="./Pages/resultados.html?q=Alquiler+2+ambientes" class="badge rounded-pill text-bg-light">Alquiler 2 ambientes</a></li>
-              <li><a href="./Pages/resultados.html?q=Zapatillas" class="badge rounded-pill text-bg-light">Zapatillas</a></li>
-              <li><a href="./Pages/resultados.html?q=Veterinaria+24hs" class="badge rounded-pill text-bg-light">Veterinaria 24hs</a></li>
-              <li><a href="./Pages/resultados.html?q=Panader%C3%ADa" class="badge rounded-pill text-bg-light">Panadería</a></li>
-            </ul>
-
-            <!-- Grid de rubros -->
-            <div class="row g-3">
-              <div class="col-6 col-md-4">
-                <a class="card card-rubro h-100 text-decoration-none" href="./Pages/resultados.html?cat=gastronomia">
-                  <div class="card-body">
-                    <p class="mb-1">🍔 Gastronomía</p>
-                    <span class="small text-muted">+24k búsquedas</span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-4">
-                <a class="card card-rubro h-100 text-decoration-none" href="./Pages/resultados.html?cat=turismo">
-                  <div class="card-body">
-                    <p class="mb-1">🏖️ Playa & viajes</p>
-                    <span class="small text-muted">+18k búsquedas</span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-4">
-                <a class="card card-rubro h-100 text-decoration-none" href="./Pages/resultados.html?cat=hogar">
-                  <div class="card-body">
-                    <p class="mb-1">🛠️ Hogar & servicios</p>
-                    <span class="small text-muted">+9k búsquedas</span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-4">
-                <a class="card card-rubro h-100 text-decoration-none" href="./Pages/resultados.html?cat=empleos">
-                  <div class="card-body">
-                    <p class="mb-1">💼 Empleo</p>
-                    <span class="small text-muted">+13k búsquedas</span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-4">
-                <a class="card card-rubro h-100 text-decoration-none" href="./Pages/resultados.html?cat=moda">
-                  <div class="card-body">
-                    <p class="mb-1">👗 Moda & calzado</p>
-                    <span class="small text-muted">+7k búsquedas</span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-4">
-                <a class="card card-rubro h-100 text-decoration-none" href="./Pages/resultados.html">
-                  <div class="card-body">
-                    <p class="mb-1">🔎 Ver todo</p>
-                    <span class="small text-muted">Explorar categorías</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Columna derecha: rankings -->
-          <div class="col-lg-4">
-            <!-- Ranking de influencers -->
-            <div class="card mb-3 card-ranking">
-              <div class="card-body">
-                <h3 class="h6 mb-3">Ranking de influencers</h3>
-                <ul class="list-unstyled mb-0 small">
-                  <li class="d-flex justify-content-between align-items-center mb-2">
-                    <span>🥇 @ViajesConMati</span>
-                    <span class="fw-semibold">92k</span>
-                  </li>
-                  <li class="d-flex justify-content-between align-items-center mb-2">
-                    <span>🥈 @FoodiePau</span>
-                    <span class="fw-semibold">87k</span>
-                  </li>
-                  <li class="d-flex justify-content-between align-items-center">
-                    <span>🥉 @SantaFeTips</span>
-                    <span class="fw-semibold">81k</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Publicaciones destacadas -->
-            <div class="card card-ranking">
-              <div class="card-body">
-                <h3 class="h6 mb-3">Publicaciones destacadas</h3>
-                <ol class="list-unstyled mb-0 small">
-                  <li class="d-flex justify-content-between align-items-center mb-2">
-                    <span>1. Tour por París</span>
-                    <span class="text-muted">Top</span>
-                  </li>
-                  <li class="d-flex justify-content-between align-items-center mb-2">
-                    <span>2. Cafetería Moderna</span>
-                    <span class="text-muted">+</span>
-                  </li>
-                  <li class="d-flex justify-content-between align-items-center">
-                    <span>3. Circuito de Montaña</span>
-                    <span class="text-muted">+</span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         INFLUENCERS DESTACADOS
-         ========================================================= -->
-    <section class="section-influencers py-5">
-      <div class="container">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <div>
-            <h2 class="h4 mb-1">Influencers destacados del mes</h2>
-            <p class="text-muted mb-0">Creadores con mayor impacto, calidad de contenido y participación.</p>
-          </div>
-          <a href="./Pages/influencers.html" class="btn btn-link btn-sm">Ver todos</a>
-        </div>
-
-        <div class="row g-4">
-          <!-- Tarjeta 1 -->
-          <div class="col-12 col-md-6">
-            <article class="influencer-card h-100" itemscope itemtype="https://schema.org/Person">
-              <div class="influencer-header">
-                <img
-                  src="https://picsum.photos/seed/viajesmaria/640/400"
-                  alt="María Fernández, creadora de viajes"
-                  class="img-fluid influencer-img"
-                  width="640" height="400"
-                  loading="lazy" decoding="async"
-                  itemprop="image">
-                <span class="categoria">🧳 Viajes · Buenos Aires</span>
-              </div>
-
-              <div class="influencer-body p-3 p-md-4">
-                <h3 class="h5 d-flex align-items-center gap-1 mb-1" itemprop="name">
-                  María Fernández
-                  <span class="verificado" aria-label="Cuenta verificada" title="Cuenta verificada">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-                      <circle cx="12" cy="12" r="10" fill="#0095F6"></circle>
-                      <path fill="#fff" d="M9 16.2 5.5 12.7l1.4-1.4L9 13.4l7.1-7.1 1.4 1.4z"/>
-                    </svg>
-                  </span>
-                </h3>
-
-                <p class="usuario text-muted mb-2" itemprop="alternateName">@ViajesConMari</p>
-                <p class="descripcion mb-3" itemprop="description">Historias de viaje y tips low cost.</p>
-
-                <div class="row text-center mb-3 metricas" aria-label="Métricas del perfil">
-                  <div class="col">
-                    <div class="fw-semibold">92k</div>
-                    <span class="small text-muted">Seguidores</span>
-                  </div>
-                  <div class="col">
-                    <div class="fw-semibold">3.4%</div>
-                    <span class="small text-muted">Engagement</span>
-                  </div>
-                  <div class="col" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-                    <div class="fw-semibold" itemprop="ratingValue">4.8</div>
-                    <span class="small text-muted">Rating</span>
-                    <meta itemprop="ratingCount" content="320">
-                    <meta itemprop="bestRating" content="5">
-                    <meta itemprop="worstRating" content="1">
-                  </div>
-                </div>
-
-                <div class="d-flex flex-wrap gap-2 mb-3 redes">
-                  <a href="https://www.instagram.com/viajesconmari" class="chip" target="_blank" rel="noopener">Instagram</a>
-                  <a href="https://www.tiktok.com/@viajesconmari" class="chip" target="_blank" rel="noopener">TikTok</a>
-                  <a href="https://www.youtube.com/@viajesconmari" class="chip" target="_blank" rel="noopener">YouTube</a>
-                </div>
-
-                <div class="d-flex flex-wrap gap-2 acciones">
-                  <a href="./Pages/influencers/viajesconmari.html" class="btn btn-primary btn-sm">Ver perfil</a>
-                  <a href="https://wa.me/5493425083275?text=Hola!%20Te%20contacto%20desde%20Yo%20Busco"
-                     class="btn btn-outline-secondary btn-sm"
-                     target="_blank" rel="noopener">
-                    Contactar
-                  </a>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <!-- Tarjeta 2 -->
-          <div class="col-12 col-md-6">
-            <article class="influencer-card h-100" itemscope itemtype="https://schema.org/Person">
-              <div class="influencer-header">
-                <img
-                  src="https://picsum.photos/seed/luciamoda/640/400"
-                  alt="Lucía Romero, creadora de estilo y moda"
-                  class="img-fluid influencer-img"
-                  width="640" height="400"
-                  loading="lazy" decoding="async"
-                  itemprop="image">
-                <span class="categoria">👗 Moda · Córdoba</span>
-              </div>
-
-              <div class="influencer-body p-3 p-md-4">
-                <h3 class="h5 d-flex align-items-center gap-1 mb-1" itemprop="name">
-                  Lucía Romero
-                  <span class="verificado" aria-label="Cuenta verificada" title="Cuenta verificada">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-                      <circle cx="12" cy="12" r="10" fill="#0095F6"></circle>
-                      <path fill="#fff" d="M9 16.2 5.5 12.7l1.4-1.4L9 13.4l7.1-7.1 1.4 1.4z"/>
-                    </svg>
-                  </span>
-                </h3>
-
-                <p class="usuario text-muted mb-2" itemprop="alternateName">@LuciaRomStyle</p>
-                <p class="descripcion mb-3" itemprop="description">Tips de moda accesible, outfits urbanos y tendencias.</p>
-
-                <div class="row text-center mb-3 metricas" aria-label="Métricas del perfil">
-                  <div class="col">
-                    <div class="fw-semibold">128k</div>
-                    <span class="small text-muted">Seguidores</span>
-                  </div>
-                  <div class="col">
-                    <div class="fw-semibold">4.1%</div>
-                    <span class="small text-muted">Engagement</span>
-                  </div>
-                  <div class="col" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-                    <div class="fw-semibold" itemprop="ratingValue">4.9</div>
-                    <span class="small text-muted">Rating</span>
-                    <meta itemprop="ratingCount" content="410">
-                    <meta itemprop="bestRating" content="5">
-                    <meta itemprop="worstRating" content="1">
-                  </div>
-                </div>
-
-                <div class="d-flex flex-wrap gap-2 mb-3 redes">
-                  <a href="https://www.instagram.com/luciaromstyle" class="chip" target="_blank" rel="noopener">Instagram</a>
-                  <a href="https://www.tiktok.com/@luciaromstyle" class="chip" target="_blank" rel="noopener">TikTok</a>
-                  <a href="https://www.youtube.com/@luciaromstyle" class="chip" target="_blank" rel="noopener">YouTube</a>
-                </div>
-
-                <div class="d-flex flex-wrap gap-2 acciones">
-                  <a href="./Pages/influencers/luciaromstyle.html" class="btn btn-primary btn-sm">Ver perfil</a>
-                  <a href="https://wa.me/5493515028831?text=Hola!%20Te%20contacto%20desde%20Yo%20Busco"
-                     class="btn btn-outline-secondary btn-sm"
-                     target="_blank" rel="noopener">
-                    Contactar
-                  </a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         COMERCIOS DESTACADOS
-         ========================================================= -->
-    <section class="section-comercios py-5">
-      <div class="container">
-        <div class="text-center mb-4">
-          <h2 class="h4 mb-1">Comercios destacados</h2>
-          <p class="text-muted mb-0">Elegidos por valoraciones y actividad reciente</p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-12 col-md-4">
-            <article class="card h-100">
-              <img
-                src="https://picsum.photos/seed/caferoma/360/220"
-                class="card-img-top"
-                width="360" height="220"
-                alt="Café Roma, cafetería en el centro">
-              <div class="card-body">
-                <h3 class="card-title h5 mb-1">Café Roma</h3>
-                <p class="card-text mb-2 text-muted">Gastronomía · ★ 4.7 (213)</p>
-                <a class="btn btn-primary btn-sm" href="./Pages/resultados.html?id=cafe-roma">Ver más</a>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-12 col-md-4">
-            <article class="card h-100">
-              <img
-                src="https://picsum.photos/seed/plomero/360/220"
-                class="card-img-top"
-                width="360" height="220"
-                alt="Plomero matriculado 24 horas">
-              <div class="card-body">
-                <h3 class="card-title h5 mb-1">Plomero Matriculado</h3>
-                <p class="card-text mb-2 text-muted">Servicios · ★ 5.0</p>
-                <a class="btn btn-primary btn-sm" href="./Pages/resultados.html?id=plomero">Ver más</a>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-12 col-md-4">
-            <article class="card h-100">
-              <img
-                src="https://picsum.photos/seed/deptocentro/360/220"
-                class="card-img-top"
-                width="360" height="220"
-                alt="Departamento 2 ambientes en el centro">
-              <div class="card-body">
-                <h3 class="card-title h5 mb-1">Depto 2 amb · Centro</h3>
-                <p class="card-text mb-2 text-muted">Alquileres · Dueño directo</p>
-                <a class="btn btn-primary btn-sm" href="./Pages/resultados.html?id=depto-centro">Ver más</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         CTA PUBLICAR
-         ========================================================= -->
-    <section class="section-cta py-5">
-      <div class="container">
-        <div class="cta-box rounded-4 p-4 p-md-5 text-center text-md-start">
-          <div class="row align-items-center g-3">
-            <div class="col-md-8">
-              <h2 class="h4 mb-2">¿Sos comercio o profesional?</h2>
-              <p class="mb-0">Publicá gratis y recibí consultas por WhatsApp desde cualquier lugar del país.</p>
-            </div>
-            <div class="col-md-4 d-grid d-md-flex justify-content-md-end">
-              <a class="btn btn-light btn-lg" href="./Pages/publicar.html">Crear publicación</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- =========================================================
-       FOOTER
-       ========================================================= -->
-  <footer class="footer border-top py-3" role="contentinfo">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-      <p class="mb-0 small text-muted">© 2025 Yo Busco</p>
-      <nav class="footer-nav d-flex gap-3 small" aria-label="Enlaces de pie">
-        <a href="./Pages/about.html" class="text-muted text-decoration-none">Nosotros</a>
-        <a href="./Pages/contacto.html" class="text-muted text-decoration-none">Contacto</a>
-        <a href="./Pages/beneficios.html" class="text-muted text-decoration-none">Beneficios</a>
-      </nav>
     </div>
-  </footer>
+  </section>
+<!-- =========================================================
+     INFLUENCERS DESTACADOS
+========================================================= -->
+<section class="yb-section yb-influencers" id="influencers">
+  <div class="container">
+
+    <!-- Encabezado -->
+    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3 mb-3">
+      <div>
+        <h2 class="yb-section-title mb-1">Influencers destacados</h2>
+        <p class="yb-section-subtitle mb-0">
+          Creadoras y creadores que recomiendan lugares, servicios y experiencias cerca tuyo.
+        </p>
+      </div>
+      <a href="./Pages/influencers.html" class="btn btn-outline-secondary btn-sm yb-see-all-btn">
+        Ver todos los influencers
+      </a>
+    </div>
+
+    <!-- Carrusel -->
+    <div id="ybInfluencersCarousel" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-inner">
+
+        <!-- SLIDE 1 (4 cards) -->
+        <div class="carousel-item active">
+          <div class="row g-3">
+
+            <!-- 1 - Viajes -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="yb-influencer-card">
+                <div class="yb-influencer-img-wrap">
+                  <img
+                    src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    class="img-fluid"
+                    alt="Influencer de viajes en la playa">
+                </div>
+                <div class="yb-influencer-body">
+                  <span class="yb-influencer-tag">Viajes · Santa Fe</span>
+                  <h3 class="yb-influencer-name">@ViajesConMati</h3>
+                  <p class="yb-influencer-desc">
+                    Destinos cercanos, tips de hospedaje y planes para escapadas de fin de semana.
+                  </p>
+                  <div class="yb-influencer-meta">
+                    <span>92k seguidores</span>
+                    <span>+180 recomendaciones</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- 2 - Gastronomía -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="yb-influencer-card">
+                <div class="yb-influencer-img-wrap">
+                  <img
+                    src="https://images.pexels.com/photos/1234535/pexels-photo-1234535.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    class="img-fluid"
+                    alt="Influencer de gastronomía en cafetería">
+                </div>
+                <div class="yb-influencer-body">
+                  <span class="yb-influencer-tag">Gastronomía · Rosario</span>
+                  <h3 class="yb-influencer-name">@FoodiePau</h3>
+                  <p class="yb-influencer-desc">
+                    Cafeterías, bares y restaurantes con reseñas honestas y fotos que dan hambre.
+                  </p>
+                  <div class="yb-influencer-meta">
+                    <span>87k seguidores</span>
+                    <span>+120 reseñas</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- 3 - Planes urbanos -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="yb-influencer-card">
+                <div class="yb-influencer-img-wrap">
+                  <img
+                    src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    class="img-fluid"
+                    alt="Influencer en ciudad de noche">
+                </div>
+                <div class="yb-influencer-body">
+                  <span class="yb-influencer-tag">Planazos · Santa Fe</span>
+                  <h3 class="yb-influencer-name">@SantaFeTips</h3>
+                  <p class="yb-influencer-desc">
+                    Agenda con eventos, ferias, recitales y actividades para todos los gustos.
+                  </p>
+                  <div class="yb-influencer-meta">
+                    <span>81k seguidores</span>
+                    <span>+95 planes</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- 4 - Fitness -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="yb-influencer-card">
+                <div class="yb-influencer-img-wrap">
+                  <img
+                    src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    class="img-fluid"
+                    alt="Influencer de fitness entrenando">
+                </div>
+                <div class="yb-influencer-body">
+                  <span class="yb-influencer-tag">Fitness · Córdoba</span>
+                  <h3 class="yb-influencer-name">@MoveWithLau</h3>
+                  <p class="yb-influencer-desc">
+                    Gimnasios, clases y actividades al aire libre para moverte y sentirte mejor.
+                  </p>
+                  <div class="yb-influencer-meta">
+                    <span>54k seguidores</span>
+                    <span>+60 spots</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SLIDE 2 (4 cards más) -->
+        <div class="carousel-item">
+          <div class="row g-3">
+
+            <!-- 5 - Servicios -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="yb-influencer-card">
+                <div class="yb-influencer-img-wrap">
+                  <img
+                    src="https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    class="img-fluid"
+                    alt="Técnico realizando servicio">
+                </div>
+                <div class="yb-influencer-body">
+                  <span class="yb-influencer-tag">Servicios · Buenos Aires</span>
+                  <h3 class="yb-influencer-name">@SolucionaBA</h3>
+                  <p class="yb-influencer-desc">
+                    Plomeros, electricistas, pintores y más: profesionales probados y recomendados.
+                  </p>
+                  <div class="yb-influencer-meta">
+                    <span>43k seguidores</span>
+                    <span>+70 servicios</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- 6 - Escapadas -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="yb-influencer-card">
+                <div class="yb-influencer-img-wrap">
+                  <img
+                    src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    class="img-fluid"
+                    alt="Paisaje de río y naturaleza">
+                </div>
+                <div class="yb-influencer-body">
+                  <span class="yb-influencer-tag">Escapadas · Litoral</span>
+                  <h3 class="yb-influencer-name">@RutasDelLitoral</h3>
+                  <p class="yb-influencer-desc">
+                    Termas, ríos y pueblitos con encanto a pocas horas en auto.
+                  </p>
+                  <div class="yb-influencer-meta">
+                    <span>38k seguidores</span>
+                    <span>+40 escapadas</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- 7 - Comercios locales -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="yb-influencer-card">
+                <div class="yb-influencer-img-wrap">
+                  <img
+                    src="https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    class="img-fluid"
+                    alt="Comercio local de barrio">
+                </div>
+                <div class="yb-influencer-body">
+                  <span class="yb-influencer-tag">Comercios · Santa Fe</span>
+                  <h3 class="yb-influencer-name">@BarrioVivo</h3>
+                  <p class="yb-influencer-desc">
+                    Recomendaciones de negocios de barrio, promociones y datos útiles.
+                  </p>
+                  <div class="yb-influencer-meta">
+                    <span>29k seguidores</span>
+                    <span>+85 comercios</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- 8 - Experiencias -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="yb-influencer-card">
+                <div class="yb-influencer-img-wrap">
+                  <img
+                    src="https://images.pexels.com/photos/1391580/pexels-photo-1391580.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    class="img-fluid"
+                    alt="Gente disfrutando una experiencia social">
+                </div>
+                <div class="yb-influencer-body">
+                  <span class="yb-influencer-tag">Experiencias · Región Centro</span>
+                  <h3 class="yb-influencer-name">@PlanPerfecto</h3>
+                  <p class="yb-influencer-desc">
+                    Shows, after offices, eventos y experiencias diferentes para salir de la rutina.
+                  </p>
+                  <div class="yb-influencer-meta">
+                    <span>51k seguidores</span>
+                    <span>+110 experiencias</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controles (usan Bootstrap) -->
+      <button
+        class="yb-arrow yb-arrow--left"
+        type="button"
+        data-bs-target="#ybInfluencersCarousel"
+        data-bs-slide="prev"
+        aria-label="Ver influencers anteriores">
+        ‹
+      </button>
+
+      <button
+        class="yb-arrow yb-arrow--right"
+        type="button"
+        data-bs-target="#ybInfluencersCarousel"
+        data-bs-slide="next"
+        aria-label="Ver influencers siguientes">
+        ›
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     LO MÁS BUSCADO
+========================================================= -->
+<section class="yb-section yb-trending">
+  <div class="container">
+
+    <!-- Encabezado -->
+    <div class="yb-trending-header d-flex justify-content-between align-items-center">
+      <div>
+        <h2 class="yb-trending-title">Lo más buscado</h2>
+        <p class="yb-trending-subtitle">
+          Categorías, lugares y servicios que la gente busca todo el tiempo cerca tuyo.
+        </p>
+      </div>
+      <a href="#" class="yb-trending-link">Ver todas las categorías</a>
+    </div>
+
+    <!-- Carrusel -->
+    <div class="yb-trending-slider">
+
+      <!-- Flecha izquierda -->
+      <button class="yb-arrow yb-arrow--left" type="button" data-yb-trending-prev>‹</button>
+
+      <!-- Track -->
+      <div class="yb-trending-track">
+
+        <!-- Card 1 -->
+        <article class="yb-trending-card">
+          <div class="yb-trending-image">
+            <img
+              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=80"
+              alt="Plato de comida en restaurante"
+              loading="lazy">
+          </div>
+          <div class="yb-trending-body">
+            <span class="yb-trending-tag">Gastronomía · Santa Fe</span>
+            <h3 class="yb-trending-name">Pizzas y deliveries</h3>
+            <p class="yb-trending-text">
+              Restaurantes, bares y casas de comida con envío rápido a domicilio.
+            </p>
+            <p class="yb-trending-meta">+24k búsquedas este mes</p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="yb-trending-card">
+          <div class="yb-trending-image">
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
+              alt="Hotel con vista al mar"
+              loading="lazy">
+          </div>
+          <div class="yb-trending-body">
+            <span class="yb-trending-tag">Viajes · Costa Atlántica</span>
+            <h3 class="yb-trending-name">Hoteles frente al mar</h3>
+            <p class="yb-trending-text">
+              Alojamiento con vista al mar, desayuno incluido y cochera.
+            </p>
+            <p class="yb-trending-meta">+18k búsquedas este mes</p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="yb-trending-card">
+          <div class="yb-trending-image">
+            <img
+              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
+              alt="Profesional de salud"
+              loading="lazy">
+          </div>
+          <div class="yb-trending-body">
+            <span class="yb-trending-tag">Salud · Rosario</span>
+            <h3 class="yb-trending-name">Turnos médicos</h3>
+            <p class="yb-trending-text">
+              Clínicas, sanatorios y consultorios con reserva de turno online.
+            </p>
+            <p class="yb-trending-meta">+15k búsquedas este mes</p>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="yb-trending-card">
+          <div class="yb-trending-image">
+            <img
+              src="https://images.unsplash.com/photo-1582719478250-cc70d3a5457b?auto=format&fit=crop&w=1200&q=80"
+              alt="Oficina de coworking"
+              loading="lazy">
+          </div>
+          <div class="yb-trending-body">
+            <span class="yb-trending-tag">Servicios · Buenos Aires</span>
+            <h3 class="yb-trending-name">Coworkings y oficinas</h3>
+            <p class="yb-trending-text">
+              Espacios de trabajo compartido, salas de reunión y oficinas privadas.
+            </p>
+            <p class="yb-trending-meta">+9k búsquedas este mes</p>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="yb-trending-card">
+          <div class="yb-trending-image">
+            <img
+              src="https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1200&q=80"
+              alt="Clase de entrenamiento"
+              loading="lazy">
+          </div>
+          <div class="yb-trending-body">
+            <span class="yb-trending-tag">Fitness · Córdoba</span>
+            <h3 class="yb-trending-name">Gimnasios y clases</h3>
+            <p class="yb-trending-text">
+              Gimnasios, entrenadores personales y clases grupales.
+            </p>
+            <p class="yb-trending-meta">+11k búsquedas este mes</p>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="yb-trending-card">
+          <div class="yb-trending-image">
+            <img
+              src="https://images.unsplash.com/photo-1582719478181-2f2df0f4d6f8?auto=format&fit=crop&w=1200&q=80"
+              alt="Electricista trabajando"
+              loading="lazy">
+          </div>
+          <div class="yb-trending-body">
+            <span class="yb-trending-tag">Servicios · Todo el país</span>
+            <h3 class="yb-trending-name">Oficios y profesionales</h3>
+            <p class="yb-trending-text">
+              Plomeros, electricistas, gasistas y más profesionales de confianza.
+            </p>
+            <p class="yb-trending-meta">+20k búsquedas este mes</p>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Flecha derecha -->
+      <button class="yb-arrow yb-arrow--right" type="button" data-yb-trending-next>›</button>
+
+    </div>
+
+  </div>
+</section>
+
+
+</main>
+
+
+
+
+
+ <!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="yb-footer">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <span class="yb-footer-copy">© 2025 Yo Busco</span>
+
+    <nav class="yb-footer-nav">
+      <a href="#">Preguntas frecuentes</a>
+      <a href="#">Contacto</a>
+      <a href="#">Sobre nosotros</a>
+    </nav>
+
+    <span class="yb-footer-made">
+      Hecho con <span class="yb-heart">♥</span> en Santa Fe
+    </span>
+
+  </div>
+</footer>
+
 
   <!-- Bootstrap JS -->
   <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous">
   </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const slider = document.querySelector(".yb-trending-slider");
+  if (!slider) return;
+
+  const track = slider.querySelector(".yb-trending-track");
+  const prev  = slider.querySelector("[data-yb-trending-prev]");
+  const next  = slider.querySelector("[data-yb-trending-next]");
+
+  if (!track || !prev || !next) return;
+
+  // Calcula el desplazamiento según el ancho real de la card
+  function getStep() {
+    const firstCard = track.querySelector(".yb-trending-card");
+    if (!firstCard) return 350;
+    const cardWidth = firstCard.getBoundingClientRect().width;
+    return cardWidth + 16; // gap incluido
+  }
+
+  next.addEventListener("click", () => {
+    track.scrollBy({ left: getStep(), behavior: "smooth" });
+  });
+
+  prev.addEventListener("click", () => {
+    track.scrollBy({ left: -getStep(), behavior: "smooth" });
+  });
+
+});
+</script>
+
 </body>
 </html>

@@ -1,472 +1,1259 @@
 /* =========================================================
-   RESET GENERAL
-   ========================================================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-/* =========================================================
-   ESTILOS BASE (MOBILE FIRST)
+   RESET
    ========================================================= */
 
+/* Box-sizing moderno */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html,
+/* Sacar márgenes por defecto */
 body {
   margin: 0;
   padding: 0;
-}
-
-body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #f4f4f6;
-  color: #222222;
+  background-color: #fff;
+  color: #222;
 }
 
-/* Links generales */
+/* Imágenes fluidas */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Enlaces sin decoración */
 a {
-  color: #5b21b6;
   text-decoration: none;
+  color: inherit;
 }
 
-a:hover {
-  text-decoration: underline;
+/* Inputs */
+input, button, textarea, select {
+  font: inherit;
+  border-radius: 0;
 }
 
+/*-----------------------------------------------------------------------------------------------------------------------*//* =========================================================
+   PAGINA INDEX 
+   ========================================================= */
 /* =========================================================
-   NAVBAR (Bootstrap + pequeños ajustes)
+   NAVBAR — ESTILOS PRINCIPALES
    ========================================================= */
 
-.navbar {
-  border-bottom: 1px solid #e5e7eb;
+.yb-navbar {
+  background: linear-gradient(90deg, #6f42c1, #9333ea);
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.3);
 }
 
-.navbar-brand img {
-  height: 40px;
-  width: auto;
+/* Marca */
+.yb-navbar .navbar-brand img {
+  height: 46px;
 }
 
-.nav-main .nav-link {
-  font-weight: 500;
-  color: #4b5563;
+/* Links */
+.yb-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding-inline: 1rem;
+  position: relative;
+  transition: color 0.2s ease, transform 0.15s ease;
 }
 
-.nav-main .nav-link.active {
-  color: #5b21b6;
+.yb-navbar .nav-link:hover,
+.yb-navbar .nav-link:focus {
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
-.nav-main .nav-link:hover {
-  color: #5b21b6;
-}
-
-/* Botones derecha */
-.navbar .btn-sm {
-  border-radius: 999px;
-}
-
-/* =========================================================
-   HERO CON FLEXBOX
-   ========================================================= */
-
-.hero-landing {
-  background-color: #5b21b6;       /* violeta simple */
+.yb-navbar .nav-link.active {
   color: #ffffff;
 }
 
-/* Capa interior para poder jugar con padding */
-.hero-overlay {
-  padding: 1.5rem 0 2.5rem;
-}
-
-/* Contenido del hero:
-   usamos flexbox en la columna principal para alinear texto y buscador */
-.hero-landing .container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Título y subtítulo */
-.hero-title {
-  font-size: 1.9rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-bottom: 0.5rem;
-}
-
-.hero-subtitle {
-  font-size: 0.98rem;
-  max-width: 28rem;
-  margin: 0;
-}
-
-.hero-badge {
-  font-size: 0.85rem;
-  opacity: 0.9;
-  margin-bottom: 0.25rem;
-}
-
-/* Caja del buscador principal */
-.hero-search {
+/* Subrayado animado (solo desktop, pero lo agregaremos en responsive luego) */
+.yb-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.35rem;
+  width: 0;
+  height: 2px;
   background-color: #ffffff;
-  border-radius: 1rem;
-  padding: 0.75rem 0.75rem 1rem;
-  margin-top: 0.5rem;
-}
-
-/* Inputs y select: estilos simples basados en box model */
-.hero-search .form-label {
-  font-size: 0.75rem;
-  color: #6b7280;
-}
-
-.hero-search .form-select,
-.hero-search .form-control {
-  font-size: 0.9rem;
-}
-
-/* Atajos del buscador: botones tipo pill */
-.hero-shortcuts {
-  margin-top: 0.75rem;
-}
-
-.hero-shortcuts .btn {
-  font-size: 0.8rem;
   border-radius: 999px;
-  border: 1px solid #e5e7eb;
-  background-color: #f3f4f6;
-  color: #374151;
+  transform: translateX(-50%);
+  transition: width 0.25s ease;
 }
 
-.hero-shortcuts .btn:hover {
-  background-color: #e5e7eb;
+.yb-navbar .nav-link:hover::after,
+.yb-navbar .nav-link.active::after {
+  width: 55%;
 }
 
-/* =========================================================
-   SECCIÓN: LO MÁS BUSCADO (GRID)
-   ========================================================= */
-
-.section-most-searched {
-  padding: 2.5rem 0;
-}
-
-/* Tags de palabras clave (box model básico) */
-.section-tags {
-  margin: 1rem 0 1.5rem;
-  padding: 0;
-  list-style: none;
-}
-
-.section-tags li {
-  margin: 0.2rem;
-}
-
-.section-tags a.badge {
-  display: inline-block;
-  padding: 0.4rem 0.8rem;
+/* Botón INGRESAR */
+.yb-navbar .btn-ingresar {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  color: #ffffff;
   border-radius: 999px;
-  border: 1px solid #e5e7eb;
-  background-color: #ffffff;
-  color: #4b5563;
-  font-size: 0.8rem;
-}
-
-/* :hover simple */
-.section-tags a.badge:hover {
-  border-color: #5b21b6;
-  color: #5b21b6;
-}
-
-/* GRID para rubros */
-.section-most-searched .row.g-3 {
-  display: grid;                     /* grid principal */
-  grid-template-columns: 1fr;        /* mobile */
-  gap: 0.9rem;
-}
-
-/* Tarjetas de rubros: box model (padding, border, margin) */
-.card-rubro {
-  background-color: #ffffff;
-  border-radius: 0.75rem;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.card-rubro .card-body {
-  padding: 0.9rem 1rem;
-}
-
-.card-rubro p {
-  margin: 0 0 0.15rem;
   font-weight: 600;
+  padding: 0.45rem 1.2rem;
+  transition: 0.15s ease;
 }
 
-.card-rubro span {
-  font-size: 0.8rem;
-  color: #6b7280;
+.yb-navbar .btn-ingresar:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
 }
 
-/* :hover para tarjetas de rubros */
-.card-rubro:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.1);
-}
-
-/* Cards de ranking a la derecha */
-.card-ranking {
+/* Botón PUBLICAR */
+.yb-navbar .btn-publicar {
   background-color: #ffffff;
-  border-radius: 0.75rem;
-  border: 1px solid #e5e7eb;
-  padding: 1rem 1.1rem;
+  border: 1px solid #ffffff;
+  color: #6f42c1;
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 0.45rem 1.2rem;
+  transition: 0.15s ease;
 }
 
-.card-ranking h3 {
-  font-size: 0.95rem;
-  margin-bottom: 0.75rem;
+.yb-navbar .btn-publicar:hover {
+  background-color: #f8f4ff;
+  color: #4c1d95;
+  transform: translateY(-1px);
 }
 
-.card-ranking li {
-  font-size: 0.85rem;
+/* Toggler (hamburguesa) */
+.yb-navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.yb-navbar .navbar-toggler-icon {
+  background-image:
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28 255, 255, 255, 0.85 %29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* =========================================================
-   INFLUENCERS DESTACADOS (TARJETAS)
-   ========================================================= */
+   HERO + BUSCADOR PRINCIPAL — ESTILOS BASE
+========================================================= */
 
-.section-influencers {
-  padding: 2.5rem 0;
+/* FONDO DEL HERO */
+.yb-hero {
+  position: relative;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      400deg,
+      rgba(111, 66, 193, 0.92) 0%,
+      rgba(124, 58, 237, 0.78) 35%,
+      rgba(168, 85, 247, 0.45) 60%,
+      rgba(245, 243, 255, 0.0) 100%
+    ),
+    url("./Assets/hero-bg.jpg") center center / cover no-repeat;
 }
 
-/* Tarjeta principal de influencer */
-.influencer-card {
-  background-color: #ffffff;
-  border-radius: 1rem;
-  border: 1px solid #e5e7eb;
+.yb-hero .container {
+  padding-top: 1.5rem;
+  padding-bottom: 2.0rem;
+}
+
+/* TAG */
+.yb-hero-tag {
+  display: inline-flex;
+  padding: .25rem .75rem;
+  align-items: center;
+  border-radius: 999px;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  background: rgba(0,0,0,.22);
+  border: 1px solid rgba(255,255,255,0.25);
+  margin-bottom: 1rem;
+}
+
+/* TITULO */
+.yb-hero-title {
+  font-size: clamp(2.2rem, 3vw + 1rem, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.0;
+  margin-bottom: 1.0rem;
+}
+
+/* SUBTITULO */
+.yb-hero-subtitle {
+  font-size: 1.15rem;
+  max-width: 38rem;
+  line-height: 1.55;
+  margin-bottom: 1.6rem;
+  color: rgba(255,255,255,0.92);
+}
+
+/* BULLETS */
+.yb-hero-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: rgba(255,255,255,0.9);
+  font-size: .95rem;
+}
+.yb-hero-bullets li + li {
+  margin-top: .55rem;
+}
+
+/* =========================================================
+   BUSCADOR PRINCIPAL — GLASS CARD
+========================================================= */
+
+.yb-search-box {
+  background: rgba(255,255,255,0.96);
+  border-radius: 1.9rem;
+  padding: 1.7rem 2rem;
+  margin: 1.8rem auto 0;
+  max-width: 960px;
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 22px 55px rgba(15,23,42,0.40);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  animation: yb-fade-up .65s ease-out .1s forwards;
+}
+
+/* FLEX DEL BUSCADOR */
+.yb-search-flex {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .6rem;
+  background: rgba(255,255,255,0.96);
+  border-radius: 2rem;
+  border: 1px solid #e8e8e8;
+}
+
+/* INPUT WRAP */
+.yb-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .5rem 1rem;
+  background: #f8f6ff;
+  border: 1px solid #e5e1ff;
+  border-radius: 1.6rem;
+}
+
+/* ICONOS */
+.yb-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fdf8ff 0, #f2e5ff 45%, #ddc9ff 100%);
+  box-shadow: 0 4px 10px rgba(148,92,228,0.35);
+}
+
+/* INPUTS */
+.yb-select,
+.yb-input {
+  border: none !important;
+  background: transparent;
+  font-size: .95rem;
+}
+.yb-select:focus,
+.yb-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* BOTÓN */
+.yb-search-btn2 {
+  border: none;
+  background: linear-gradient(135deg, #6f42c1, #9333ea);
+  color: #fff;
+  padding: .85rem 2rem;
+  border-radius: 1.6rem;
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(88,28,135,.55);
+  transition: .15s ease;
+}
+.yb-search-btn2:hover {
+  background: linear-gradient(135deg, #5b35a8, #7e22ce);
+  transform: translateY(-1px);
+}
+
+/* TAGS */
+.yb-tags {
+  display: flex;
+  gap: .3rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.yb-tag2 {
+  padding: .35rem .9rem;
+  border-radius: 1.2rem;
+  background: #f5f0ff;
+  border: 1px solid #e4d7ff;
+  font-size: .8rem;
+  color: #4c1d95;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.yb-tag2:hover {
+  background:#ede4ff;
+  transform:translateY(-1px);
+}
+
+/* ANIMACIÓN */
+@keyframes yb-fade-up {
+  0% { opacity:0; transform:translateY(18px) scale(0.98); }
+  100% { opacity:1; transform:translateY(0) scale(1); }
+}
+
+/* =========================================================
+   INFLUENCERS DESTACADOS
+========================================================= */
+
+.yb-section.yb-influencers {
+  background: linear-gradient(to bottom, #f8f5ff 0%, #fdfbff 40%, #ffffff 100%);
+  padding: 3rem 0 2.5rem;
+}
+
+/* Card base */
+.yb-influencer-card {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 16px 45px rgba(15, 23, 42, 0.11);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transform-origin: center bottom;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.yb-influencer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.18);
+}
+
+/* Imagen: misma altura que “Lo más buscado” */
+.yb-influencer-img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 150px;              /* antes era más alta */
+}
+
+.yb-influencer-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.03);
+  transition: transform .25s ease;
+}
+
+.yb-influencer-card:hover .yb-influencer-img-wrap img {
+  transform: scale(1.06);
+}
+
+/* Contenido */
+.yb-influencer-body {
+  padding: .85rem 1rem 1rem;   /* menos padding para bajar la altura total */
+}
+
+.yb-influencer-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: .18rem .7rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  background: #f5f0ff;
+  color: #6d28d9;
+  margin-bottom: .4rem;
+}
+
+.yb-influencer-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 .35rem;
+  color: #111827;
+}
+
+.yb-influencer-desc {
+  font-size: .85rem;
+  line-height: 1.45;
+  color: #4b5563;
+  margin: 0 0 .55rem;
+}
+
+.yb-influencer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  font-size: .8rem;
+  color: #6b7280;
+}
+
+/* =========================================================
+   LO MÁS BUSCADO — VERSIÓN OPTIMIZADA
+========================================================= */
+
+.yb-section.yb-trending {
+  background: linear-gradient(to bottom, #f8f5ff 0%, #ffffff 100%);
+  padding: 3rem 0 3.25rem;
+}
+
+/* Encabezado */
+.yb-trending-header {
+  margin-bottom: 2rem;
+}
+
+.yb-trending-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #331f26;
+  margin-bottom: .25rem;
+}
+
+.yb-trending-subtitle {
+  margin: 0;
+  font-size: .95rem;
+  color: #6b7280;
+}
+
+.yb-trending-link {
+  display: inline-flex;
+  align-items: center;
+  padding: .45rem .95rem;
+  border-radius: 999px;
+  font-size: .85rem;
+  border: 1px solid #e4d7ff;
+  color: #6f42c1;
+  background: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: background .15s ease, box-shadow .15s ease, transform .1s ease;
+}
+
+.yb-trending-link:hover {
+  background: #f5f0ff;
+  box-shadow: 0 8px 20px rgba(149, 92, 228, 0);
+  transform: translateY(-1px);
+}
+
+/* Carrusel base */
+.yb-trending-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: .5rem;
+}
+
+.yb-trending-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: .5rem .25rem 2rem;
+  margin: 0 2.75rem; /* más espacio para flechas */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+/* Ocultar scrollbar */
+.yb-trending-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+.yb-trending-card {
+  flex: 0 0 280px;     /* más ancha, igual a influencers */
+  max-width: 280px;
+  background: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 16px 45px rgba(15, 23, 42, 0.058);
+  overflow: hidden;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  transform-origin: center bottom;
+  min-height: 260px;    /* altura uniforme */
+}
+
+.yb-trending-card:hover {
+  box-shadow: 0 50px 60px rgba(15, 23, 42, 0);
 }
 
 /* Imagen */
-.influencer-header {
+.yb-trending-image {
   position: relative;
+  overflow: hidden;
+  height: 150px;
 }
 
-.influencer-img {
+.yb-trending-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.03);
+  transition: transform .25s ease;
+}
+
+.yb-trending-card:hover .yb-trending-image img {
+  transform: scale(1.06);
+}
+
+/* Contenido */
+.yb-trending-body {
+  padding: .85rem 1rem 1rem;
+}
+
+.yb-trending-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: .18rem .7rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  background: #f5f0ff;
+  color: #6d28d9;
+  margin-bottom: .4rem;
+}
+
+.yb-trending-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 .35rem;
+  color: #111827;
+}
+
+.yb-trending-text {
+  font-size: .85rem;
+  line-height: 1.45;
+  color: #4b5563;
+  margin: 0 0 .55rem;
+}
+
+.yb-trending-meta {
+  font-size: .8rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* =========================================================
+   FLECHAS GENERALES DE CARRUSELES
+========================================================= */
+
+.yb-arrow {
+  position: absolute;
+  top: 50%;                              /* base */
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 10px 26px rgba(148, 92, 228, 0.35);
+  color: #6f42c1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background .15s ease, transform .12s ease, box-shadow .15s ease;
+  z-index: 5;
+}
+
+/* Sacar un poco hacia afuera en ambos carruseles */
+.yb-arrow--left {
+  left: -14px;
+}
+
+.yb-arrow--right {
+  right: -14px;
+}
+
+.yb-arrow:hover {
+  background: #f5f0ff;
+  transform: translateY(-50%) translateY(-1px);
+  box-shadow: 0 14px 32px rgba(76, 29, 149, 0.55);
+}
+
+/* Ajuste fino para que las flechas de INFLUENCERS
+   queden en la misma línea horizontal que las de LO MÁS BUSCADO */
+.yb-section.yb-influencers .yb-arrow {
+  top: 62%;   /* bajamos un poco dentro de la sección */
+}
+
+/* En “Lo más buscado” las dejamos centradas respecto a las tarjetas */
+.yb-section.yb-trending .yb-arrow {
+  top: 50%;
+}
+/* =========================================================
+   FOOTER
+========================================================= */
+
+
+.yb-footer {
+  background: linear-gradient(90deg, #6f42c1, #9333ea);
+  height: 70px; /* misma altura que tu header */
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  margin-top: 3rem;
+}
+
+.yb-footer .container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  height: 100%;
+}
+
+/* Texto del lado izquierdo */
+.yb-footer-copy {
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+/* Texto del lado derecho */
+.yb-footer-made {
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.yb-heart {
+  color: #ffb3d1;
+}
+
+/* NAV (links horizontales) */
+.yb-footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem; /* espacio entre links */
+}
+
+.yb-footer-nav a {
+  color: #ffffff;
+  font-size: .95rem;
+  text-decoration: none;
+  transition: .2s ease;
+  opacity: 0.9;
+}
+
+.yb-footer-nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/* =========================================================
+   PAGINA INFLUENCER
+========================================================= */
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--yb-gray-900);
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
   display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =========================================================
+   BUSCADOR PRINCIPAL (MISMO DISEÑO QUE INDEX)
+========================================================= */
+
+.yb-searchbar {
+  padding: 18px 0;
+  background: linear-gradient(to bottom, #fbf9ff 0%, #ffffff 45%);
+}
+
+/* contenedor grande tipo cápsula */
+.yb-search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  width: 100%;
+  padding: 12px 20px;
+
+  border-radius: 999px;
+  border: 1px solid #ece4ff;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 2px #f6f1ff,
+    0 14px 32px rgba(145, 70, 255, 0.22);
+}
+
+/* pastillas internas (localidad + input),
+   sin fondo propio para que se vea una sola cápsula */
+.yb-input-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.yb-pill-location {
+  white-space: nowrap;
+}
+
+.yb-pill-search {
+  flex: 1;
+}
+
+/* icono redondo: mismos colores que index */
+.yb-pill-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* degradé rosa-violeta con luz suave */
+  background:
+    radial-gradient(circle at 30% 30%, #ff88c3 0%, #c67bff 45%, #8c5dff 100%);
+  box-shadow: 0 4px 16px rgba(157, 104, 255, 0.55);
+  color: #ffffff;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* texto “Todas las localidades” */
+.yb-pill-text {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #222222;
+}
+
+/* input real dentro de la cápsula */
+.yb-pill-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  font-size: 0.92rem;
+  color: #262637;
+}
+
+.yb-pill-input::placeholder {
+  color: #8b8ba5;
+}
+
+/* botón Buscar – mismo degradé que index */
+.yb-search-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+
+  background-image: linear-gradient(135deg, #8b46ff 0%, #bf3cff 50%, #ff4fb0 100%);
+  box-shadow: 0 14px 32px rgba(174, 62, 255, 0.60);
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition: transform 0.12s ease, box-shadow 0.15s ease, filter 0.12s ease;
+}
+
+.yb-search-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 20px 45px rgba(174, 62, 255, 0.70);
+}
+
+
+/* =========================================================
+   FILTROS LATERALES
+========================================================= */
+
+.yb-filtro-box {
+  background: #ffffff;
+  border-radius: var(--yb-radius-xl);
+  border: 1px solid #eee;
+}
+
+.yb-filtro-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.yb-subfilter {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--yb-gray-700);
+}
+
+/* chips / tags */
+.yb-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  background: #f5f4ff;
+  color: var(--yb-gray-700);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.15s ease, color 0.15s ease,
+              transform 0.08s ease, border-color 0.15s ease;
+}
+
+.yb-tag.active,
+.yb-tag:hover {
+  background: var(--yb-primary);
+  color: #fff;
+  border-color: var(--yb-primary-dark);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   CARDS DE INFLUENCERS
+========================================================= */
+
+.yb-card {
+  border-radius: var(--yb-radius-xl);
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.18s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.yb-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--yb-shadow-soft);
+}
+
+/* imagen de cabecera */
+.yb-card-img {
   width: 100%;
   height: 220px;
   object-fit: cover;
 }
 
-/* Categoría sobre la imagen */
-.categoria {
-  position: absolute;
-  left: 0.75rem;
-  bottom: 0.75rem;
-  padding: 0.25rem 0.6rem;
+/* badge categoría */
+.yb-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 0.72rem;
   border-radius: 999px;
-  background-color: rgba(17, 24, 39, 0.85);
-  color: #f9fafb;
-  font-size: 0.75rem;
+  background: var(--yb-primary-soft);
+  color: var(--yb-primary-dark);
+  font-weight: 600;
 }
 
-/* Cuerpo de la card */
-.influencer-body {
-  padding: 1rem 1.2rem 1.2rem;
-}
-
-/* Usuario y descripción */
-.usuario {
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin-bottom: 0.35rem;
-}
-
-.descripcion {
-  font-size: 0.9rem;
-  margin-bottom: 0.9rem;
-}
-
-/* Métricas (usamos flexbox interno) */
-.metricas {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  margin-bottom: 0.9rem;
-}
-
-.metricas .fw-semibold {
-  font-size: 0.95rem;
-}
-
-.metricas span {
-  font-size: 0.75rem;
-  color: #6b7280;
-}
-
-/* Redes y botones */
-.redes {
-  margin-bottom: 0.8rem;
-}
-
-.chip {
-  display: inline-block;
-  padding: 0.3rem 0.7rem;
-  border-radius: 999px;
-  background-color: #f3f4f6;
-  font-size: 0.8rem;
-  color: #374151;
-}
-
-.chip:hover {
-  background-color: #e5e7eb;
-}
-
-.acciones .btn {
-  border-radius: 999px;
-}
-
-/* :hover de tarjeta completa */
-.influencer-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
-}
-
-/* =========================================================
-   COMERCIOS DESTACADOS (GRID)
-   ========================================================= */
-
-.section-comercios {
-  padding: 2.5rem 0;
-}
-
-/* Usamos grid para las cards, encima de la row de Bootstrap */
-.section-comercios .row {
+/* stats */
+.yb-stats {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px 10px;
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: var(--yb-gray-700);
 }
 
-/* Card simple con box model */
-.section-comercios .card {
-  border-radius: 0.9rem;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04);
-  overflow: hidden;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+.yb-stats span {
+  white-space: nowrap;
 }
 
-.section-comercios .card-img-top {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-}
-
-.section-comercios .card-body {
-  padding: 0.9rem 1rem 1.1rem;
-}
-
-/* :hover tarjetas de comercios */
-.section-comercios .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 18px rgba(15, 23, 42, 0.14);
+/* botones dentro de la card */
+.yb-card .btn {
+  font-size: 0.85rem;
 }
 
 /* =========================================================
-   CTA FINAL
-   ========================================================= */
+   PAGINACIÓN
+========================================================= */
 
-.section-cta {
-  padding: 2.5rem 0 3rem;
+.pagination .page-link {
+  border-radius: 999px !important;
+  border: none;
+  padding-inline: 14px;
+  padding-block: 7px;
+  font-size: 0.9rem;
+  color: var(--yb-gray-700);
 }
 
-.cta-box {
-  background-color: #5b21b6;
-  color: #ffffff;
-  border-radius: 1.2rem;
+.pagination .page-item.active .page-link {
+  background: var(--yb-primary);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(111, 66, 193, 0.4);
 }
 
-.cta-box .btn-lg {
-  border-radius: 999px;
+.pagination .page-link:hover {
+  background: var(--yb-primary-soft-2);
 }
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
 
 /* =========================================================
-   FOOTER
+   RESPONSIVE PAGINA INDEX
    ========================================================= */
-
-.footer {
-  background-color: #ffffff;
-}
-
-.footer-nav a {
-  color: #6b7280;
-}
-
 /* =========================================================
-   MEDIA QUERIES (MOBILE FIRST -> DESKTOP)
+   NAVBAR 
    ========================================================= */
 
-/* Tablets en adelante */
-@media (min-width: 768px) {
-  .hero-overlay {
-    padding: 2.5rem 0 3.5rem;
+/* Ajustes solo para pantallas grandes (subrayado animado) */
+@media (max-width: 991px) {
+  .yb-navbar .nav-link::after {
+    display: none;
+  }
+}
+
+/* Mobile: padding, centrado del menú, botones más grandes */
+@media (max-width: 767px) {
+
+  .yb-navbar .nav-link {
+    padding: 0.75rem 0;
+    text-align: center;
   }
 
-  .hero-title {
+  .yb-navbar .btn-ingresar,
+  .yb-navbar .btn-publicar {
+    width: 100%;
+    margin-top: 0.3rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .yb-navbar .navbar-collapse {
+    padding-top: 0.8rem;
+    padding-bottom: 1rem;
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 0.5rem;
+    backdrop-filter: blur(6px);
+  }
+}
+/* =========================================================
+   HERO + BUSCADOR — RESPONSIVE
+   ========================================================= */
+
+/* ====== Tablets y pantallas medianas (≤ 992px) ====== */
+@media (max-width: 992px) {
+
+  /* Hero */
+  .yb-hero .container {
+    padding-top: 3rem;
+    padding-bottom: 2.2rem;
+  }
+
+  .yb-hero-title {
     font-size: 2.3rem;
+    text-align: center;
   }
 
-  .hero-landing .container {
-    min-height: 260px;
+  .yb-hero-subtitle,
+  .yb-hero-bullets {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  /* GRID de rubros: 3 columnas en tablet */
-  .section-most-searched .row.g-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* Buscador */
+  .yb-search-box {
+    margin-top: 1.5rem;
+    padding: 1.5rem 1.4rem;
+    border-radius: 1.5rem;
   }
 
-  /* Grid de comercios: 3 columnas */
-  .section-comercios .row {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .yb-search-flex {
+    gap: .6rem;
   }
 
-  .influencer-img {
-    height: 260px;
+  .yb-input-wrap {
+    padding: .55rem .9rem;
   }
 }
 
-/* Desktop ancho */
-@media (min-width: 992px) {
-  .hero-overlay {
-    padding: 3rem 0 4rem;
+
+/* ====== Mobile — hasta 767px ====== */
+@media (max-width: 767px) {
+
+  /* HERO */
+  .yb-hero .container {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
   }
 
-  .hero-title {
-    font-size: 2.6rem;
+  .yb-hero-title {
+    font-size: 2rem;
+    line-height: 1.25;
+    text-align: center;
   }
 
-  /* Un poco más de ancho para la parte central */
-  .section-most-searched {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  .yb-hero-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
   }
 
-  .section-influencers {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  .yb-hero-subtitle,
+  .yb-hero-bullets {
+    text-align: center;
   }
 
-  .section-comercios {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  /* BUSCADOR */
+  .yb-search-box {
+    padding: 1.25rem 1.1rem;
+    border-radius: 1.3rem;
+    margin-top: 1.25rem;
+  }
+
+  /* Inputs en columna */
+  .yb-search-flex {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .75rem;
+  }
+
+  .yb-input-wrap {
+    width: 100%;
+    padding: .65rem 1rem;
+  }
+
+  /* Botón full width */
+  .yb-search-btn2 {
+    width: 100%;
+    justify-content: center;
+    padding: .9rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  /* Tags centrados */
+  .yb-tags {
+    justify-content: center;
+    gap: .6rem;
+  }
+
+  .yb-tag2 {
+    font-size: .78rem;
+    padding: .32rem .75rem;
+  }
+}
+
+
+/* ====== Mobile pequeño — hasta 480px ====== */
+@media (max-width: 480px) {
+
+  .yb-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .yb-search-box {
+    padding: 1.1rem;
+    border-radius: 1.15rem;
+  }
+
+  .yb-input-wrap {
+    padding: .55rem .85rem;
+  }
+
+  .yb-search-btn2 {
+    padding: .8rem 1rem;
+    font-size: .95rem;
+  }
+
+  .yb-tag2 {
+    font-size: .72rem;
+    padding: .28rem .65rem;
+  }
+}
+/* =========================================================
+  INFLUENCER
+   ========================================================= */
+@media (max-width: 767px) {
+
+  .yb-section {
+    padding-block: 2.5rem;
+  }
+
+  .yb-section-title,
+  .yb-section-subtitle {
+    text-align: center;
+  }
+
+  .yb-see-all-btn {
+    align-self: center;
+  }
+
+  #ybInfluencersCarousel .row > div {
+    /* para que la tarjeta ocupe todo el ancho y se vea una por slide en mobile */
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .yb-influencer-img-wrap img {
+    height: 210px;
+  }
+}
+/* =========================================================
+   INFLUENCERS — RESPONSIVE
+========================================================= */
+
+/* Tablets */
+@media (max-width: 991.98px) {
+  .yb-section.yb-influencers {
+    padding-block: 2.2rem;
+  }
+
+  .yb-influencer-img-wrap img {
+    height: 160px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+
+  .yb-section.yb-influencers {
+    padding-block: 2rem;
+  }
+
+  .yb-section-title,
+  .yb-section-subtitle {
+    text-align: center;
+  }
+
+  .yb-see-all-btn {
+    align-self: center;
+  }
+
+  /* En mobile, una card por slide para que se vea bien */
+  #ybInfluencersCarousel .carousel-item .row > div {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .yb-influencer-img-wrap img {
+    height: 180px;
+  }
+}
+/* =========================
+   LO MAS BUSCADO
+   ========================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .yb-trending-track {
+    margin: 0 2.25rem;
+  }
+
+  .yb-trending-card {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .yb-section.yb-trending {
+    padding-top: 2.5rem;
+  }
+
+  .yb-trending-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .75rem;
+  }
+
+  .yb-trending-link {
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .yb-trending-track {
+    margin: 0 2rem;
+  }
+
+  .yb-trending-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .yb-trending-nav--prev {
+    left: -4px;
+  }
+
+  .yb-trending-nav--next {
+    right: -4px;
+  }
+}
+
+/* =========================
+   FOTTER
+   ========================= */
+@media (max-width: 768px) {
+  .yb-footer {
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .yb-footer .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .yb-footer-nav {
+    flex-direction: row;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/* =========================
+  RESPOSIVE-  PAGINA INFLENCER 
+   ========================= */
+/* =========================
+   BUSCARDOR SUPERIOR
+   ========================= */
+@media (max-width: 768px) {
+  .yb-search-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .yb-pill-location,
+  .yb-pill-search,
+  .yb-search-btn {
+    width: 100%;
+  }
+
+  .yb-search-btn {
+    text-align: center;
   }
 }

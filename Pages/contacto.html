@@ -1,36 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yo Busco — Inicio</title>
-    <!-- Favicon -->
-  <link rel="icon" href="/Assent/favicon.png" type="image/png">
-   
-    <!-- CCS  -->
-  <link rel="stylesheet" href="/style.css">
+  <title>Influencers — Yo Busco</title>
+  <meta name="description" content="Encontrá influencers por categoría y ubicación.">
+
+  <link rel="icon" href="../Assets/favicon.png" type="image/png">
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  >
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
 
-<!-- Header -->
-<header class="header">
-  <!-- Marca -->
-  <a class="Marca" href="../index.html" aria-label="Inicio Yo Busco">
-    <img src="../Assent/logoprincipal.png" alt="Yo Busco" class="logo">
-  </a>
+  <!-- =========================================================
+       HEADER / NAVBAR
+  ========================================================= -->
+  <header>
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
 
-  <!-- Navegación -->
-  <nav class="nav" role="navigation" aria-label="Navegación principal">
-    <a class="nav-link" href="../index.html">Inicio</a>
-    <a class="nav-link" href="./influencers.html">Influencers</a>
-    <a class="nav-link" href="./beneficios.html">Beneficios & Descuentos</a>
-    <a class="nav-link" href="./about.html">Sobre Nosotros</a>
-    <a class="nav-link is-active" href="./contacto.html">Contacto</a>
-  </nav>
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="../index.html">
+          <img src="../Assets/logo-principal.png" alt="Yo Busco" height="46">
+        </a>
 
-  <!-- Acciones -->
-  <div class="acciones">
-    <a class="btn" href="./login.html">Ingresar</a>
-    <a class="btn btn-primary" href="./publicar.html">Publicar</a>
-  </div>
-</header>
+        <!-- Botón mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarYoBusco" aria-controls="navbarYoBusco"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú -->
+        <div class="collapse navbar-collapse" id="navbarYoBusco">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="../index.html">Inicio</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="./influencers.html">Influencers</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="./beneficios.html">Beneficios & Descuentos</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="./about.html">Sobre Nosotros</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fw-semibold active" href="./contacto.html">Contacto</a>
+            </li>
+
+          </ul>
+
+          <!-- Botones derecha -->
+          <div class="d-flex gap-2">
+            <a href="./login.html" class="btn btn-ingresar btn-sm px-3">Ingresar</a>
+            <a href="./publicar.html" class="btn btn-publicar btn-sm px-3">Publicar</a>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </header>
