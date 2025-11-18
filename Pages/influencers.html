@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Yo Busco — Influencers</title>
-  <meta name="description" content="Descubrí influencers destacados por rubro y localidad para potenciar tu marca en Yo Busco.">
+  <meta name="description" content="Descubrí influencers por nicho y localidad para impulsar tu marca en Yo Busco.">
 
   <!-- Favicon -->
   <link rel="icon" href="../Assets/favicon.png" type="image/png">
@@ -15,20 +15,25 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
     crossorigin="anonymous"
-  ><!-- Íconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  >
 
-  <!-- CSS general (mismo que el index) -->
+  <!-- Íconos -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+  <!-- CSS general -->
   <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body class="yb-page-influencers">
 
   <!-- =========================================================
-       HEADER / NAVBAR (igual que index, ajustando rutas)
+       HEADER / NAVBAR 
   ========================================================= -->
   <header>
-    <nav class="navbar navbar-expand-lg yb-navbar sticky-top">
+    <nav class="navbar navbar-expand-lg yb-navbar sticky-top" aria-label="Navegación principal">
       <div class="container">
 
         <!-- Logo -->
@@ -56,7 +61,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./beneficios.html">Beneficios &amp; Descuentos</a>
+              <a class="nav-link fw-semibold" href="./beneficios.html">Beneficios & Descuentos</a>
             </li>
 
             <li class="nav-item">
@@ -79,653 +84,444 @@
       </div>
     </nav>
   </header>
-<!-- ===========================
-     BUSCADOR SUPERIOR INFLUENCERS
-=========================== -->
-<section class="yb-searchbar">
-  <div class="container">
-    <div class="yb-search-wrapper">
 
-      <!-- Localidades -->
-      <div class="yb-input-pill yb-pill-location">
-        <span class="yb-pill-icon">
-          <i class="fa-solid fa-location-dot"></i>
-        </span>
-        <span class="yb-pill-text">Todas las localidades</span>
-      </div>
-
-      <!-- Input principal -->
-      <div class="yb-input-pill yb-pill-search">
-        <span class="yb-pill-icon">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </span>
-        <input
-          type="text"
-          class="yb-pill-input"
-          placeholder="Buscar por nombre, @usuario o nicho..."
-        >
-      </div>
-
-      <!-- Botón -->
-      <button class="yb-search-btn">Buscar</button>
-
-    </div>
-  </div>
-</section>
   <!-- =========================================================
-     CONTENIDO GENERAL
-========================================================= -->
-<div class="container my-4">
-  <div class="row">
+       BUSCADOR INFLUENCERS
+  ========================================================= -->
+  <section class="yb-searchbar-influencers">
+    <div class="container">
+      <form class="yb-search-wrapper" role="search" action="#" method="get">
 
-    <!-- =====================================================
-         COL IZQUIERDA — FILTROS
-    ====================================================== -->
-    <aside class="col-md-3 mb-4">
+        <!-- Localidad  -->
+        <div class="yb-input-pill yb-pill-location">
+          <span class="yb-pill-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </span>
 
-      <div class="yb-filtro-box p-3 shadow-sm">
-        <h5 class="yb-filtro-title">Filtros</h5>
-
-        <!-- Nicho -->
-        <div class="mt-3">
-          <h6 class="yb-subfilter">Nicho</h6>
-          <div class="d-flex flex-wrap gap-2">
-            <span class="yb-tag">Viajes</span>
-            <span class="yb-tag">Gastronomía</span>
-            <span class="yb-tag">Moda</span>
-            <span class="yb-tag">Tech</span>
-            <span class="yb-tag">Fitness</span>
-            <span class="yb-tag">Hogar</span>
-          </div>
+          <select
+            name="location"
+            class="yb-pill-select"
+            aria-label="Filtrar influencers por localidad"
+          >
+            <option value="">Todas las localidades</option>
+            <option value="santa-fe">Santa Fe</option>
+            <option value="rosario">Rosario</option>
+            <option value="cordoba">Córdoba</option>
+            <option value="buenos-aires">Buenos Aires</option>
+            <option value="mendoza">Mendoza</option>
+          </select>
         </div>
 
-        <!-- Tamaño -->
-        <div class="mt-4">
-          <h6 class="yb-subfilter">Tamaño de audiencia</h6>
-          <div class="d-flex flex-wrap gap-2">
-            <span class="yb-tag">Nano (1K–10K)</span>
-            <span class="yb-tag">Micro (10K–100K)</span>
-            <span class="yb-tag">Mid (100K–500K)</span>
-            <span class="yb-tag">Macro (500K–1M)</span>
-            <span class="yb-tag">Mega (+1M)</span>
-          </div>
+        <!-- Búsqueda -->
+        <div class="yb-input-pill yb-pill-search">
+          <span class="yb-pill-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+          <input
+            type="text"
+            class="yb-pill-input"
+            name="q"
+            placeholder="Buscar por nombre, @usuario o nicho..."
+            aria-label="Buscar influencers por nombre, usuario o nicho"
+          >
         </div>
 
+        <!-- Botón buscar -->
+        <button class="yb-search-btn" type="submit">
+          Buscar
+        </button>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CONTENIDO PRINCIPAL
+  ========================================================= -->
+  <main class="py-4 py-md-5">
+    <div class="container">
+
+      <!-- Título + resumen -->
+      <div class="mb-3">
+        <h1 class="yb-section-title mb-1">Influencers · Encontrá y conectá</h1>
+        <p class="yb-section-subtitle mb-0">
+          Buscá creadores por nicho, ciudad, tamaño de audiencia y tipo de colaboración.
+        </p>
       </div>
 
-    </aside>
+      <!-- =====================================================
+           TOOLBAR: FILTROS + ORDENAR 
+      ====================================================== -->
+      <div class="yb-toolbar d-flex align-items-center justify-content-between gap-3 mb-3">
+        <!-- Botón filtros (solo mobile/tablet) -->
+        <button
+          class="btn yb-filtros-toggle d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#filtrosInfluencersMobile"
+          aria-expanded="false"
+          aria-controls="filtrosInfluencersMobile"
+        >
+          <i class="fa-solid fa-sliders"></i>
+          Filtros
+        </button>
 
-
-        <!-- =====================================================
-         COL DERECHA — INFLUENCERS
-    ====================================================== -->
-    <main class="col-md-9">
-
-      <!-- Encabezado + Ordenar -->
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h3 class="fw-bold">Influencers · Encuentra y conecta</h3>
-
-        <div class="d-flex align-items-center gap-2">
-          <label class="fw-semibold">Ordenar:</label>
-          <select class="form-select form-select-sm w-auto">
-            <option>Relevancia</option>
-            <option>Seguidores</option>
-            <option>Rating</option>
+        <!-- Ordenar -->
+        <div class="yb-order-box mb-0 flex-grow-1 text-lg-end">
+          <select class="yb-order-select" aria-label="Ordenar influencers">
+            <option value="relevancia">Relevancia</option>
+            <option value="audiencia">Tamaño de audiencia</option>
+            <option value="engagement">Mayor engagement</option>
+            <option value="rating">Mejor rating</option>
           </select>
         </div>
       </div>
 
       <!-- =====================================================
-           GRID DE CARDS (18 cards, 3×fila)
-           PARA PÁGINA 1 USÁS LAS 9 PRIMERAS,
-           PARA PÁGINA 2 LAS 9 ÚLTIMAS
+           FILTROS + GRID
       ====================================================== -->
-      <div class="row g-4">
+      <div class="yb-layout">
+        <div class="row g-4">
 
-        <!-- CARD 1 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
-                 alt="Mati Fernández - influencer de viajes"
-                 class="yb-card-img">
+          <!-- Filtros DESKTOP  -->
+          <div class="col-lg-3 d-none d-lg-block">
+            <aside class="yb-filtros">
+              <h4>Filtros</h4>
 
-            <div class="p-3">
-              <span class="yb-badge">Viajes · Buenos Aires</span>
-
-              <h5 class="mt-2 fw-bold">Mati Fernández</h5>
-              <p class="text-muted small">@ViajesConMati</p>
-
-              <div class="yb-stats">
-                <span><strong>92k</strong> seguidores</span>
-                <span><strong>3.4%</strong> engagement</span>
-                <span><strong>4.8</strong> rating</span>
+              <!-- Nicho -->
+              <div class="grupo mb-3">
+                <p class="fw-semibold mb-1">Nicho</p>
+                <span>Viajes</span>
+                <span>Gastronomía</span>
+                <span>Moda</span>
+                <span>Tech</span>
+                <span>Fitness</span>
+                <span>Hogar & deco</span>
+                <span>Emprendedores</span>
               </div>
 
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
+              <!-- Localidad -->
+              <div class="grupo mb-3">
+                <p class="fw-semibold mb-1">Localidad</p>
+                <span>Santa Fe</span>
+                <span>Rosario</span>
+                <span>Córdoba</span>
+                <span>Buenos Aires</span>
+                <span>Otras ciudades</span>
               </div>
+
+              <!-- Tamaño de audiencia -->
+              <div class="grupo mb-3">
+                <p class="fw-semibold mb-1">Tamaño de audiencia</p>
+                <span>Nano (1k–10k)</span>
+                <span>Micro (10k–100k)</span>
+                <span>Mid (100k–500k)</span>
+                <span>Macro (500k–1M)</span>
+                <span>Mega (+1M)</span>
+              </div>
+
+              <!-- Tipo de colaboración -->
+              <div class="grupo mb-3">
+                <p class="fw-semibold mb-1">Tipo de colaboración</p>
+                <span>Canje</span>
+                <span>Pago fijo</span>
+                <span>Comisión / Afiliado</span>
+                <span>Mixto</span>
+              </div>
+
+              <!-- Plataforma principal -->
+              <div class="grupo">
+                <p class="fw-semibold mb-1">Plataforma principal</p>
+                <span>Instagram</span>
+                <span>TikTok</span>
+                <span>YouTube</span>
+                <span>Twitch</span>
+                <span>Multiplataforma</span>
+              </div>
+            </aside>
+          </div>
+
+          <!-- Filtros MOBILE  -->
+          <div class="col-12 d-lg-none">
+            <div class="collapse mb-3" id="filtrosInfluencersMobile">
+              <aside class="yb-filtros">
+                <h4>Filtros</h4>
+
+                <!-- Nicho -->
+                <div class="grupo mb-3">
+                  <p class="fw-semibold mb-1">Nicho</p>
+                  <span>Viajes</span>
+                  <span>Gastronomía</span>
+                  <span>Moda</span>
+                  <span>Tech</span>
+                  <span>Fitness</span>
+                  <span>Hogar & deco</span>
+                  <span>Emprendedores</span>
+                </div>
+
+                <!-- Localidad -->
+                <div class="grupo mb-3">
+                  <p class="fw-semibold mb-1">Localidad</p>
+                  <span>Santa Fe</span>
+                  <span>Rosario</span>
+                  <span>Córdoba</span>
+                  <span>Buenos Aires</span>
+                  <span>Otras ciudades</span>
+                </div>
+
+                <!-- Tamaño de audiencia -->
+                <div class="grupo mb-3">
+                  <p class="fw-semibold mb-1">Tamaño de audiencia</p>
+                  <span>Nano (1k–10k)</span>
+                  <span>Micro (10k–100k)</span>
+                  <span>Mid (100k–500k)</span>
+                  <span>Macro (500k–1M)</span>
+                  <span>Mega (+1M)</span>
+                </div>
+
+                <!-- Tipo de colaboración -->
+                <div class="grupo mb-3">
+                  <p class="fw-semibold mb-1">Tipo de colaboración</p>
+                  <span>Canje</span>
+                  <span>Pago fijo</span>
+                  <span>Comisión / Afiliado</span>
+                  <span>Mixto</span>
+                </div>
+
+                <!-- Plataforma principal -->
+                <div class="grupo">
+                  <p class="fw-semibold mb-1">Plataforma principal</p>
+                  <span>Instagram</span>
+                  <span>TikTok</span>
+                  <span>YouTube</span>
+                  <span>Twitch</span>
+                  <span>Multiplataforma</span>
+                </div>
+              </aside>
             </div>
           </div>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg"
-                 alt="Paula Gómez - influencer de gastronomía"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Gastronomía · Rosario</span>
-
-              <h5 class="mt-2 fw-bold">Paula Gómez</h5>
-              <p class="text-muted small">@FoodiePau</p>
-
-              <div class="yb-stats">
-                <span><strong>87k</strong> seguidores</span>
-                <span><strong>4.1%</strong> engagement</span>
-                <span><strong>4.7</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg"
-                 alt="Nico Ríos - influencer lifestyle"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Lifestyle · Santa Fe</span>
-
-              <h5 class="mt-2 fw-bold">Nico Ríos</h5>
-              <p class="text-muted small">@SantaFeTips</p>
-
-              <div class="yb-stats">
-                <span><strong>81k</strong> seguidores</span>
-                <span><strong>5.2%</strong> engagement</span>
-                <span><strong>4.9</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg"
-                 alt="Laura Pérez - influencer de moda"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Moda · Córdoba</span>
-
-              <h5 class="mt-2 fw-bold">Laura Pérez</h5>
-              <p class="text-muted small">@LauraTrendy</p>
-
-              <div class="yb-stats">
-                <span><strong>73k</strong> seguidores</span>
-                <span><strong>4.6%</strong> engagement</span>
-                <span><strong>4.8</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 5 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
-                 alt="Diego Álvarez - influencer tech"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Tech · Buenos Aires</span>
-
-              <h5 class="mt-2 fw-bold">Diego Álvarez</h5>
-              <p class="text-muted small">@CodeConDiego</p>
-
-              <div class="yb-stats">
-                <span><strong>64k</strong> seguidores</span>
-                <span><strong>3.9%</strong> engagement</span>
-                <span><strong>4.6</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 6 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/3760852/pexels-photo-3760852.jpeg"
-                 alt="Sofía Roldán - influencer fitness"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Fitness · Rosario</span>
-
-              <h5 class="mt-2 fw-bold">Sofía Roldán</h5>
-              <p class="text-muted small">@SofiFit</p>
-
-              <div class="yb-stats">
-                <span><strong>56k</strong> seguidores</span>
-                <span><strong>6.1%</strong> engagement</span>
-                <span><strong>4.9</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 7 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg"
-                 alt="Bruno Castillo - influencer gaming"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Gaming · Online</span>
-
-              <h5 class="mt-2 fw-bold">Bruno Castillo</h5>
-              <p class="text-muted small">@BrunoPlays</p>
-
-              <div class="yb-stats">
-                <span><strong>101k</strong> seguidores</span>
-                <span><strong>5.7%</strong> engagement</span>
-                <span><strong>4.8</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 8 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg"
-                 alt="Camila Duarte - influencer beauty"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Beauty · Mendoza</span>
-
-              <h5 class="mt-2 fw-bold">Camila Duarte</h5>
-              <p class="text-muted small">@CamiGlow</p>
-
-              <div class="yb-stats">
-                <span><strong>89k</strong> seguidores</span>
-                <span><strong>4.3%</strong> engagement</span>
-                <span><strong>4.7</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 9 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg"
-                 alt="Julián Herrera - influencer de negocios"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Negocios · Córdoba</span>
-
-              <h5 class="mt-2 fw-bold">Julián Herrera</h5>
-              <p class="text-muted small">@JulianEmprende</p>
-
-              <div class="yb-stats">
-                <span><strong>42k</strong> seguidores</span>
-                <span><strong>3.8%</strong> engagement</span>
-                <span><strong>4.5</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 10 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/1181681/pexels-photo-1181681.jpeg"
-                 alt="Valentina Cruz - influencer hogar"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Hogar · Buenos Aires</span>
-
-              <h5 class="mt-2 fw-bold">Valentina Cruz</h5>
-              <p class="text-muted small">@CasaConValen</p>
-
-              <div class="yb-stats">
-                <span><strong>58k</strong> seguidores</span>
-                <span><strong>4.0%</strong> engagement</span>
-                <span><strong>4.6</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 11 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg"
-                 alt="Martín Silva - influencer finanzas"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Finanzas · Online</span>
-
-              <h5 class="mt-2 fw-bold">Martín Silva</h5>
-              <p class="text-muted small">@FinanzasConMartin</p>
-
-              <div class="yb-stats">
-                <span><strong>37k</strong> seguidores</span>
-                <span><strong>3.2%</strong> engagement</span>
-                <span><strong>4.5</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 12 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg"
-                 alt="Ana Torres - influencer maternidad"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Maternidad · Rosario</span>
-
-              <h5 class="mt-2 fw-bold">Ana Torres</h5>
-              <p class="text-muted small">@MaternidadConAna</p>
-
-              <div class="yb-stats">
-                <span><strong>45k</strong> seguidores</span>
-                <span><strong>4.4%</strong> engagement</span>
-                <span><strong>4.7</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 13 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/2837009/pexels-photo-2837009.jpeg"
-                 alt="Tomás Medina - influencer deportes"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Deportes · Santa Fe</span>
-
-              <h5 class="mt-2 fw-bold">Tomás Medina</h5>
-              <p class="text-muted small">@TomiRunner</p>
-
-              <div class="yb-stats">
-                <span><strong>61k</strong> seguidores</span>
-                <span><strong>5.0%</strong> engagement</span>
-                <span><strong>4.8</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 14 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg"
-                 alt="Florencia Vidal - influencer fotografía"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Fotografía · Buenos Aires</span>
-
-              <h5 class="mt-2 fw-bold">Florencia Vidal</h5>
-              <p class="text-muted small">@FlorCaptura</p>
-
-              <div class="yb-stats">
-                <span><strong>29k</strong> seguidores</span>
-                <span><strong>6.3%</strong> engagement</span>
-                <span><strong>4.9</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 15 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg"
-                 alt="Lucas Benítez - influencer viajes Patagonia"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Viajes · Patagonia</span>
-
-              <h5 class="mt-2 fw-bold">Lucas Benítez</h5>
-              <p class="text-muted small">@LucasEnRuta</p>
-
-              <div class="yb-stats">
-                <span><strong>47k</strong> seguidores</span>
-                <span><strong>4.9%</strong> engagement</span>
-                <span><strong>4.8</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 16 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/3760850/pexels-photo-3760850.jpeg"
-                 alt="Carla Sosa - influencer gastronomía"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Gastronomía · Córdoba</span>
-
-              <h5 class="mt-2 fw-bold">Carla Sosa</h5>
-              <p class="text-muted small">@CarlaCocina</p>
-
-              <div class="yb-stats">
-                <span><strong>52k</strong> seguidores</span>
-                <span><strong>4.2%</strong> engagement</span>
-                <span><strong>4.7</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 17 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/3760853/pexels-photo-3760853.jpeg"
-                 alt="Gabriela Ortiz - influencer moda"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Moda · Rosario</span>
-
-              <h5 class="mt-2 fw-bold">Gabriela Ortiz</h5>
-              <p class="text-muted small">@GabiLooks</p>
-
-              <div class="yb-stats">
-                <span><strong>68k</strong> seguidores</span>
-                <span><strong>4.5%</strong> engagement</span>
-                <span><strong>4.8</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 18 -->
-        <div class="col-md-4">
-          <div class="yb-card shadow-sm">
-            <img src="https://images.pexels.com/photos/2379008/pexels-photo-2379008.jpeg"
-                 alt="Ramiro López - influencer lifestyle"
-                 class="yb-card-img">
-
-            <div class="p-3">
-              <span class="yb-badge">Lifestyle · Mar del Plata</span>
-
-              <h5 class="mt-2 fw-bold">Ramiro López</h5>
-              <p class="text-muted small">@RamiCoastal</p>
-
-              <div class="yb-stats">
-                <span><strong>39k</strong> seguidores</span>
-                <span><strong>3.7%</strong> engagement</span>
-                <span><strong>4.5</strong> rating</span>
-              </div>
-
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn yb-btn-primary w-50">Ver perfil</button>
-                <button class="btn btn-outline-secondary w-50">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /row g-4 -->
-
-
-      <!-- =====================================================
-           PAGINACIÓN (2 páginas estáticas)
-           Después podés hacer:
-           influencers.html (cards 1–9)
-           influencers-page2.html (cards 10–18)
-      ====================================================== -->
-      <nav class="mt-4">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link">Anterior</a>
-          </li>
-
-          <li class="page-item active">
-            <a class="page-link">1</a>
-          </li>
-
-          <li class="page-item">
-            <a class="page-link" href="influencers-page2.html">2</a>
-          </li>
-
-          <li class="page-item">
-            <a class="page-link" href="influencers-page2.html">Siguiente</a>
-          </li>
-        </ul>
-      </nav>
-
-    </main>
 
+          <!-- GRID DE TARJETAS -->
+          <div class="col-12 col-lg-9">
+            <div class="yb-grid">
+
+              <!-- Card 1 -->
+              <article class="yb-card">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80" alt="Mati Fernández">
+                <div class="yb-card-body">
+                  <span class="yb-tag">Viajes · Buenos Aires</span>
+                  <h3 class="yb-card-title">Mati Fernández</h3>
+                  <p class="yb-card-sub">@ViajesConMati</p>
+
+                  <p class="mb-1">
+                    <strong>92k</strong> seguidores ·
+                    <strong>3,4%</strong> engagement ·
+                    <strong>4,8</strong> rating
+                  </p>
+                  <p class="mb-0 small text-muted">
+                    Experiencias de viaje, escapadas y recomendaciones de destinos en Argentina y el mundo.
+                  </p>
+                </div>
+                <div class="yb-card-footer">
+                  <button class="yb-btn-outline" type="button">Ver perfil</button>
+                  <button class="yb-btn-outline" type="button">Contactar</button>
+                </div>
+              </article>
+
+              <!-- Card 2 -->
+              <article class="yb-card">
+                <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=1200&q=80" alt="Paula Gómez">
+                <div class="yb-card-body">
+                  <span class="yb-tag">Gastronomía · Rosario</span>
+                  <h3 class="yb-card-title">Paula Gómez</h3>
+                  <p class="yb-card-sub">@FoodiePau</p>
+
+                  <p class="mb-1">
+                    <strong>87k</strong> seguidores ·
+                    <strong>4,1%</strong> engagement ·
+                    <strong>4,7</strong> rating
+                  </p>
+                  <p class="mb-0 small text-muted">
+                    Reseñas de restaurantes, bares y propuestas foodies con enfoque local y regional.
+                  </p>
+                </div>
+                <div class="yb-card-footer">
+                  <button class="yb-btn-outline" type="button">Ver perfil</button>
+                  <button class="yb-btn-outline" type="button">Contactar</button>
+                </div>
+              </article>
+
+              <!-- Card 3 -->
+              <article class="yb-card">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80" alt="Nico Ríos">
+                <div class="yb-card-body">
+                  <span class="yb-tag">Lifestyle · Santa Fe</span>
+                  <h3 class="yb-card-title">Nico Ríos</h3>
+                  <p class="yb-card-sub">@SantaFeTips</p>
+
+                  <p class="mb-1">
+                    <strong>81k</strong> seguidores ·
+                    <strong>5,2%</strong> engagement ·
+                    <strong>4,9</strong> rating
+                  </p>
+                  <p class="mb-0 small text-muted">
+                    Lifestyle, productividad y recomendaciones de comercios y servicios de la ciudad.
+                  </p>
+                </div>
+                <div class="yb-card-footer">
+                  <button class="yb-btn-outline" type="button">Ver perfil</button>
+                  <button class="yb-btn-outline" type="button">Contactar</button>
+                </div>
+              </article>
+
+              <!-- Card 4 -->
+              <article class="yb-card">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80" alt="Cami López">
+                <div class="yb-card-body">
+                  <span class="yb-tag">Moda · Córdoba</span>
+                  <h3 class="yb-card-title">Cami López</h3>
+                  <p class="yb-card-sub">@CamiOutfits</p>
+
+                  <p class="mb-1">
+                    <strong>120k</strong> seguidores ·
+                    <strong>3,9%</strong> engagement ·
+                    <strong>4,6</strong> rating
+                  </p>
+                  <p class="mb-0 small text-muted">
+                    Looks urbanos, moda cotidiana y colaboraciones con marcas de indumentaria.
+                  </p>
+                </div>
+                <div class="yb-card-footer">
+                  <button class="yb-btn-outline" type="button">Ver perfil</button>
+                  <button class="yb-btn-outline" type="button">Contactar</button>
+                </div>
+              </article>
+
+              <!-- Card 5 -->
+              <article class="yb-card">
+                <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1200&q=80" alt="Lau Fit">
+                <div class="yb-card-body">
+                  <span class="yb-tag">Fitness · Córdoba</span>
+                  <h3 class="yb-card-title">Lau Fit</h3>
+                  <p class="yb-card-sub">@MoveWithLau</p>
+
+                  <p class="mb-1">
+                    <strong>54k</strong> seguidores ·
+                    <strong>4,5%</strong> engagement ·
+                    <strong>4,8</strong> rating
+                  </p>
+                  <p class="mb-0 small text-muted">
+                    Entrenamientos simples, rutinas en casa y recomendaciones de gimnasios y clases grupales.
+                  </p>
+                </div>
+                <div class="yb-card-footer">
+                  <button class="yb-btn-outline" type="button">Ver perfil</button>
+                  <button class="yb-btn-outline" type="button">Contactar</button>
+                </div>
+              </article>
+
+              <!-- Card 6 -->
+              <article class="yb-card">
+                <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80" alt="Tech Apps">
+                <div class="yb-card-body">
+                  <span class="yb-tag">Tech · Todo el país</span>
+                  <h3 class="yb-card-title">Clau Tech</h3>
+                  <p class="yb-card-sub">@AppsQueSirven</p>
+
+                  <p class="mb-1">
+                    <strong>39k</strong> seguidores ·
+                    <strong>6,1%</strong> engagement ·
+                    <strong>4,9</strong> rating
+                  </p>
+                  <p class="mb-0 small text-muted">
+                    Recomendaciones de apps útiles para organizar gastos, entrenar, estudiar y trabajar mejor.
+                  </p>
+                </div>
+                <div class="yb-card-footer">
+                  <button class="yb-btn-outline" type="button">Ver perfil</button>
+                  <button class="yb-btn-outline" type="button">Contactar</button>
+                </div>
+              </article>
+
+              <!-- Card 7 -->
+              <article class="yb-card">
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Emprendedores">
+                <div class="yb-card-body">
+                  <span class="yb-tag">Emprendimientos · Región Centro</span>
+                  <h3 class="yb-card-title">Emprende Hoy</h3>
+                  <p class="yb-card-sub">@RedDeEmprendedores</p>
+
+                  <p class="mb-1">
+                    <strong>47k</strong> seguidores ·
+                    <strong>3,8%</strong> engagement ·
+                    <strong>4,7</strong> rating
+                  </p>
+                  <p class="mb-0 small text-muted">
+                    Casos reales, historias de negocio y difusión de marcas chicas con impacto local.
+                  </p>
+                </div>
+                <div class="yb-card-footer">
+                  <button class="yb-btn-outline" type="button">Ver perfil</button>
+                  <button class="yb-btn-outline" type="button">Contactar</button>
+                </div>
+              </article>
+
+              <!-- Card 8 -->
+              <article class="yb-card">
+                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80" alt="Viajes baratos">
+                <div class="yb-card-body">
+                  <span class="yb-tag">Viajes low-cost · Argentina</span>
+                  <h3 class="yb-card-title">Rutas Baratas</h3>
+                  <p class="yb-card-sub">@TrucosDeViaje</p>
+
+                  <p class="mb-1">
+                    <strong>65k</strong> seguidores ·
+                    <strong>4,3%</strong> engagement ·
+                    <strong>4,8</strong> rating
+                  </p>
+                  <p class="mb-0 small text-muted">
+                    Tips para viajar barato por Argentina: buses, hostels, escapadas y promos reales.
+                  </p>
+                </div>
+                <div class="yb-card-footer">
+                  <button class="yb-btn-outline" type="button">Ver perfil</button>
+                  <button class="yb-btn-outline" type="button">Contactar</button>
+                </div>
+              </article>
+
+            </div> 
+          </div> 
+
+        </div> 
+      </div> 
+    </div>
+  </main>
 
   <!-- =========================================================
-       FOOTER (igual que index)
+       FOOTER 
   ========================================================= -->
   <footer class="yb-footer">
-    <div class="container d-flex justify-content-between align-items-center">
-
-      <span class="yb-footer-copy">© 2025 Yo Busco</span>
+    <div class="container">
+      <div class="yb-footer-copy">
+        © 2025 Yo Busco
+      </div>
 
       <nav class="yb-footer-nav">
-        <a href="#">Preguntas frecuentes</a>
-        <a href="./contacto.html">Contacto</a>
+        <a href="./preguntasfrecuentes.html">Preguntas frecuentes</a>
         <a href="./about.html">Sobre nosotros</a>
+        <a href="./contacto.html">Contacto</a>
       </nav>
 
-      <span class="yb-footer-made">
+      <div class="yb-footer-made">
         Hecho con <span class="yb-heart">♥</span> en Santa Fe
-      </span>
-
+      </div>
     </div>
   </footer>
 
   <!-- Bootstrap JS -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous">
-  </script>
-
+    crossorigin="anonymous"
+  ></script>
 </body>
 </html>

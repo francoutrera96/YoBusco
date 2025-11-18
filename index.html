@@ -16,7 +16,8 @@
     rel="stylesheet"
     crossorigin="anonymous"
   >
-  <!-- CSS  -->
+
+  <!-- CSS -->
   <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -26,7 +27,7 @@
        HEADER / NAVBAR
   ========================================================= -->
   <header>
-    <nav class="navbar navbar-expand-lg yb-navbar sticky-top">
+    <nav class="navbar navbar-expand-lg yb-navbar sticky-top" aria-label="Navegación principal">
       <div class="container">
 
         <!-- Logo -->
@@ -54,7 +55,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./Pages/beneficios.html">Beneficios &amp; Descuentos</a>
+              <a class="nav-link fw-semibold" href="./Pages/beneficios.html">Beneficios & Descuentos</a>
             </li>
 
             <li class="nav-item">
@@ -78,546 +79,589 @@
     </nav>
   </header>
 
-<main>
+  <main>
+    <!-- =========================================================
+         HERO + BUSCADOR PRINCIPAL
+    ========================================================= -->
+    <section class="yb-hero">
+      <div class="container">
+
+        <!-- Texto principal -->
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-xl-7">
+
+            <span class="yb-hero-tag">Beta · Proyecto Yo Busco</span>
+
+            <h1 class="yb-hero-title">
+              Encontrá lo que necesitás, <span>cerca tuyo</span>.
+            </h1>
+
+            <p class="yb-hero-subtitle">
+              Buscá comercios, servicios, actividades, influencers, beneficios 
+              y empleo en un solo lugar, filtrando por ciudad o zona.
+            </p>
+
+            <ul class="yb-hero-bullets">
+              <li>🔍 Búsqueda rápida por rubro, nombre o palabra clave.</li>
+              <li>📍 Filtrá por ubicación para ver resultados cerca tuyo.</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <!-- Buscador principal -->
+        <div class="row justify-content-center mt-4">
+          <div class="col-lg-10 col-xl-9">
+
+            <div class="yb-search-box">
+
+              <form class="yb-search-flex" role="search" action="#" method="get">
+
+                <!-- Ubicación -->
+                <div class="yb-input-wrap">
+                  <span class="yb-icon">📍</span>
+                  <select class="form-select yb-select" name="location">
+                    <option value="">Todas las localidades</option>
+                    <option value="santa-fe">Santa Fe</option>
+                    <option value="rosario">Rosario</option>
+                    <option value="cordoba">Córdoba</option>
+                    <option value="buenos-aires">Buenos Aires</option>
+                    <option value="otra">Otra localidad</option>
+                  </select>
+                </div>
+
+                <!-- Texto -->
+                <div class="yb-input-wrap flex-grow-1">
+                  <span class="yb-icon">🔍</span>
+                  <input
+                    type="text"
+                    class="form-control yb-input"
+                    name="q"
+                    placeholder="Hotel 5 estrellas, café de especialidad, plomero, empleo…"
+                    aria-label="Buscar por rubro, nombre o palabra clave"
+                  >
+                </div>
+
+                <!-- Botón -->
+                <button type="submit" class="yb-search-btn2">
+                  Buscar
+                </button>
+
+              </form>
+
+              <!-- TAGS -->
+              <div class="yb-tags">
+                <button class="yb-tag2" type="button">Hoteles 5★</button>
+                <button class="yb-tag2" type="button">Café de especialidad</button>
+                <button class="yb-tag2" type="button">Plomeros</button>
+                <button class="yb-tag2" type="button">Viajes a Europa</button>
+                <button class="yb-tag2" type="button">Restaurantes</button>
+                <button class="yb-tag2" type="button">Empleos</button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         INFLUENCERS DESTACADOS
+    ========================================================= -->
+    <section class="yb-section yb-influencers" id="influencers">
+      <div class="container">
+
+        <!-- Encabezado -->
+        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3 mb-3">
+          <div>
+            <h2 class="yb-section-title mb-1">Influencers destacados</h2>
+            <p class="yb-section-subtitle mb-0">
+              Creadoras y creadores que recomiendan lugares, servicios y experiencias cerca tuyo.
+            </p>
+          </div>
+          <a href="./Pages/influencers.html" class="btn btn-outline-secondary btn-sm yb-see-all-btn">
+            Ver todos los influencers
+          </a>
+        </div>
+
+        <!-- Carrusel -->
+        <div id="ybInfluencersCarousel" class="carousel slide" data-bs-ride="false">
+          <div class="carousel-inner">
+
+            <!-- SLIDE 1 (4 cards) -->
+            <div class="carousel-item active">
+              <div class="row g-3">
+
+                <!-- 1 - Viajes -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-influencer-card">
+                    <div class="yb-influencer-img-wrap">
+                      <img
+                        src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        class="img-fluid"
+                        alt="Influencer de viajes en la playa">
+                    </div>
+                    <div class="yb-influencer-body">
+                      <span class="yb-influencer-tag">Viajes · Santa Fe</span>
+                      <h3 class="yb-influencer-name">@ViajesConMati</h3>
+                      <p class="yb-influencer-desc">
+                        Destinos cercanos, tips de hospedaje y planes para escapadas de fin de semana.
+                      </p>
+                      <div class="yb-influencer-meta">
+                        <span>92k seguidores</span>
+                        <span>+180 recomendaciones</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- 2 - Gastronomía -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-influencer-card">
+                    <div class="yb-influencer-img-wrap">
+                      <img
+                        src="https://images.pexels.com/photos/1234535/pexels-photo-1234535.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        class="img-fluid"
+                        alt="Influencer de gastronomía en cafetería">
+                    </div>
+                    <div class="yb-influencer-body">
+                      <span class="yb-influencer-tag">Gastronomía · Rosario</span>
+                      <h3 class="yb-influencer-name">@FoodiePau</h3>
+                      <p class="yb-influencer-desc">
+                        Cafeterías, bares y restaurantes con reseñas honestas y fotos que dan hambre.
+                      </p>
+                      <div class="yb-influencer-meta">
+                        <span>87k seguidores</span>
+                        <span>+120 reseñas</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- 3 - Planes urbanos -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-influencer-card">
+                    <div class="yb-influencer-img-wrap">
+                      <img
+                        src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        class="img-fluid"
+                        alt="Influencer en ciudad de noche">
+                    </div>
+                    <div class="yb-influencer-body">
+                      <span class="yb-influencer-tag">Planazos · Santa Fe</span>
+                      <h3 class="yb-influencer-name">@SantaFeTips</h3>
+                      <p class="yb-influencer-desc">
+                        Agenda con eventos, ferias, recitales y actividades para todos los gustos.
+                      </p>
+                      <div class="yb-influencer-meta">
+                        <span>81k seguidores</span>
+                        <span>+95 planes</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- 4 - Fitness -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-influencer-card">
+                    <div class="yb-influencer-img-wrap">
+                      <img
+                        src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        class="img-fluid"
+                        alt="Influencer de fitness entrenando">
+                    </div>
+                    <div class="yb-influencer-body">
+                      <span class="yb-influencer-tag">Fitness · Córdoba</span>
+                      <h3 class="yb-influencer-name">@MoveWithLau</h3>
+                      <p class="yb-influencer-desc">
+                        Gimnasios, clases y actividades al aire libre para moverte y sentirte mejor.
+                      </p>
+                      <div class="yb-influencer-meta">
+                        <span>54k seguidores</span>
+                        <span>+60 spots</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- SLIDE 2 (4 cards más) -->
+            <div class="carousel-item">
+              <div class="row g-3">
+
+                <!-- 5 - Servicios -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-influencer-card">
+                    <div class="yb-influencer-img-wrap">
+                      <img
+                        src="https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        class="img-fluid"
+                        alt="Técnico realizando servicio">
+                    </div>
+                    <div class="yb-influencer-body">
+                      <span class="yb-influencer-tag">Servicios · Buenos Aires</span>
+                      <h3 class="yb-influencer-name">@SolucionaBA</h3>
+                      <p class="yb-influencer-desc">
+                        Plomeros, electricistas, pintores y más: profesionales probados y recomendados.
+                      </p>
+                      <div class="yb-influencer-meta">
+                        <span>43k seguidores</span>
+                        <span>+70 servicios</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- 6 - Escapadas -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-influencer-card">
+                    <div class="yb-influencer-img-wrap">
+                      <img
+                        src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        class="img-fluid"
+                        alt="Paisaje de río y naturaleza">
+                    </div>
+                    <div class="yb-influencer-body">
+                      <span class="yb-influencer-tag">Escapadas · Litoral</span>
+                      <h3 class="yb-influencer-name">@RutasDelLitoral</h3>
+                      <p class="yb-influencer-desc">
+                        Termas, ríos y pueblitos con encanto a pocas horas en auto.
+                      </p>
+                      <div class="yb-influencer-meta">
+                        <span>38k seguidores</span>
+                        <span>+40 escapadas</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- 7 - Comercios locales -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-influencer-card">
+                    <div class="yb-influencer-img-wrap">
+                      <img
+                        src="https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        class="img-fluid"
+                        alt="Comercio local de barrio">
+                    </div>
+                    <div class="yb-influencer-body">
+                      <span class="yb-influencer-tag">Comercios · Santa Fe</span>
+                      <h3 class="yb-influencer-name">@BarrioVivo</h3>
+                      <p class="yb-influencer-desc">
+                        Recomendaciones de negocios de barrio, promociones y datos útiles.
+                      </p>
+                      <div class="yb-influencer-meta">
+                        <span>29k seguidores</span>
+                        <span>+85 comercios</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- 8 - Experiencias -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-influencer-card">
+                    <div class="yb-influencer-img-wrap">
+                      <img
+                        src="https://images.pexels.com/photos/1391580/pexels-photo-1391580.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        class="img-fluid"
+                        alt="Gente disfrutando una experiencia social">
+                    </div>
+                    <div class="yb-influencer-body">
+                      <span class="yb-influencer-tag">Experiencias · Región Centro</span>
+                      <h3 class="yb-influencer-name">@PlanPerfecto</h3>
+                      <p class="yb-influencer-desc">
+                        Shows, after offices, eventos y experiencias diferentes para salir de la rutina.
+                      </p>
+                      <div class="yb-influencer-meta">
+                        <span>51k seguidores</span>
+                        <span>+110 experiencias</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Controles -->
+          <button
+            class="yb-arrow yb-arrow--left"
+            type="button"
+            data-bs-target="#ybInfluencersCarousel"
+            data-bs-slide="prev"
+            aria-label="Ver influencers anteriores">
+            ‹
+          </button>
+
+          <button
+            class="yb-arrow yb-arrow--right"
+            type="button"
+            data-bs-target="#ybInfluencersCarousel"
+            data-bs-slide="next"
+            aria-label="Ver influencers siguientes">
+            ›
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         LO MÁS BUSCADO
+    ========================================================= -->
+    <section class="yb-section yb-trending">
+      <div class="container">
+
+        <!-- Encabezado -->
+        <div class="yb-trending-header d-flex justify-content-between align-items-center">
+          <div>
+            <h2 class="yb-trending-title">Lo más buscado</h2>
+            <p class="yb-trending-subtitle">
+              Categorías, lugares y servicios que la gente busca todo el tiempo cerca tuyo.
+            </p>
+          </div>
+          <a href="#" class="yb-trending-link">Ver todas las categorías</a>
+        </div>
+
+        <!-- Carrusel Bootstrap  -->
+        <div id="ybTrendingCarousel" class="carousel slide" data-bs-ride="false">
+          <div class="carousel-inner">
+
+            <!-- SLIDE 1 (4 cards) -->
+            <div class="carousel-item active">
+              <div class="row g-3">
+
+                <!-- Card 1 -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-trending-card">
+                    <div class="yb-trending-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=80"
+                        alt="Plato de comida en restaurante"
+                        loading="lazy">
+                    </div>
+                    <div class="yb-trending-body">
+                      <span class="yb-trending-tag">Gastronomía · Santa Fe</span>
+                      <h3 class="yb-trending-name">Pizzas y deliveries</h3>
+                      <p class="yb-trending-text">
+                        Restaurantes, bares y casas de comida con envío rápido a domicilio.
+                      </p>
+                      <p class="yb-trending-meta">+24k búsquedas este mes</p>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-trending-card">
+                    <div class="yb-trending-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
+                        alt="Hotel con vista al mar"
+                        loading="lazy">
+                    </div>
+                    <div class="yb-trending-body">
+                      <span class="yb-trending-tag">Viajes · Costa Atlántica</span>
+                      <h3 class="yb-trending-name">Hoteles frente al mar</h3>
+                      <p class="yb-trending-text">
+                        Alojamiento con vista al mar, desayuno incluido y cochera.
+                      </p>
+                      <p class="yb-trending-meta">+18k búsquedas este mes</p>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-trending-card">
+                    <div class="yb-trending-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
+                        alt="Profesional de salud"
+                        loading="lazy">
+                    </div>
+                    <div class="yb-trending-body">
+                      <span class="yb-trending-tag">Salud · Rosario</span>
+                      <h3 class="yb-trending-name">Turnos médicos</h3>
+                      <p class="yb-trending-text">
+                        Clínicas, sanatorios y consultorios con reserva de turno online.
+                      </p>
+                      <p class="yb-trending-meta">+15k búsquedas este mes</p>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-trending-card">
+                    <div class="yb-trending-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=80"
+                        alt="Oficina de coworking moderna"
+                        loading="lazy">
+                    </div>
+                    <div class="yb-trending-body">
+                      <span class="yb-trending-tag">Servicios · Buenos Aires</span>
+                      <h3 class="yb-trending-name">Coworkings y oficinas</h3>
+                      <p class="yb-trending-text">
+                        Espacios de trabajo compartido, salas de reunión y oficinas privadas.
+                      </p>
+                      <p class="yb-trending-meta">+9k búsquedas este mes</p>
+                    </div>
+                  </article>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- SLIDE 2  -->
+            <div class="carousel-item">
+              <div class="row g-3">
+
+                <!-- Card 5 -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-trending-card">
+                    <div class="yb-trending-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1200&q=80"
+                        alt="Clase de entrenamiento"
+                        loading="lazy">
+                    </div>
+                    <div class="yb-trending-body">
+                      <span class="yb-trending-tag">Fitness · Córdoba</span>
+                      <h3 class="yb-trending-name">Gimnasios y clases</h3>
+                      <p class="yb-trending-text">
+                        Gimnasios, entrenadores personales y clases grupales.
+                      </p>
+                      <p class="yb-trending-meta">+11k búsquedas este mes</p>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-trending-card">
+                    <div class="yb-trending-image">
+                      <img
+                        src="https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Electricista trabajando"
+                        loading="lazy">
+                    </div>
+                    <div class="yb-trending-body">
+                      <span class="yb-trending-tag">Servicios · Todo el país</span>
+                      <h3 class="yb-trending-name">Oficios y profesionales</h3>
+                      <p class="yb-trending-text">
+                        Plomeros, electricistas, gasistas y más profesionales de confianza.
+                      </p>
+                      <p class="yb-trending-meta">+20k búsquedas este mes</p>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-trending-card">
+                    <div class="yb-trending-image">
+                      <img
+                        src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Persona usando aplicaciones en un smartphone"
+                        loading="lazy">
+                    </div>
+                    <div class="yb-trending-body">
+                      <span class="yb-trending-tag">Tecnología · Todo el país</span>
+                      <h3 class="yb-trending-name">Apps útiles del día a día</h3>
+                      <p class="yb-trending-text">
+                        Recomendaciones de apps para organizar gastos, entrenar, cocinar y mejorar tu rutina.
+                      </p>
+                      <p class="yb-trending-meta">+17k búsquedas este mes</p>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <article class="yb-trending-card">
+                    <div class="yb-trending-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=1200&q=80"
+                        alt="Paisaje económico para viajar"
+                        loading="lazy">
+                    </div>
+                    <div class="yb-trending-body">
+                      <span class="yb-trending-tag">Viajes · Argentina</span>
+                      <h3 class="yb-trending-name">Viajes baratos y escapadas</h3>
+                      <p class="yb-trending-text">
+                        Opciones low-cost para viajar por Argentina sin gastar de más: buses, hostels y destinos económicos.
+                      </p>
+                      <p class="yb-trending-meta">+22k búsquedas este mes</p>
+                    </div>
+                  </article>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Controles  -->
+          <button
+            class="yb-arrow yb-arrow--left"
+            type="button"
+            data-bs-target="#ybTrendingCarousel"
+            data-bs-slide="prev"
+            aria-label="Ver categorías anteriores">
+            ‹
+          </button>
+
+          <button
+            class="yb-arrow yb-arrow--right"
+            type="button"
+            data-bs-target="#ybTrendingCarousel"
+            data-bs-slide="next"
+            aria-label="Ver categorías siguientes">
+            ›
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
   <!-- =========================================================
-       HERO + BUSCADOR PRINCIPAL
+       FOOTER
   ========================================================= -->
-  <section class="yb-hero">
-    <div class="container">
+  <footer class="yb-footer">
+    <div class="container d-flex justify-content-between align-items-center">
 
-      <!-- Texto principal -->
-      <div class="row justify-content-center">
-        <div class="col-lg-8 col-xl-7">
+      <span class="yb-footer-copy">© 2025 Yo Busco</span>
 
-          <span class="yb-hero-tag">Beta · Proyecto Yo Busco</span>
+      <nav class="yb-footer-nav">
+        <a href="./Pages/preguntasfrecuentes.html">Preguntas frecuentes</a>
+        <a href="./Pages/contacto.html">Contacto</a>
+        <a href="./Pages/about.html">Sobre nosotros</a>
+      </nav>
 
-          <h1 class="yb-hero-title">
-            Encontrá lo que necesitás, <span>cerca tuyo</span>.
-          </h1>
-
-          <p class="yb-hero-subtitle">
-            Buscá comercios, servicios, actividades, influencers, beneficios 
-            y empleo en un solo lugar, filtrando por ciudad o zona.
-          </p>
-
-          <ul class="yb-hero-bullets">
-            <li>🔍 Búsqueda rápida por rubro, nombre o palabra clave.</li>
-            <li>📍 Filtrá por ubicación para ver resultados cerca tuyo.</li>
-          </ul>
-
-        </div>
-      </div>
-
-      <!-- Buscador principal -->
-      <div class="row justify-content-center mt-4">
-        <div class="col-lg-10 col-xl-9">
-
-          <div class="yb-search-box">
-
-            <form class="yb-search-flex">
-
-              <!-- Ubicación -->
-              <div class="yb-input-wrap">
-                <span class="yb-icon">📍</span>
-                <select class="form-select yb-select">
-                  <option>Todas Las Localidades</option>
-                  <option>Santa Fe</option>
-                  <option>Rosario</option>
-                  <option>Córdoba</option>
-                  <option>Buenos Aires</option>
-                  <option>Otra Localidad</option>
-                </select>
-              </div>
-
-              <!-- Texto -->
-              <div class="yb-input-wrap flex-grow-1">
-                <span class="yb-icon">🔍</span>
-                <input
-                  type="text"
-                  class="form-control yb-input"
-                  placeholder="Hotel 5 estrellas, café de especialidad, plomero, empleo…"
-                >
-              </div>
-
-              <!-- Botón -->
-              <button type="submit" class="yb-search-btn2">
-                Buscar
-              </button>
-
-            </form>
-
-            <!-- TAGS -->
-            <div class="yb-tags">
-              <button class="yb-tag2">Hoteles 5★</button>
-              <button class="yb-tag2">Café de especialidad</button>
-              <button class="yb-tag2">Plomeros</button>
-              <button class="yb-tag2">Viajes a Europa</button>
-              <button class="yb-tag2">Restaurantes</button>
-              <button class="yb-tag2">Empleos</button>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
+      <span class="yb-footer-made">
+        Hecho con <span class="yb-heart">♥</span> en Santa Fe
+      </span>
 
     </div>
-  </section>
-<!-- =========================================================
-     INFLUENCERS DESTACADOS
-========================================================= -->
-<section class="yb-section yb-influencers" id="influencers">
-  <div class="container">
-
-    <!-- Encabezado -->
-    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3 mb-3">
-      <div>
-        <h2 class="yb-section-title mb-1">Influencers destacados</h2>
-        <p class="yb-section-subtitle mb-0">
-          Creadoras y creadores que recomiendan lugares, servicios y experiencias cerca tuyo.
-        </p>
-      </div>
-      <a href="./Pages/influencers.html" class="btn btn-outline-secondary btn-sm yb-see-all-btn">
-        Ver todos los influencers
-      </a>
-    </div>
-
-    <!-- Carrusel -->
-    <div id="ybInfluencersCarousel" class="carousel slide" data-bs-ride="false">
-      <div class="carousel-inner">
-
-        <!-- SLIDE 1 (4 cards) -->
-        <div class="carousel-item active">
-          <div class="row g-3">
-
-            <!-- 1 - Viajes -->
-            <div class="col-12 col-sm-6 col-lg-3">
-              <article class="yb-influencer-card">
-                <div class="yb-influencer-img-wrap">
-                  <img
-                    src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    class="img-fluid"
-                    alt="Influencer de viajes en la playa">
-                </div>
-                <div class="yb-influencer-body">
-                  <span class="yb-influencer-tag">Viajes · Santa Fe</span>
-                  <h3 class="yb-influencer-name">@ViajesConMati</h3>
-                  <p class="yb-influencer-desc">
-                    Destinos cercanos, tips de hospedaje y planes para escapadas de fin de semana.
-                  </p>
-                  <div class="yb-influencer-meta">
-                    <span>92k seguidores</span>
-                    <span>+180 recomendaciones</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- 2 - Gastronomía -->
-            <div class="col-12 col-sm-6 col-lg-3">
-              <article class="yb-influencer-card">
-                <div class="yb-influencer-img-wrap">
-                  <img
-                    src="https://images.pexels.com/photos/1234535/pexels-photo-1234535.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    class="img-fluid"
-                    alt="Influencer de gastronomía en cafetería">
-                </div>
-                <div class="yb-influencer-body">
-                  <span class="yb-influencer-tag">Gastronomía · Rosario</span>
-                  <h3 class="yb-influencer-name">@FoodiePau</h3>
-                  <p class="yb-influencer-desc">
-                    Cafeterías, bares y restaurantes con reseñas honestas y fotos que dan hambre.
-                  </p>
-                  <div class="yb-influencer-meta">
-                    <span>87k seguidores</span>
-                    <span>+120 reseñas</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- 3 - Planes urbanos -->
-            <div class="col-12 col-sm-6 col-lg-3">
-              <article class="yb-influencer-card">
-                <div class="yb-influencer-img-wrap">
-                  <img
-                    src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    class="img-fluid"
-                    alt="Influencer en ciudad de noche">
-                </div>
-                <div class="yb-influencer-body">
-                  <span class="yb-influencer-tag">Planazos · Santa Fe</span>
-                  <h3 class="yb-influencer-name">@SantaFeTips</h3>
-                  <p class="yb-influencer-desc">
-                    Agenda con eventos, ferias, recitales y actividades para todos los gustos.
-                  </p>
-                  <div class="yb-influencer-meta">
-                    <span>81k seguidores</span>
-                    <span>+95 planes</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- 4 - Fitness -->
-            <div class="col-12 col-sm-6 col-lg-3">
-              <article class="yb-influencer-card">
-                <div class="yb-influencer-img-wrap">
-                  <img
-                    src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    class="img-fluid"
-                    alt="Influencer de fitness entrenando">
-                </div>
-                <div class="yb-influencer-body">
-                  <span class="yb-influencer-tag">Fitness · Córdoba</span>
-                  <h3 class="yb-influencer-name">@MoveWithLau</h3>
-                  <p class="yb-influencer-desc">
-                    Gimnasios, clases y actividades al aire libre para moverte y sentirte mejor.
-                  </p>
-                  <div class="yb-influencer-meta">
-                    <span>54k seguidores</span>
-                    <span>+60 spots</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- SLIDE 2 (4 cards más) -->
-        <div class="carousel-item">
-          <div class="row g-3">
-
-            <!-- 5 - Servicios -->
-            <div class="col-12 col-sm-6 col-lg-3">
-              <article class="yb-influencer-card">
-                <div class="yb-influencer-img-wrap">
-                  <img
-                    src="https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    class="img-fluid"
-                    alt="Técnico realizando servicio">
-                </div>
-                <div class="yb-influencer-body">
-                  <span class="yb-influencer-tag">Servicios · Buenos Aires</span>
-                  <h3 class="yb-influencer-name">@SolucionaBA</h3>
-                  <p class="yb-influencer-desc">
-                    Plomeros, electricistas, pintores y más: profesionales probados y recomendados.
-                  </p>
-                  <div class="yb-influencer-meta">
-                    <span>43k seguidores</span>
-                    <span>+70 servicios</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- 6 - Escapadas -->
-            <div class="col-12 col-sm-6 col-lg-3">
-              <article class="yb-influencer-card">
-                <div class="yb-influencer-img-wrap">
-                  <img
-                    src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    class="img-fluid"
-                    alt="Paisaje de río y naturaleza">
-                </div>
-                <div class="yb-influencer-body">
-                  <span class="yb-influencer-tag">Escapadas · Litoral</span>
-                  <h3 class="yb-influencer-name">@RutasDelLitoral</h3>
-                  <p class="yb-influencer-desc">
-                    Termas, ríos y pueblitos con encanto a pocas horas en auto.
-                  </p>
-                  <div class="yb-influencer-meta">
-                    <span>38k seguidores</span>
-                    <span>+40 escapadas</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- 7 - Comercios locales -->
-            <div class="col-12 col-sm-6 col-lg-3">
-              <article class="yb-influencer-card">
-                <div class="yb-influencer-img-wrap">
-                  <img
-                    src="https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    class="img-fluid"
-                    alt="Comercio local de barrio">
-                </div>
-                <div class="yb-influencer-body">
-                  <span class="yb-influencer-tag">Comercios · Santa Fe</span>
-                  <h3 class="yb-influencer-name">@BarrioVivo</h3>
-                  <p class="yb-influencer-desc">
-                    Recomendaciones de negocios de barrio, promociones y datos útiles.
-                  </p>
-                  <div class="yb-influencer-meta">
-                    <span>29k seguidores</span>
-                    <span>+85 comercios</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- 8 - Experiencias -->
-            <div class="col-12 col-sm-6 col-lg-3">
-              <article class="yb-influencer-card">
-                <div class="yb-influencer-img-wrap">
-                  <img
-                    src="https://images.pexels.com/photos/1391580/pexels-photo-1391580.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    class="img-fluid"
-                    alt="Gente disfrutando una experiencia social">
-                </div>
-                <div class="yb-influencer-body">
-                  <span class="yb-influencer-tag">Experiencias · Región Centro</span>
-                  <h3 class="yb-influencer-name">@PlanPerfecto</h3>
-                  <p class="yb-influencer-desc">
-                    Shows, after offices, eventos y experiencias diferentes para salir de la rutina.
-                  </p>
-                  <div class="yb-influencer-meta">
-                    <span>51k seguidores</span>
-                    <span>+110 experiencias</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Controles (usan Bootstrap) -->
-      <button
-        class="yb-arrow yb-arrow--left"
-        type="button"
-        data-bs-target="#ybInfluencersCarousel"
-        data-bs-slide="prev"
-        aria-label="Ver influencers anteriores">
-        ‹
-      </button>
-
-      <button
-        class="yb-arrow yb-arrow--right"
-        type="button"
-        data-bs-target="#ybInfluencersCarousel"
-        data-bs-slide="next"
-        aria-label="Ver influencers siguientes">
-        ›
-      </button>
-
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     LO MÁS BUSCADO
-========================================================= -->
-<section class="yb-section yb-trending">
-  <div class="container">
-
-    <!-- Encabezado -->
-    <div class="yb-trending-header d-flex justify-content-between align-items-center">
-      <div>
-        <h2 class="yb-trending-title">Lo más buscado</h2>
-        <p class="yb-trending-subtitle">
-          Categorías, lugares y servicios que la gente busca todo el tiempo cerca tuyo.
-        </p>
-      </div>
-      <a href="#" class="yb-trending-link">Ver todas las categorías</a>
-    </div>
-
-    <!-- Carrusel -->
-    <div class="yb-trending-slider">
-
-      <!-- Flecha izquierda -->
-      <button class="yb-arrow yb-arrow--left" type="button" data-yb-trending-prev>‹</button>
-
-      <!-- Track -->
-      <div class="yb-trending-track">
-
-        <!-- Card 1 -->
-        <article class="yb-trending-card">
-          <div class="yb-trending-image">
-            <img
-              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=80"
-              alt="Plato de comida en restaurante"
-              loading="lazy">
-          </div>
-          <div class="yb-trending-body">
-            <span class="yb-trending-tag">Gastronomía · Santa Fe</span>
-            <h3 class="yb-trending-name">Pizzas y deliveries</h3>
-            <p class="yb-trending-text">
-              Restaurantes, bares y casas de comida con envío rápido a domicilio.
-            </p>
-            <p class="yb-trending-meta">+24k búsquedas este mes</p>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="yb-trending-card">
-          <div class="yb-trending-image">
-            <img
-              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
-              alt="Hotel con vista al mar"
-              loading="lazy">
-          </div>
-          <div class="yb-trending-body">
-            <span class="yb-trending-tag">Viajes · Costa Atlántica</span>
-            <h3 class="yb-trending-name">Hoteles frente al mar</h3>
-            <p class="yb-trending-text">
-              Alojamiento con vista al mar, desayuno incluido y cochera.
-            </p>
-            <p class="yb-trending-meta">+18k búsquedas este mes</p>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="yb-trending-card">
-          <div class="yb-trending-image">
-            <img
-              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
-              alt="Profesional de salud"
-              loading="lazy">
-          </div>
-          <div class="yb-trending-body">
-            <span class="yb-trending-tag">Salud · Rosario</span>
-            <h3 class="yb-trending-name">Turnos médicos</h3>
-            <p class="yb-trending-text">
-              Clínicas, sanatorios y consultorios con reserva de turno online.
-            </p>
-            <p class="yb-trending-meta">+15k búsquedas este mes</p>
-          </div>
-        </article>
-
-        <!-- Card 4 -->
-        <article class="yb-trending-card">
-          <div class="yb-trending-image">
-            <img
-              src="https://images.unsplash.com/photo-1582719478250-cc70d3a5457b?auto=format&fit=crop&w=1200&q=80"
-              alt="Oficina de coworking"
-              loading="lazy">
-          </div>
-          <div class="yb-trending-body">
-            <span class="yb-trending-tag">Servicios · Buenos Aires</span>
-            <h3 class="yb-trending-name">Coworkings y oficinas</h3>
-            <p class="yb-trending-text">
-              Espacios de trabajo compartido, salas de reunión y oficinas privadas.
-            </p>
-            <p class="yb-trending-meta">+9k búsquedas este mes</p>
-          </div>
-        </article>
-
-        <!-- Card 5 -->
-        <article class="yb-trending-card">
-          <div class="yb-trending-image">
-            <img
-              src="https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1200&q=80"
-              alt="Clase de entrenamiento"
-              loading="lazy">
-          </div>
-          <div class="yb-trending-body">
-            <span class="yb-trending-tag">Fitness · Córdoba</span>
-            <h3 class="yb-trending-name">Gimnasios y clases</h3>
-            <p class="yb-trending-text">
-              Gimnasios, entrenadores personales y clases grupales.
-            </p>
-            <p class="yb-trending-meta">+11k búsquedas este mes</p>
-          </div>
-        </article>
-
-        <!-- Card 6 -->
-        <article class="yb-trending-card">
-          <div class="yb-trending-image">
-            <img
-              src="https://images.unsplash.com/photo-1582719478181-2f2df0f4d6f8?auto=format&fit=crop&w=1200&q=80"
-              alt="Electricista trabajando"
-              loading="lazy">
-          </div>
-          <div class="yb-trending-body">
-            <span class="yb-trending-tag">Servicios · Todo el país</span>
-            <h3 class="yb-trending-name">Oficios y profesionales</h3>
-            <p class="yb-trending-text">
-              Plomeros, electricistas, gasistas y más profesionales de confianza.
-            </p>
-            <p class="yb-trending-meta">+20k búsquedas este mes</p>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- Flecha derecha -->
-      <button class="yb-arrow yb-arrow--right" type="button" data-yb-trending-next>›</button>
-
-    </div>
-
-  </div>
-</section>
-
-
-</main>
-
-
-
-
-
- <!-- =========================================================
-     FOOTER
-========================================================= -->
-<footer class="yb-footer">
-  <div class="container d-flex justify-content-between align-items-center">
-
-    <span class="yb-footer-copy">© 2025 Yo Busco</span>
-
-    <nav class="yb-footer-nav">
-      <a href="#">Preguntas frecuentes</a>
-      <a href="#">Contacto</a>
-      <a href="#">Sobre nosotros</a>
-    </nav>
-
-    <span class="yb-footer-made">
-      Hecho con <span class="yb-heart">♥</span> en Santa Fe
-    </span>
-
-  </div>
-</footer>
-
+  </footer>
 
   <!-- Bootstrap JS -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous">
   </script>
-
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const slider = document.querySelector(".yb-trending-slider");
-  if (!slider) return;
-
-  const track = slider.querySelector(".yb-trending-track");
-  const prev  = slider.querySelector("[data-yb-trending-prev]");
-  const next  = slider.querySelector("[data-yb-trending-next]");
-
-  if (!track || !prev || !next) return;
-
-  // Calcula el desplazamiento según el ancho real de la card
-  function getStep() {
-    const firstCard = track.querySelector(".yb-trending-card");
-    if (!firstCard) return 350;
-    const cardWidth = firstCard.getBoundingClientRect().width;
-    return cardWidth + 16; // gap incluido
-  }
-
-  next.addEventListener("click", () => {
-    track.scrollBy({ left: getStep(), behavior: "smooth" });
-  });
-
-  prev.addEventListener("click", () => {
-    track.scrollBy({ left: -getStep(), behavior: "smooth" });
-  });
-
-});
-</script>
 
 </body>
 </html>

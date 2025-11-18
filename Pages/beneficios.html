@@ -4,9 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Beneficios & Descuentos — Yo Busco</title>
-  <meta name="description" content="Accedé a beneficios y descuentos exclusivos en comercios e influencers.">
+  <title>Yo Busco — Beneficios & Descuentos</title>
+  <meta name="description" content="Encontrá beneficios, descuentos y promos cerca tuyo para ahorrar en tus compras diarias.">
 
+  <!-- Favicon -->
   <link rel="icon" href="../Assets/favicon.png" type="image/png">
 
   <!-- Bootstrap -->
@@ -16,17 +17,23 @@
     crossorigin="anonymous"
   >
 
-  <!-- CSS propio -->
+  <!-- Íconos -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+  <!-- CSS general -->
   <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body class="yb-page-beneficios">
 
   <!-- =========================================================
        HEADER / NAVBAR
   ========================================================= -->
   <header>
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-lg yb-navbar sticky-top">
       <div class="container">
 
         <!-- Logo -->
@@ -74,7 +81,491 @@
           </div>
 
         </div>
-
       </div>
     </nav>
   </header>
+
+  <!-- =========================================================
+       BUSCADOR SUPERIOR (CÁPSULA)
+  ========================================================= -->
+  <section class="yb-searchbar-beneficios">
+    <div class="container">
+      <form class="yb-search-wrapper" role="search" action="#" method="get">
+
+        <!-- Localidad  -->
+        <div class="yb-input-pill yb-pill-location">
+          <span class="yb-pill-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </span>
+
+          <select name="location" class="yb-pill-select">
+            <option value="">Todas las localidades</option>
+            <option value="santa-fe">Santa Fe</option>
+            <option value="rosario">Rosario</option>
+            <option value="cordoba">Córdoba</option>
+            <option value="buenos-aires">Buenos Aires</option>
+            <option value="mendoza">Mendoza</option>        
+          </select>
+        </div>
+
+        <!-- Input principal -->
+        <div class="yb-input-pill yb-pill-search">
+          <span class="yb-pill-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+          <input
+            type="text"
+            id="beneficiosSearch"
+            name="q"
+            class="yb-pill-input"
+            placeholder="Buscar por comercio, rubro o beneficio..."
+            aria-label="Buscar beneficios por comercio, rubro o tipo de beneficio"
+          >
+        </div>
+
+        <!-- Botón buscar -->
+        <button type="submit" class="yb-search-btn">
+          Buscar
+        </button>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CONTENIDO PRINCIPAL
+  ========================================================= -->
+  <main class="py-4 py-md-5">
+    <div class="container">
+
+      <!-- Título + resumen -->
+      <div class="mb-3">
+        <h1 class="yb-section-title mb-1">Beneficios & descuentos cerca tuyo</h1>
+        <p class="yb-section-subtitle mb-0">
+          Encontrá promos reales en gastronomía, viajes, belleza, indumentaria, electrónica y más.
+        </p>
+      </div>
+
+      <!-- Toolbar: botón Filtros + Ordenar -->
+      <div class="yb-toolbar d-flex align-items-center justify-content-between gap-3 mb-3">
+
+        <!-- Botón Filtros (solo mobile/tablet) -->
+        <button
+          class="btn yb-filtros-toggle d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#beneficiosFiltrosMobile"
+          aria-controls="beneficiosFiltrosMobile"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-sliders"></i>
+          Filtros
+        </button>
+
+        <!-- Select ordenar -->
+        <div class="yb-order-box mb-0 flex-grow-1 text-lg-end">
+          <select class="yb-order-select" aria-label="Ordenar beneficios">
+            <option value="relevancia">Relevancia</option>
+            <option value="descuento">Mayor descuento</option>
+            <option value="recientes">Más recientes</option>
+            <option value="cerca">Cerca mío</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Layout principal -->
+      <div class="yb-layout">
+
+        <!-- Filtros DESKTOP (columna fija) -->
+        <aside class="yb-filtros d-none d-lg-block">
+          <h4>Filtros</h4>
+
+          <!-- Rubro -->
+          <div class="grupo mb-3">
+            <p class="fw-semibold mb-1">Rubro</p>
+            <span>Gastronomía</span>
+            <span>Viajes</span>
+            <span>Belleza</span>
+            <span>Indumentaria</span>
+            <span>Electrónica</span>
+            <span>Entretenimiento</span>
+            <span>Cafeterías</span>
+          </div>
+
+          <!-- Tipo de beneficio -->
+          <div class="grupo mb-3">
+            <p class="fw-semibold mb-1">Tipo de beneficio</p>
+            <span>% OFF</span>
+            <span>2x1</span>
+            <span>Envío gratis</span>
+            <span>Cashback</span>
+            <span>Primera compra</span>
+            <span>Socios / Membresía</span>
+          </div>
+
+          <!-- Modalidad -->
+          <div class="grupo mb-3">
+            <p class="fw-semibold mb-1">Modalidad</p>
+            <span>Online</span>
+            <span>Presencial</span>
+            <span>Mixto</span>
+          </div>
+
+          <!-- Medios de pago -->
+          <div class="grupo mb-3">
+            <p class="fw-semibold mb-1">Medio de pago</p>
+            <span>Efectivo / débito</span>
+            <span>Crédito</span>
+            <span>Transferencia</span>
+            <span>Billetera virtual</span>
+          </div>
+
+          <!-- Vigencia -->
+          <div class="grupo">
+            <p class="fw-semibold mb-1">Vigencia</p>
+            <span>Solo hoy</span>
+            <span>Este finde</span>
+            <span>Este mes</span>
+          </div>
+        </aside>
+
+        <!-- Columna derecha: filtros mobile + grid -->
+        <div class="flex-grow-1">
+
+          <!-- Filtros MOBILE/TABLET -->
+          <div class="d-lg-none">
+            <div class="collapse mb-3" id="beneficiosFiltrosMobile">
+              <aside class="yb-filtros">
+                <h4>Filtros</h4>
+
+                <!-- Rubro -->
+                <div class="grupo mb-3">
+                  <p class="fw-semibold mb-1">Rubro</p>
+                  <span>Gastronomía</span>
+                  <span>Viajes</span>
+                  <span>Belleza</span>
+                  <span>Indumentaria</span>
+                  <span>Electrónica</span>
+                  <span>Entretenimiento</span>
+                  <span>Cafeterías</span>
+                </div>
+
+                <!-- Tipo de beneficio -->
+                <div class="grupo mb-3">
+                  <p class="fw-semibold mb-1">Tipo de beneficio</p>
+                  <span>% OFF</span>
+                  <span>2x1</span>
+                  <span>Envío gratis</span>
+                  <span>Cashback</span>
+                  <span>Primera compra</span>
+                  <span>Socios / Membresía</span>
+                </div>
+
+                <!-- Modalidad -->
+                <div class="grupo mb-3">
+                  <p class="fw-semibold mb-1">Modalidad</p>
+                  <span>Online</span>
+                  <span>Presencial</span>
+                  <span>Mixto</span>
+                </div>
+
+                <!-- Medios de pago -->
+                <div class="grupo mb-3">
+                  <p class="fw-semibold mb-1">Medio de pago</p>
+                  <span>Efectivo / débito</span>
+                  <span>Crédito</span>
+                  <span>Transferencia</span>
+                  <span>Billetera virtual</span>
+                </div>
+
+                <!-- Vigencia -->
+                <div class="grupo">
+                  <p class="fw-semibold mb-1">Vigencia</p>
+                  <span>Solo hoy</span>
+                  <span>Este finde</span>
+                  <span>Este mes</span>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <!-- GRID DE CARDS -->
+          <div class="yb-grid yb-grid-benefits">
+
+            <!-- CARD 1 -->
+            <article class="yb-benefit-card">
+              <div class="yb-benefit-img">
+                <img
+                  src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Restaurante La Terraza"
+                  loading="lazy">
+              </div>
+              <div class="yb-benefit-body">
+                <span class="yb-benefit-tag">Gastronomía · Santa Fe</span>
+                <h3 class="yb-benefit-title">Restaurante La Terraza</h3>
+                <p class="yb-benefit-highlight">🍝 30% OFF en cenas</p>
+                <p class="yb-benefit-text">
+                  De lunes a jueves pagando con débito o transferencia.
+                </p>
+                <div class="yb-benefit-meta">
+                  <span><strong>Hasta 30% OFF</strong></span>
+                  <span>Válido hasta 30/11</span>
+                </div>
+              </div>
+              <div class="yb-card-footer">
+                <button class="yb-btn-outline" type="button">Ver detalle</button>
+                <button class="yb-btn-outline" type="button">Obtener beneficio</button>
+              </div>
+            </article>
+
+            <!-- CARD 2 -->
+            <article class="yb-benefit-card">
+              <div class="yb-benefit-img">
+                <img
+                  src="https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Hotel Costa Norte"
+                  loading="lazy">
+              </div>
+              <div class="yb-benefit-body">
+                <span class="yb-benefit-tag">Viajes · Mar del Plata</span>
+                <h3 class="yb-benefit-title">Hotel Costa Norte</h3>
+                <p class="yb-benefit-highlight">🏖 2x1 en noches</p>
+                <p class="yb-benefit-text">
+                  Pagás 3 noches y te quedás 4. Desayuno incluido.
+                </p>
+                <div class="yb-benefit-meta">
+                  <span><strong>2x1 escalonado</strong></span>
+                  <span>Fin de semana largo</span>
+                </div>
+              </div>
+              <div class="yb-card-footer">
+                <button class="yb-btn-outline" type="button">Ver detalle</button>
+                <button class="yb-btn-outline" type="button">Reservar</button>
+              </div>
+            </article>
+
+            <!-- CARD 3 -->
+            <article class="yb-benefit-card">
+              <div class="yb-benefit-img">
+                <img
+                  src="https://images.pexels.com/photos/3735630/pexels-photo-3735630.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Glow Studio"
+                  loading="lazy">
+              </div>
+              <div class="yb-benefit-body">
+                <span class="yb-benefit-tag">Belleza · Rosario</span>
+                <h3 class="yb-benefit-title">Glow Studio</h3>
+                <p class="yb-benefit-highlight">💅 25% OFF en primera visita</p>
+                <p class="yb-benefit-text">
+                  Manos + pies Spa con turnos de lunes a miércoles.
+                </p>
+                <div class="yb-benefit-meta">
+                  <span><strong>25% OFF</strong></span>
+                  <span>Solo nuevos clientes</span>
+                </div>
+              </div>
+              <div class="yb-card-footer">
+                <button class="yb-btn-outline" type="button">Ver detalle</button>
+                <button class="yb-btn-outline" type="button">Pedir turno</button>
+              </div>
+            </article>
+
+            <!-- CARD 4 -->
+            <article class="yb-benefit-card">
+              <div class="yb-benefit-img">
+                <img
+                  src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Urban Fit"
+                  loading="lazy">
+              </div>
+              <div class="yb-benefit-body">
+                <span class="yb-benefit-tag">Gimnasio · Córdoba</span>
+                <h3 class="yb-benefit-title">Urban Fit</h3>
+                <p class="yb-benefit-highlight">🏋️ 50% OFF 1º mes</p>
+                <p class="yb-benefit-text">
+                  Plan full acceso a salas + clases grupales.
+                </p>
+                <div class="yb-benefit-meta">
+                  <span><strong>50% OFF</strong></span>
+                  <span>Alta online</span>
+                </div>
+              </div>
+              <div class="yb-card-footer">
+                <button class="yb-btn-outline" type="button">Ver detalle</button>
+                <button class="yb-btn-outline" type="button">Quiero este plan</button>
+              </div>
+            </article>
+
+            <!-- CARD 5 -->
+            <article class="yb-benefit-card">
+              <div class="yb-benefit-img">
+                <img
+                  src="https://images.pexels.com/photos/3738087/pexels-photo-3738087.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="MODA Urbana"
+                  loading="lazy">
+              </div>
+              <div class="yb-benefit-body">
+                <span class="yb-benefit-tag">Indumentaria · Online</span>
+                <h3 class="yb-benefit-title">MODA Urbana</h3>
+                <p class="yb-benefit-highlight">👟 Envío gratis + 10% OFF</p>
+                <p class="yb-benefit-text">
+                  En compras superiores a $60.000 usando el código YOBUSCO10.
+                </p>
+                <div class="yb-benefit-meta">
+                  <span><strong>Envío gratis</strong></span>
+                  <span>Cupón online</span>
+                </div>
+              </div>
+              <div class="yb-card-footer">
+                <button class="yb-btn-outline" type="button">Ver detalle</button>
+                <button class="yb-btn-outline" type="button">Copiar código</button>
+              </div>
+            </article>
+
+            <!-- CARD 6 -->
+            <article class="yb-benefit-card">
+              <div class="yb-benefit-img">
+                <img
+                  src="https://images.pexels.com/photos/374085/pexels-photo-374085.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Tech House"
+                  loading="lazy">
+              </div>
+              <div class="yb-benefit-body">
+                <span class="yb-benefit-tag">Electrónica · Buenos Aires</span>
+                <h3 class="yb-benefit-title">Tech House</h3>
+                <p class="yb-benefit-highlight">🎧 20% OFF en audio</p>
+                <p class="yb-benefit-text">
+                  Auriculares y parlantes seleccionados, 3 cuotas sin interés.
+                </p>
+                <div class="yb-benefit-meta">
+                  <span><strong>20% OFF</strong></span>
+                  <span>Stock limitado</span>
+                </div>
+              </div>
+              <div class="yb-card-footer">
+                <button class="yb-btn-outline" type="button">Ver detalle</button>
+                <button class="yb-btn-outline" type="button">Comprar ahora</button>
+              </div>
+            </article>
+
+            <!-- CARD 7 -->
+            <article class="yb-benefit-card">
+              <div class="yb-benefit-img">
+                <img
+                  src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1200&q=80"
+                  alt="Cine Central"
+                  loading="lazy">
+              </div>
+              <div class="yb-benefit-body">
+                <span class="yb-benefit-tag">Entretenimiento · Mendoza</span>
+                <h3 class="yb-benefit-title">Cine Central</h3>
+                <p class="yb-benefit-highlight">🎬 2x1 en entradas</p>
+                <p class="yb-benefit-text">
+                  Funciones 2D y 3D los martes y miércoles.
+                </p>
+                <div class="yb-benefit-meta">
+                  <span><strong>2x1</strong></span>
+                  <span>Solo en boletería</span>
+                </div>
+              </div>
+              <div class="yb-card-footer">
+                <button class="yb-btn-outline" type="button">Ver cartelera</button>
+                <button class="yb-btn-outline" type="button">Descargar cupón</button>
+              </div>
+            </article>
+
+            <!-- CARD 8 -->
+            <article class="yb-benefit-card">
+              <div class="yb-benefit-img">
+                <img
+                  src="https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Café Bonito"
+                  loading="lazy">
+              </div>
+              <div class="yb-benefit-body">
+                <span class="yb-benefit-tag">Cafetería · Santa Fe</span>
+                <h3 class="yb-benefit-title">Café Bonito</h3>
+                <p class="yb-benefit-highlight">☕ 2x1 en desayunos</p>
+                <p class="yb-benefit-text">
+                  Todos los días de 8 a 11 hs presentando tu código desde Yo Busco.
+                </p>
+                <div class="yb-benefit-meta">
+                  <span><strong>2x1</strong></span>
+                  <span>Beneficio exclusivo</span>
+                </div>
+              </div>
+              <div class="yb-card-footer">
+                <button class="yb-btn-outline" type="button">Ver detalle</button>
+                <button class="yb-btn-outline" type="button">Mostrar código</button>
+              </div>
+            </article>
+
+            <!-- CARD 9 -->
+            <article class="yb-benefit-card">
+              <div class="yb-benefit-img">
+                <img
+                  src="https://images.pexels.com/photos/373883/pexels-photo-373883.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Club de Compras Plus"
+                  loading="lazy">
+              </div>
+              <div class="yb-benefit-body">
+                <span class="yb-benefit-tag">Membresía · Online</span>
+                <h3 class="yb-benefit-title">Club de Compras Plus</h3>
+                <p class="yb-benefit-highlight">🔁 5% cashback</p>
+                <p class="yb-benefit-text">
+                  Recuperás el 5% de cada compra en comercios adheridos.
+                </p>
+                <div class="yb-benefit-meta">
+                  <span><strong>Cashback</strong></span>
+                  <span>Plan mensual</span>
+                </div>
+              </div>
+              <div class="yb-card-footer">
+                <button class="yb-btn-outline" type="button">Ver comercios</button>
+                <button class="yb-btn-outline" type="button">Unirme</button>
+              </div>
+            </article>
+
+          </div> 
+
+        </div> 
+
+      </div> 
+
+    </div>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+  <footer class="yb-footer">
+    <div class="container">
+      <div class="yb-footer-copy">
+        © 2025 Yo Busco
+      </div>
+
+      <nav class="yb-footer-nav">
+        <a href="./preguntasfrecuentes.html">Preguntas frecuentes</a>
+        <a href="./about.html">Sobre nosotros</a>
+        <a href="./contacto.html">Contacto</a>
+      </nav>
+
+      <div class="yb-footer-made">
+        Hecho con <span class="yb-heart">♥</span> en Santa Fe
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous">
+  </script>
+
+</body>
+</html>
+
+
+
+
+
