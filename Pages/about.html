@@ -4,189 +4,150 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yo Busco — Sobre Nosotros</title>
-  <meta name="description" content="Conocé la historia, el propósito y el equipo detrás de Yo Busco, el buscador inteligente de comercios, servicios e influencers.">
+  <title>Yo Busco - Sobre Nosotros</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="../Assets/favicon.png" type="image/png">
+  <link rel="icon" href="../Assets/favicon1.png" type="image/png">
 
   <!-- Bootstrap -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    crossorigin="anonymous"
-  >
-  <!-- Íconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous">
+
+  <!-- Animate.css -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <!-- CSS general -->
   <link rel="stylesheet" href="../style.css">
 </head>
 
-<body class="yb-page-about">
+<body>
 
-  <!-- =========================================================
-       HEADER / NAVBAR
-  ========================================================= -->
-  <header>
-    <nav class="navbar navbar-expand-lg yb-navbar sticky-top">
+  <!-- Header -->
+  <header class="encabezado">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
 
-        <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center" href="../index.html">
-          <img src="../Assets/logo-principal.png" alt="Yo Busco" height="46">
+        <!-- LOGO -->
+        <a class="navbar-brand" href="../index.html">
+          <img src="../Assets/logo-principal.png" alt="Yo Busco" />
         </a>
 
-        <!-- Botón mobile -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarYoBusco" aria-controls="navbarYoBusco"
-          aria-expanded="false" aria-label="Toggle navigation">
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menú -->
-        <div class="collapse navbar-collapse" id="navbarYoBusco">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <!-- MENU-->
+        <div class="collapse navbar-collapse" id="menu">
 
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="../index.html">Inicio</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./influencers.html">Influencers</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./beneficios.html">Beneficios & Descuentos</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold active" href="./about.html">Sobre Nosotros</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./contacto.html">Contacto</a>
-            </li>
-
+          <!-- PAGINAS NAV -->
+          <ul class="navbar-nav nav-centro">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="./influencers.html">Influencers</a></li>
+            <li class="nav-item"><a class="nav-link" href="./beneficios.html">Beneficios</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./about.html">Sobre Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
           </ul>
 
-          <!-- Botones derecha -->
-          <div class="d-flex gap-2">
-            <a href="./login.html" class="btn btn-ingresar btn-sm px-3">Ingresar</a>
-            <a href="./publicar.html" class="btn btn-publicar btn-sm px-3">Publicar</a>
+          <!-- BOTONES DERECHA -->
+          <div class="botones">
+            <a href="./login.html" class="boton-ingresar">Ingresar</a>
+            <a href="./publicar.html" class="boton-publicar">Publicar</a>
           </div>
 
         </div>
+
       </div>
     </nav>
   </header>
 
-  <!-- =========================================================
-       HERO / PRESENTACIÓN
-  ========================================================= -->
   <main>
-    <section class="yb-hero-about py-5">
+
+    <!-- Sección principal -->
+    <section class="seccion-pagina">
       <div class="container">
-        <div class="row align-items-center g-4">
+        <div class="row fila-historia">
+
           <div class="col-md-6">
-            <h1 class="fw-bold mb-3">La historia detrás de <span class="text-primary">Yo Busco</span></h1>
-            <p class="lead mb-3">
-              Yo Busco nace en Santa Fe, Argentina, como un proyecto simple: 
-              hacerle más fácil a las personas encontrar todo lo que necesitan cerca,
-              y ayudar a comercios e influencers a ser descubiertos por el público correcto.
+            <h1 class="animate__animated animate__fadeInDown">
+              La historia de Yo Busco
+            </h1>
+            <p>
+              Yo Busco nace en Santa Fe como una idea sencilla: hacer más fácil encontrar comercios,
+              servicios e influencers sin perder tiempo buscando en mil lados distintos.
             </p>
-            <p class="mb-0">
-              Somos un grupo de profesionales de marketing, tecnología y diseño que creemos 
-              en el poder de las conexiones locales. Construimos una plataforma que une 
-              personas reales con negocios reales e influencias reales, de forma clara, 
-              transparente y humana.
+            <p>
+              La idea mezcla marketing, tecnología y diseño, con foco total en lo local y lo simple.
+              La idea es que cualquier persona pueda encontrar cosas útiles sin complicarse.
             </p>
           </div>
+
           <div class="col-md-6">
-            <div class="yb-hero-card shadow-sm p-4 rounded-4 bg-white">
-              <h5 class="fw-semibold mb-3">
-                🌎 ¿Qué es Yo Busco?
-              </h5>
-              <p class="mb-2">
-                Yo Busco es un <strong>buscador inteligente</strong> de comercios, servicios, 
-                actividades, beneficios e influencers, pensado para que 
-                cualquier persona pueda encontrar en segundos lo que necesita,
-                filtrando por rubro, localidad, tipo de beneficio o perfil.
+            <div class="caja-simple animate__animated animate__fadeInRight">
+              <h5>¿Qué es Yo Busco?</h5>
+              <p>
+                Es un buscador de comercios, beneficios, actividades e influencers por rubro y ciudad.
               </p>
-              <p class="mb-0">
-                No es solo un directorio: es una <strong>plataforma de descubrimiento</strong> 
-                que conecta usuarios, marcas e influencers en un mismo ecosistema, 
-                ayudando a todos a crecer.
+              <p>
+                No es solo un listado: buscamos que sea una herramienta práctica para descubrir lugares
+                y conectar personas.
               </p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-         NUESTRA HISTORIA
-    ========================================================= -->
-    <section class="yb-section py-5">
+    <!-- Sección línea de tiempo -->
+    <section class="seccion-pagina fondo-claro">
       <div class="container">
-        <div class="row g-4 align-items-start">
+        <div class="row fila-timeline">
+
           <div class="col-md-5">
-            <h2 class="yb-section-title mb-3">Cómo empezó todo</h2>
+            <h2>Cómo empezó todo</h2>
             <p>
-              La idea de Yo Busco surgió en plena conversación de café, 
-              recorriendo la ciudad y dándonos cuenta de algo simple:
-              está lleno de lugares increíbles, pero la mayoría de las personas 
-              <strong>no sabe que existen</strong>.
+              La idea aparece charlando en un café. Había muchos lugares buenos, pero la mayoría ni sabía
+              que existían.
             </p>
             <p>
-              Del otro lado, los comercios invertían tiempo y dinero en redes sociales,
-              pero sin una forma clara de llegar a las personas de su zona.
-              Y los influencers crecían en comunidades fuertes, pero sin un puente 
-              organizado para conectar con marcas y proyectos locales.
+              Los comercios publicaban en redes pero no llegaban a la gente. Y varios influencers
+              no tenían un espacio armado para trabajar con comercios locales.
             </p>
-            <p class="mb-0">
-              Ahí entendimos que hacía falta un lugar donde todo eso se ordene:
-              un mapa vivo de la ciudad, sus comercios, sus propuestas y sus voces.
-              Ese lugar es Yo Busco.
+            <p>
+              Así nace Yo Busco: un lugar donde ordenar todo eso y tener un “mapa” claro de la ciudad
+              y las propuestas que tiene.
             </p>
           </div>
 
           <div class="col-md-7">
-            <div class="yb-timeline">
-              <div class="yb-timeline-item mb-4">
-                <h6 class="text-uppercase text-muted small mb-1">2023 — La idea</h6>
-                <p class="mb-0">
-                  Nace el concepto: un buscador orientado a la vida real, con foco en 
-                  <strong>proximidad, confianza y experiencia</strong>.
-                </p>
+            <div class="lista-simple animate__animated animate__fadeInUp">
+
+              <div class="item-simple">
+                <h6 class="texto-chico">2023 – La idea</h6>
+                <p>Aparece el concepto de un buscador con foco en la cercanía y la confianza.</p>
               </div>
 
-              <div class="yb-timeline-item mb-4">
-                <h6 class="text-uppercase text-muted small mb-1">2024 — Primer prototipo</h6>
-                <p class="mb-0">
-                  Armamos los primeros mapas, categorías y fichas de comercios. 
-                  Empezamos a testear con negocios locales y usuarios de Santa Fe y alrededores.
-                </p>
+              <div class="item-simple">
+                <h6 class="texto-chico">2024 – Primer prototipo</h6>
+                <p>Armamos las primeras categorías y fichas para probar con comercios reales.</p>
               </div>
 
-              <div class="yb-timeline-item mb-4">
-                <h6 class="text-uppercase text-muted small mb-1">2025 — Comunidad & Influencers</h6>
-                <p class="mb-0">
-                  Sumamos el módulo de <strong>Influencers</strong> y 
-                  <strong>Beneficios & Descuentos</strong>, para que las marcas 
-                  puedan potenciar sus acciones y los usuarios encuentren más valor 
-                  en cada búsqueda.
-                </p>
+              <div class="item-simple">
+                <h6 class="texto-chico">2025 – Beneficios e influencers</h6>
+                <p>Sumamos la parte de influencers y beneficios para que marcas y usuarios puedan aprovechar más.</p>
               </div>
 
-              <div class="yb-timeline-item">
-                <h6 class="text-uppercase text-muted small mb-1">Hoy — Un proyecto en expansión</h6>
-                <p class="mb-0">
-                  Seguimos creciendo junto a comercios, profesionales, influencers 
-                  y usuarios que se suman todos los días. Yo Busco está pensado 
-                  para escalar a más ciudades, más categorías y más oportunidades.
-                </p>
+              <div class="item-simple">
+                <h6 class="texto-chico">Hoy</h6>
+                <p>Seguimos creciendo e incorporando nuevas ciudades y rubros.</p>
               </div>
+
             </div>
           </div>
 
@@ -194,186 +155,140 @@
       </div>
     </section>
 
-    <!-- =========================================================
-         PARA QUIÉN ES YO BUSCO
-    ========================================================= -->
-    <section class="yb-section yb-section-light py-5">
+    <!-- A quién ayuda -->
+    <section class="seccion-pagina seccion-centrada">
       <div class="container">
-        <div class="text-center mb-4">
-          <h2 class="yb-section-title mb-2">¿A quién ayuda Yo Busco?</h2>
-          <p class="yb-section-subtitle yb-about-subtitle mb-0">
-            Diseñamos la plataforma pensando en que cada parte de la comunidad gane algo real.
-          </p>
+        <div class="bloque-titulo-centrado">
+          <h2>¿A quién ayuda Yo Busco?</h2>
+          <p class="texto-chico">Cada parte gana algo concreto.</p>
         </div>
 
-        <div class="row g-4">
-          <!-- Usuarios -->
+        <div class="row fila-personas">
+
           <div class="col-md-4">
-            <div class="yb-card shadow-sm h-100 p-4">
-              <div class="mb-3">
-                <span class="yb-badge">Para usuarios</span>
-              </div>
-              <h5 class="fw-bold mb-2">Personas que buscan soluciones reales</h5>
-              <p class="small mb-3">
-                Como usuario, Yo Busco te ayuda a:
-              </p>
-              <ul class="small mb-0">
-                <li>Encontrar <strong>comercios, servicios e influencers</strong> por rubro y localidad.</li>
-                <li>Ver <strong>beneficios, descuentos y promos</strong> activos cerca tuyo.</li>
-                <li>Descubrir lugares que no conocías, con información clara y actualizada.</li>
-                <li>Ahorrar tiempo comparando opciones en un solo lugar.</li>
+            <div class="caja-simple tarjeta-persona animate__animated animate__fadeInUp">
+              <span class="etiqueta">Usuarios</span>
+              <h5>Personas que buscan soluciones</h5>
+              <ul class="texto-chico">
+                <li>Encontrar comercios e influencers por rubro.</li>
+                <li>Ver beneficios y promos.</li>
+                <li>Descubrir lugares nuevos.</li>
+                <li>Ahorrar tiempo.</li>
               </ul>
             </div>
           </div>
 
-          <!-- Comercios -->
           <div class="col-md-4">
-            <div class="yb-card shadow-sm h-100 p-4">
-              <div class="mb-3">
-                <span class="yb-badge">Para comercios</span>
-              </div>
-              <h5 class="fw-bold mb-2">Negocios que quieren ser vistos</h5>
-              <p class="small mb-3">
-                Si tenés un comercio o emprendimiento, Yo Busco te ayuda a:
-              </p>
-              <ul class="small mb-0">
-                <li>Ganarte un lugar en el <strong>mapa digital de tu ciudad</strong>.</li>
-                <li>Mostrar tu propuesta con fotos, links, horarios y reseñas.</li>
-                <li>Publicar <strong>beneficios y descuentos</strong> para atraer más clientes.</li>
-                <li>Conectar con <strong>influencers</strong> alineados a tu rubro y público.</li>
+            <div class="caja-simple tarjeta-persona animate__animated animate__fadeInUp animate__delay-1s">
+              <span class="etiqueta">Comercios</span>
+              <h5>Negocios que quieren mostrarse</h5>
+              <ul class="texto-chico">
+                <li>Aparecer en el mapa digital local.</li>
+                <li>Mostrar su propuesta de forma simple.</li>
+                <li>Publicar beneficios.</li>
+                <li>Conectar con influencers.</li>
               </ul>
             </div>
           </div>
 
-          <!-- Influencers -->
           <div class="col-md-4">
-            <div class="yb-card shadow-sm h-100 p-4">
-              <div class="mb-3">
-                <span class="yb-badge">Para influencers</span>
-              </div>
-              <h5 class="fw-bold mb-2">Voces que quieren conectar con marcas</h5>
-              <p class="small mb-3">
-                Si sos creador de contenido, Yo Busco te ayuda a:
-              </p>
-              <ul class="small mb-0">
-                <li>Crear un <strong>perfil profesional</strong> con tus datos, nicho y métricas.</li>
-                <li>Ser descubierto por <strong>marcas y comercios</strong> que buscan tu tipo de audiencia.</li>
-                <li>Recibir propuestas más claras y ordenadas para colaborar.</li>
-                <li>Construir <strong>relaciones a largo plazo</strong> con negocios de tu localidad y del país.</li>
+            <div class="caja-simple tarjeta-persona animate__animated animate__fadeInUp animate__delay-2s">
+              <span class="etiqueta">Influencers</span>
+              <h5>Creadores de contenido</h5>
+              <ul class="texto-chico">
+                <li>Armar un perfil visible.</li>
+                <li>Ser encontrados por marcas.</li>
+                <li>Recibir propuestas más claras.</li>
+                <li>Generar relaciones a largo plazo.</li>
               </ul>
             </div>
           </div>
+
         </div>
-
       </div>
     </section>
 
-    <!-- =========================================================
-         NUESTRO ENFOQUE / VALORES
-    ========================================================= -->
-    <section class="yb-section py-5">
+    <!-- Nuestros valores -->
+    <section class="seccion-pagina fondo-claro">
       <div class="container">
-        <div class="row g-4 align-items-center">
+        <div class="row fila-valores">
+
           <div class="col-md-6">
-            <h2 class="yb-section-title mb-3">Un equipo con enfoque humano</h2>
-            <p>
-              Detrás de Yo Busco hay desarrolladores, diseñadores, especialistas en marketing,
-              creadores de contenido y personas que aman los negocios locales.
-            </p>
-            <p>
-              Trabajamos con una idea simple: <strong>hacer fácil lo que hoy es complicado</strong>.
-              Por eso cada decisión de diseño, cada filtro y cada sección de la plataforma 
-              está pensada para que se entienda rápido y se use todos los días.
-            </p>
-            <p class="mb-0">
-              Creemos en la transparencia, en el crecimiento conjunto y en el poder 
-              de las comunidades locales conectadas por la tecnología.
-            </p>
+            <h2>Nuestro enfoque</h2>
+            <p>Detrás del proyecto hay personas de tecnología, diseño y negocios locales.</p>
+            <p>Tratamos de que todo sea fácil de entender y usar. Filtros simples y pantallas claras.</p>
+            <p>Nos importa la transparencia y el crecimiento de las comunidades locales.</p>
           </div>
+
           <div class="col-md-6">
-            <div class="row g-3">
+            <div class="row fila-valores-internos animate__animated animate__fadeInUp">
+
               <div class="col-6">
-                <div class="yb-mini-card p-3 shadow-sm h-100">
-                  <h6 class="fw-semibold mb-1">Transparencia</h6>
-                  <p class="small mb-0">
-                    Información clara, sin letras chicas, para usuarios, comercios e influencers.
-                  </p>
+                <div class="caja-simple tarjeta-valor">
+                  <h6>Transparencia</h6>
+                  <p class="texto-chico">Información clara y directa.</p>
                 </div>
               </div>
+
               <div class="col-6">
-                <div class="yb-mini-card p-3 shadow-sm h-100">
-                  <h6 class="fw-semibold mb-1">Simpleza</h6>
-                  <p class="small mb-0">
-                    Búsquedas rápidas, filtros útiles y fichas que van al grano.
-                  </p>
+                <div class="caja-simple tarjeta-valor">
+                  <h6>Simpleza</h6>
+                  <p class="texto-chico">Búsquedas rápidas.</p>
                 </div>
               </div>
+
               <div class="col-6">
-                <div class="yb-mini-card p-3 shadow-sm h-100">
-                  <h6 class="fw-semibold mb-1">Cercanía</h6>
-                  <p class="small mb-0">
-                    Apostamos a la economía local, los barrios y las historias reales.
-                  </p>
+                <div class="caja-simple tarjeta-valor">
+                  <h6>Cercanía</h6>
+                  <p class="texto-chico">Foco en lo local.</p>
                 </div>
               </div>
+
               <div class="col-6">
-                <div class="yb-mini-card p-3 shadow-sm h-100">
-                  <h6 class="fw-semibold mb-1">Evolución constante</h6>
-                  <p class="small mb-0">
-                    Escuchamos a la comunidad y mejoramos la plataforma todo el tiempo.
-                  </p>
+                <div class="caja-simple tarjeta-valor">
+                  <h6>Mejora constante</h6>
+                  <p class="texto-chico">Siempre ajustando y sumando ideas.</p>
                 </div>
               </div>
+
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
 
-    <!-- =========================================================
-         CTA FINAL
-    ========================================================= -->
-    <section class="yb-section yb-section-light py-5">
-      <div class="container text-center">
-        <h2 class="yb-section-title mb-3">¿Te gustaría ser parte de Yo Busco?</h2>
-        <p class="yb-section-subtitle yb-about-subtitle mb-4">
-          Seas usuario, comercio o influencer, estamos construyendo algo para vos.
+    <!-- parte final -->
+    <section class="seccion-pagina seccion-centrada fondo-claro">
+      <div class="container">
+        <h2>¿Querés ser parte?</h2>
+        <p class="texto-chico">
+          Seas usuario, comercio o influencer, nos interesa escuchar tu idea.
         </p>
-        <a href="./contacto.html" class="btn btn-publicar px-4 py-2">
-          Hablemos sobre cómo podemos ayudarte
-        </a>
+        <a href="./contacto.html" class="boton-tarjetas">Escribir mensaje</a>
       </div>
     </section>
 
   </main>
 
-  <!-- =========================================================
-       FOOTER
-  ========================================================= -->
-  <footer class="yb-footer">
-    <div class="container d-flex justify-content-between align-items-center">
+  <!-- Footer -->
+  <footer class="pie">
+    <div class="container pie-contenido">
 
-      <span class="yb-footer-copy">© 2025 Yo Busco</span>
+      <span class="pie-texto">© 2025 Yo Busco</span>
 
-      <nav class="yb-footer-nav">
-        <a href="./preguntasfrecuentes.html">Preguntas frecuentes</a>
-        <a href="./about.html">Sobre nosotros</a>
-        <a href="./contacto.html">Contacto</a>
+      <nav class="pie-nav">
+        <a href="../Pages/preguntasfrecuentes.html">Preguntas frecuentes</a>
+        <a href="../Pages/contacto.html">Contacto</a>
+        <a href="../Pages/about.html">Sobre nosotros</a>
       </nav>
 
-      <span class="yb-footer-made">
-        Hecho con <span class="yb-heart">♥</span> en Santa Fe
-      </span>
+      <span class="pie-texto">Hecho en Santa Fe</span>
 
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

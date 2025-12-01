@@ -1,0 +1,36 @@
+@use "../Utiles/variables";
+
+/* Contenedor básico */
+.contenedor {
+  padding: 20px;
+}
+
+/* Secciones generales */
+.seccion {
+  padding: 40px 0;
+}
+
+/* Imagen centrada */
+.img-centro {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Texto centrado simple */
+.texto-centro {
+  text-align: center;
+}
+
+/* Borde básico */
+.borde {
+  border: 1px solid variables.$gris-claro;
+  padding: 10px;
+}
+
+/* Enlaces con hover (regla general) */
+a {
+  &:hover {
+    color: variables.$violeta;
+    text-decoration: underline;
+  }
+}

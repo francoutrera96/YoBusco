@@ -1,0 +1,71 @@
+@use "../Utiles/variables";
+@use "../Utiles/mixins"; 
+
+/* ============================
+   BOTONES DEL HEADER
+============================ */
+
+.boton-ingresar,
+.boton-publicar {
+  @include mixins.boton-base(transparent, variables.$blanco, variables.$blanco);
+
+  &:hover {
+    background: variables.$blanco;
+    color: variables.$violeta;
+  }
+}
+
+.botones {
+  @include mixins.flex(row, space-between, center);
+  gap: 10px;
+}
+
+
+/* ============================
+   BOTON PRINCIPAL
+============================ */
+
+.boton-principal {
+  @include mixins.boton-base(variables.$violeta, variables.$blanco, variables.$violeta);
+  padding: 8px 20px;
+  text-align: center;
+
+  &:hover {
+    background: variables.$blanco;
+    color: variables.$violeta;
+  }
+}
+
+
+/* ============================
+   BOTONES DE TARJETAS
+============================ */
+
+.boton-tarjetas {
+  @include mixins.boton-base(variables.$blanco, variables.$violeta, variables.$violeta);
+  padding: 6px 14px;
+  border-radius: 16px;
+
+  &:hover {
+    background: variables.$violeta;
+    color: variables.$blanco;
+  }
+}
+
+
+/* ============================
+   BOTON SECUNDARIO
+============================ */
+
+.boton-secundario {
+  @include mixins.boton-base(variables.$violeta-claro, variables.$violeta, variables.$violeta);
+  padding: 10px 20px; 
+  width: 100%;
+  @include mixins.flex(row, center, center);
+  gap: 10px;
+
+  &:hover {
+    background: variables.$violeta;
+    color: variables.$blanco;
+  }
+}

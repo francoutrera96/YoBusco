@@ -1,0 +1,59 @@
+@use "../Utiles/variables";
+
+.hero-inicio {
+  background: variables.$violeta;
+  color: variables.$blanco;
+  padding: 60px 0 80px;
+  text-align: center;
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  .texto-hero {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Caja del buscador */
+  .buscador-inicio {
+    margin-top: 25px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background: variables.$blanco;
+    border-radius: 40px;
+    padding: 10px;
+
+    form {
+      display: flex;
+      align-items: stretch;
+      gap: 8px;
+    }
+
+    select,
+    input {
+      border: none;
+      border-radius: 25px;
+      padding: 10px 14px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    select {
+      width: 30%;
+    }
+
+    input {
+      width: 45%;
+    }
+
+    .boton-principal {
+      width: 25%;
+      border-radius: 25px;
+      border: none;
+    }
+  }
+}

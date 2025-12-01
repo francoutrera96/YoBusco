@@ -5,17 +5,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Yo Busco — Inicio</title>
-  <meta name="description" content="Buscá gastronomía, viajes, servicios, actividades, influencers, empleos y mucho más cerca tuyo.">
+  <meta name="description" content="Buscá comercios, servicios, actividades, influencers y beneficios.">
 
   <!-- Favicon -->
-  <link rel="icon" href="./Assets/favicon.png" type="image/png">
+  <link rel="icon" href="./Assets/favicon1.png" type="image/png">
 
   <!-- Bootstrap -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    crossorigin="anonymous"
-  >
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous">
 
   <!-- CSS -->
   <link rel="stylesheet" href="./style.css">
@@ -23,193 +23,128 @@
 
 <body>
 
-  <!-- =========================================================
-       HEADER / NAVBAR
-  ========================================================= -->
-  <header>
-    <nav class="navbar navbar-expand-lg yb-navbar sticky-top" aria-label="Navegación principal">
+  <!-- Header -->
+  <header class="encabezado">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
 
-        <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center" href="./index.html">
-          <img src="./Assets/logo-principal.png" alt="Yo Busco" height="46">
+        <!-- LOGO -->
+        <a class="navbar-brand" href="./index.html">
+          <img src="./Assets/logo-principal.png" alt="Yo Busco" />
         </a>
 
-        <!-- Botón mobile -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarYoBusco" aria-controls="navbarYoBusco"
-          aria-expanded="false" aria-label="Toggle navigation">
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menú -->
-        <div class="collapse navbar-collapse" id="navbarYoBusco">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <!-- MENÚ -->
+        <div class="collapse navbar-collapse" id="menu">
 
-            <li class="nav-item">
-              <a class="nav-link fw-semibold active" href="./index.html">Inicio</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./Pages/influencers.html">Influencers</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./Pages/beneficios.html">Beneficios & Descuentos</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./Pages/about.html">Sobre Nosotros</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./Pages/contacto.html">Contacto</a>
-            </li>
-
+          <!-- PAGINAS NAV -->
+          <ul class="navbar-nav nav-centro">
+            <li class="nav-item"><a class="nav-link active" href="./index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="./Pages/influencers.html">Influencers</a></li>
+            <li class="nav-item"><a class="nav-link" href="./Pages/beneficios.html">Beneficios</a></li>
+            <li class="nav-item"><a class="nav-link" href="./Pages/about.html">Sobre Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="./Pages/contacto.html">Contacto</a></li>
           </ul>
 
-          <!-- Botones derecha -->
-          <div class="d-flex gap-2">
-            <a href="./Pages/login.html" class="btn btn-ingresar btn-sm px-3">Ingresar</a>
-            <a href="./Pages/publicar.html" class="btn btn-publicar btn-sm px-3">Publicar</a>
+          <!-- BOTONES DERECHA -->
+          <div class="botones">
+            <a href="./Pages/login.html" class="boton-ingresar">Ingresar</a>
+            <a href="./Pages/publicar.html" class="boton-publicar">Publicar</a>
           </div>
 
         </div>
+
       </div>
     </nav>
   </header>
 
   <main>
-    <!-- =========================================================
-         HERO + BUSCADOR PRINCIPAL
-    ========================================================= -->
-    <section class="yb-hero">
+
+    <!-- Sección principal -->
+    <section class="hero-inicio">
       <div class="container">
 
-        <!-- Texto principal -->
-        <div class="row justify-content-center">
-          <div class="col-lg-8 col-xl-7">
+        <h1>Encontrá lo que necesitás cerca tuyo</h1>
 
-            <span class="yb-hero-tag">Beta · Proyecto Yo Busco</span>
+        <p class="texto-hero">
+          Buscá comercios, servicios, actividades, influencers, beneficios y empleo en un solo lugar.
+        </p>
 
-            <h1 class="yb-hero-title">
-              Encontrá lo que necesitás, <span>cerca tuyo</span>.
-            </h1>
+        <!-- Buscador -->
+        <div class="buscador-inicio">
+          <form action="./Pages/resultados.html" method="get">
 
-            <p class="yb-hero-subtitle">
-              Buscá comercios, servicios, actividades, influencers, beneficios 
-              y empleo en un solo lugar, filtrando por ciudad o zona.
-            </p>
+            <select name="localidad">
+              <option value="">Todas las localidades</option>
+              <option value="santa-fe">Santa Fe</option>
+              <option value="rosario">Rosario</option>
+              <option value="cordoba">Córdoba</option>
+              <option value="buenos-aires">Buenos Aires</option>
+            </select>
 
-            <ul class="yb-hero-bullets">
-              <li>🔍 Búsqueda rápida por rubro, nombre o palabra clave.</li>
-              <li>📍 Filtrá por ubicación para ver resultados cerca tuyo.</li>
-            </ul>
+            <input
+              type="text"
+              name="busqueda"
+              placeholder="Ej: pizzería, gimnasio, depilación, empleo…"
+            >
 
-          </div>
-        </div>
+            <button type="submit" class="boton-principal">
+              Buscar
+            </button>
 
-        <!-- Buscador principal -->
-        <div class="row justify-content-center mt-4">
-          <div class="col-lg-10 col-xl-9">
-
-            <div class="yb-search-box">
-
-              <form class="yb-search-flex" role="search" action="#" method="get">
-
-                <!-- Ubicación -->
-                <div class="yb-input-wrap">
-                  <span class="yb-icon">📍</span>
-                  <select class="form-select yb-select" name="location">
-                    <option value="">Todas las localidades</option>
-                    <option value="santa-fe">Santa Fe</option>
-                    <option value="rosario">Rosario</option>
-                    <option value="cordoba">Córdoba</option>
-                    <option value="buenos-aires">Buenos Aires</option>
-                    <option value="otra">Otra localidad</option>
-                  </select>
-                </div>
-
-                <!-- Texto -->
-                <div class="yb-input-wrap flex-grow-1">
-                  <span class="yb-icon">🔍</span>
-                  <input
-                    type="text"
-                    class="form-control yb-input"
-                    name="q"
-                    placeholder="Hotel 5 estrellas, café de especialidad, plomero, empleo…"
-                    aria-label="Buscar por rubro, nombre o palabra clave"
-                  >
-                </div>
-
-                <!-- Botón -->
-                <button type="submit" class="yb-search-btn2">
-                  Buscar
-                </button>
-
-              </form>
-
-              <!-- TAGS -->
-              <div class="yb-tags">
-                <button class="yb-tag2" type="button">Hoteles 5★</button>
-                <button class="yb-tag2" type="button">Café de especialidad</button>
-                <button class="yb-tag2" type="button">Plomeros</button>
-                <button class="yb-tag2" type="button">Viajes a Europa</button>
-                <button class="yb-tag2" type="button">Restaurantes</button>
-                <button class="yb-tag2" type="button">Empleos</button>
-              </div>
-
-            </div>
-
-          </div>
+          </form>
         </div>
 
       </div>
     </section>
 
-    <!-- =========================================================
-         INFLUENCERS DESTACADOS
-    ========================================================= -->
-    <section class="yb-section yb-influencers" id="influencers">
+    <!-- Sección influencers -->
+    <section class="seccion seccion-influencers" id="influencers">
       <div class="container">
 
         <!-- Encabezado -->
-        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3 mb-3">
-          <div>
-            <h2 class="yb-section-title mb-1">Influencers destacados</h2>
-            <p class="yb-section-subtitle mb-0">
-              Creadoras y creadores que recomiendan lugares, servicios y experiencias cerca tuyo.
+        <div class="row encabezado-seccion">
+          <div class="col-12 col-md-8">
+            <h2 class="titulo-seccion">Influencers destacados</h2>
+            <p class="subtitulo-seccion">
+              Personas que recomiendan lugares, servicios y experiencias.
             </p>
           </div>
-          <a href="./Pages/influencers.html" class="btn btn-outline-secondary btn-sm yb-see-all-btn">
-            Ver todos los influencers
-          </a>
+          <div class="col-12 col-md-4">
+            <a href="./Pages/influencers.html" class="boton-principal">
+              Ver todos los influencers
+            </a>
+          </div>
         </div>
 
         <!-- Carrusel -->
-        <div id="ybInfluencersCarousel" class="carousel slide" data-bs-ride="false">
+        <div id="carruselInfluencers" class="carousel slide">
           <div class="carousel-inner">
 
-            <!-- SLIDE 1 (4 cards) -->
+            <!-- Slide 1 -->
             <div class="carousel-item active">
-              <div class="row g-3">
+              <div class="row">
 
                 <!-- 1 - Viajes -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-influencer-card">
-                    <div class="yb-influencer-img-wrap">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800"
                         class="img-fluid"
-                        alt="Influencer de viajes en la playa">
+                        alt="Influencer de viajes">
                     </div>
-                    <div class="yb-influencer-body">
-                      <span class="yb-influencer-tag">Viajes · Santa Fe</span>
-                      <h3 class="yb-influencer-name">@ViajesConMati</h3>
-                      <p class="yb-influencer-desc">
-                        Destinos cercanos, tips de hospedaje y planes para escapadas de fin de semana.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Viajes · Santa Fe</span>
+                      <h3 class="tarjeta-nombre">@ViajesConMati</h3>
+                      <p class="tarjeta-texto">
+                        Destinos cercanos y tips para escapadas de fin de semana.
                       </p>
-                      <div class="yb-influencer-meta">
+                      <div class="tarjeta-datos">
                         <span>92k seguidores</span>
                         <span>+180 recomendaciones</span>
                       </div>
@@ -219,20 +154,20 @@
 
                 <!-- 2 - Gastronomía -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-influencer-card">
-                    <div class="yb-influencer-img-wrap">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.pexels.com/photos/1234535/pexels-photo-1234535.jpeg?auto=compress&cs=tinysrgb&w=800"
                         class="img-fluid"
-                        alt="Influencer de gastronomía en cafetería">
+                        alt="Influencer de gastronomía">
                     </div>
-                    <div class="yb-influencer-body">
-                      <span class="yb-influencer-tag">Gastronomía · Rosario</span>
-                      <h3 class="yb-influencer-name">@FoodiePau</h3>
-                      <p class="yb-influencer-desc">
-                        Cafeterías, bares y restaurantes con reseñas honestas y fotos que dan hambre.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Gastronomía · Rosario</span>
+                      <h3 class="tarjeta-nombre">@FoodiePau</h3>
+                      <p class="tarjeta-texto">
+                        Cafeterías, bares y restaurantes con reseñas simples.
                       </p>
-                      <div class="yb-influencer-meta">
+                      <div class="tarjeta-datos">
                         <span>87k seguidores</span>
                         <span>+120 reseñas</span>
                       </div>
@@ -242,20 +177,20 @@
 
                 <!-- 3 - Planes urbanos -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-influencer-card">
-                    <div class="yb-influencer-img-wrap">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800"
                         class="img-fluid"
-                        alt="Influencer en ciudad de noche">
+                        alt="Influencer de ciudad">
                     </div>
-                    <div class="yb-influencer-body">
-                      <span class="yb-influencer-tag">Planazos · Santa Fe</span>
-                      <h3 class="yb-influencer-name">@SantaFeTips</h3>
-                      <p class="yb-influencer-desc">
-                        Agenda con eventos, ferias, recitales y actividades para todos los gustos.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Planazos · Santa Fe</span>
+                      <h3 class="tarjeta-nombre">@SantaFeTips</h3>
+                      <p class="tarjeta-texto">
+                        Agenda con eventos, ferias y actividades.
                       </p>
-                      <div class="yb-influencer-meta">
+                      <div class="tarjeta-datos">
                         <span>81k seguidores</span>
                         <span>+95 planes</span>
                       </div>
@@ -265,20 +200,20 @@
 
                 <!-- 4 - Fitness -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-influencer-card">
-                    <div class="yb-influencer-img-wrap">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=800"
                         class="img-fluid"
-                        alt="Influencer de fitness entrenando">
+                        alt="Influencer de fitness">
                     </div>
-                    <div class="yb-influencer-body">
-                      <span class="yb-influencer-tag">Fitness · Córdoba</span>
-                      <h3 class="yb-influencer-name">@MoveWithLau</h3>
-                      <p class="yb-influencer-desc">
-                        Gimnasios, clases y actividades al aire libre para moverte y sentirte mejor.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Fitness · Córdoba</span>
+                      <h3 class="tarjeta-nombre">@MoveWithLau</h3>
+                      <p class="tarjeta-texto">
+                        Gimnasios, clases y actividades al aire libre.
                       </p>
-                      <div class="yb-influencer-meta">
+                      <div class="tarjeta-datos">
                         <span>54k seguidores</span>
                         <span>+60 spots</span>
                       </div>
@@ -289,26 +224,26 @@
               </div>
             </div>
 
-            <!-- SLIDE 2 (4 cards más) -->
+            <!-- Slide 2 -->
             <div class="carousel-item">
-              <div class="row g-3">
+              <div class="row">
 
                 <!-- 5 - Servicios -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-influencer-card">
-                    <div class="yb-influencer-img-wrap">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=800"
                         class="img-fluid"
-                        alt="Técnico realizando servicio">
+                        alt="Técnico de servicios">
                     </div>
-                    <div class="yb-influencer-body">
-                      <span class="yb-influencer-tag">Servicios · Buenos Aires</span>
-                      <h3 class="yb-influencer-name">@SolucionaBA</h3>
-                      <p class="yb-influencer-desc">
-                        Plomeros, electricistas, pintores y más: profesionales probados y recomendados.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Servicios · Buenos Aires</span>
+                      <h3 class="tarjeta-nombre">@SolucionaBA</h3>
+                      <p class="tarjeta-texto">
+                        Plomeros, electricistas y pintores recomendados.
                       </p>
-                      <div class="yb-influencer-meta">
+                      <div class="tarjeta-datos">
                         <span>43k seguidores</span>
                         <span>+70 servicios</span>
                       </div>
@@ -318,20 +253,20 @@
 
                 <!-- 6 - Escapadas -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-influencer-card">
-                    <div class="yb-influencer-img-wrap">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=800"
                         class="img-fluid"
-                        alt="Paisaje de río y naturaleza">
+                        alt="Río y naturaleza">
                     </div>
-                    <div class="yb-influencer-body">
-                      <span class="yb-influencer-tag">Escapadas · Litoral</span>
-                      <h3 class="yb-influencer-name">@RutasDelLitoral</h3>
-                      <p class="yb-influencer-desc">
-                        Termas, ríos y pueblitos con encanto a pocas horas en auto.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Escapadas · Litoral</span>
+                      <h3 class="tarjeta-nombre">@RutasDelLitoral</h3>
+                      <p class="tarjeta-texto">
+                        Termas, ríos y pueblos cerca para recorrer.
                       </p>
-                      <div class="yb-influencer-meta">
+                      <div class="tarjeta-datos">
                         <span>38k seguidores</span>
                         <span>+40 escapadas</span>
                       </div>
@@ -341,20 +276,20 @@
 
                 <!-- 7 - Comercios locales -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-influencer-card">
-                    <div class="yb-influencer-img-wrap">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg?auto=compress&cs=tinysrgb&w=800"
                         class="img-fluid"
-                        alt="Comercio local de barrio">
+                        alt="Comercio local">
                     </div>
-                    <div class="yb-influencer-body">
-                      <span class="yb-influencer-tag">Comercios · Santa Fe</span>
-                      <h3 class="yb-influencer-name">@BarrioVivo</h3>
-                      <p class="yb-influencer-desc">
-                        Recomendaciones de negocios de barrio, promociones y datos útiles.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Comercios · Santa Fe</span>
+                      <h3 class="tarjeta-nombre">@BarrioVivo</h3>
+                      <p class="tarjeta-texto">
+                        Negocios de barrio y promociones simples.
                       </p>
-                      <div class="yb-influencer-meta">
+                      <div class="tarjeta-datos">
                         <span>29k seguidores</span>
                         <span>+85 comercios</span>
                       </div>
@@ -364,20 +299,20 @@
 
                 <!-- 8 - Experiencias -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-influencer-card">
-                    <div class="yb-influencer-img-wrap">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.pexels.com/photos/1391580/pexels-photo-1391580.jpeg?auto=compress&cs=tinysrgb&w=800"
                         class="img-fluid"
-                        alt="Gente disfrutando una experiencia social">
+                        alt="Experiencia social">
                     </div>
-                    <div class="yb-influencer-body">
-                      <span class="yb-influencer-tag">Experiencias · Región Centro</span>
-                      <h3 class="yb-influencer-name">@PlanPerfecto</h3>
-                      <p class="yb-influencer-desc">
-                        Shows, after offices, eventos y experiencias diferentes para salir de la rutina.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Experiencias · Región Centro</span>
+                      <h3 class="tarjeta-nombre">@PlanPerfecto</h3>
+                      <p class="tarjeta-texto">
+                        Eventos y actividades diferentes para salir de la rutina.
                       </p>
-                      <div class="yb-influencer-meta">
+                      <div class="tarjeta-datos">
                         <span>51k seguidores</span>
                         <span>+110 experiencias</span>
                       </div>
@@ -390,130 +325,127 @@
 
           </div>
 
-          <!-- Controles -->
+          <!-- Controles del carrusel -->
           <button
-            class="yb-arrow yb-arrow--left"
+            class="carousel-control-prev"
             type="button"
-            data-bs-target="#ybInfluencersCarousel"
-            data-bs-slide="prev"
-            aria-label="Ver influencers anteriores">
-            ‹
+            data-bs-target="#carruselInfluencers"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           </button>
 
           <button
-            class="yb-arrow yb-arrow--right"
+            class="carousel-control-next"
             type="button"
-            data-bs-target="#ybInfluencersCarousel"
-            data-bs-slide="next"
-            aria-label="Ver influencers siguientes">
-            ›
+            data-bs-target="#carruselInfluencers"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
           </button>
 
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-         LO MÁS BUSCADO
-    ========================================================= -->
-    <section class="yb-section yb-trending">
+    <!-- Sección lo más buscado -->
+    <section class="seccion seccion-buscado" id="buscado">
       <div class="container">
 
         <!-- Encabezado -->
-        <div class="yb-trending-header d-flex justify-content-between align-items-center">
-          <div>
-            <h2 class="yb-trending-title">Lo más buscado</h2>
-            <p class="yb-trending-subtitle">
-              Categorías, lugares y servicios que la gente busca todo el tiempo cerca tuyo.
+        <div class="row encabezado-seccion">
+          <div class="col-12 col-md-8">
+            <h2 class="titulo-seccion">Lo más buscado</h2>
+            <p class="subtitulo-seccion">
+              Categorías, lugares y servicios que la gente busca seguido.
             </p>
           </div>
-          <a href="#" class="yb-trending-link">Ver todas las categorías</a>
+
+          <div class="col-12 col-md-4">
+            <a href="./Pages/resultados.html" class="boton-principal">
+              Ver todas las categorías
+            </a>
+          </div>
         </div>
 
-        <!-- Carrusel Bootstrap  -->
-        <div id="ybTrendingCarousel" class="carousel slide" data-bs-ride="false">
+        <!-- Carrusel -->
+        <div id="carruselBuscado" class="carousel slide">
           <div class="carousel-inner">
 
-            <!-- SLIDE 1 (4 cards) -->
+            <!-- Slide 1 -->
             <div class="carousel-item active">
-              <div class="row g-3">
+              <div class="row">
 
-                <!-- Card 1 -->
+                <!-- Tarjeta 1 -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-trending-card">
-                    <div class="yb-trending-image">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=80"
-                        alt="Plato de comida en restaurante"
-                        loading="lazy">
+                        alt="Plato de comida">
                     </div>
-                    <div class="yb-trending-body">
-                      <span class="yb-trending-tag">Gastronomía · Santa Fe</span>
-                      <h3 class="yb-trending-name">Pizzas y deliveries</h3>
-                      <p class="yb-trending-text">
-                        Restaurantes, bares y casas de comida con envío rápido a domicilio.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Gastronomía · Santa Fe</span>
+                      <h3 class="tarjeta-nombre">Pizzas y deliveries</h3>
+                      <p class="tarjeta-texto">
+                        Restaurantes y casas de comida con envío a domicilio.
                       </p>
-                      <p class="yb-trending-meta">+24k búsquedas este mes</p>
+                      <p class="tarjeta-datos">+24k búsquedas este mes</p>
                     </div>
                   </article>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Tarjeta 2 -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-trending-card">
-                    <div class="yb-trending-image">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
-                        alt="Hotel con vista al mar"
-                        loading="lazy">
+                        alt="Hotel">
                     </div>
-                    <div class="yb-trending-body">
-                      <span class="yb-trending-tag">Viajes · Costa Atlántica</span>
-                      <h3 class="yb-trending-name">Hoteles frente al mar</h3>
-                      <p class="yb-trending-text">
-                        Alojamiento con vista al mar, desayuno incluido y cochera.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Viajes · Costa Atlántica</span>
+                      <h3 class="tarjeta-nombre">Hoteles frente al mar</h3>
+                      <p class="tarjeta-texto">
+                        Alojamiento con vista al mar y desayuno.
                       </p>
-                      <p class="yb-trending-meta">+18k búsquedas este mes</p>
+                      <p class="tarjeta-datos">+18k búsquedas este mes</p>
                     </div>
                   </article>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Tarjeta 3 -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-trending-card">
-                    <div class="yb-trending-image">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
-                        alt="Profesional de salud"
-                        loading="lazy">
+                        alt="Profesional de salud">
                     </div>
-                    <div class="yb-trending-body">
-                      <span class="yb-trending-tag">Salud · Rosario</span>
-                      <h3 class="yb-trending-name">Turnos médicos</h3>
-                      <p class="yb-trending-text">
-                        Clínicas, sanatorios y consultorios con reserva de turno online.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Salud · Rosario</span>
+                      <h3 class="tarjeta-nombre">Turnos médicos</h3>
+                      <p class="tarjeta-texto">
+                        Clínicas, sanatorios y consultorios.
                       </p>
-                      <p class="yb-trending-meta">+15k búsquedas este mes</p>
+                      <p class="tarjeta-datos">+15k búsquedas este mes</p>
                     </div>
                   </article>
                 </div>
 
-                <!-- Card 4 -->
+                <!-- Tarjeta 4 -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-trending-card">
-                    <div class="yb-trending-image">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=80"
-                        alt="Oficina de coworking moderna"
-                        loading="lazy">
+                        alt="Oficina">
                     </div>
-                    <div class="yb-trending-body">
-                      <span class="yb-trending-tag">Servicios · Buenos Aires</span>
-                      <h3 class="yb-trending-name">Coworkings y oficinas</h3>
-                      <p class="yb-trending-text">
-                        Espacios de trabajo compartido, salas de reunión y oficinas privadas.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Servicios · Buenos Aires</span>
+                      <h3 class="tarjeta-nombre">Coworkings y oficinas</h3>
+                      <p class="tarjeta-texto">
+                        Espacios de trabajo y salas de reunión.
                       </p>
-                      <p class="yb-trending-meta">+9k búsquedas este mes</p>
+                      <p class="tarjeta-datos">+9k búsquedas este mes</p>
                     </div>
                   </article>
                 </div>
@@ -521,86 +453,82 @@
               </div>
             </div>
 
-            <!-- SLIDE 2  -->
+            <!-- Slide 2 -->
             <div class="carousel-item">
-              <div class="row g-3">
+              <div class="row">
 
-                <!-- Card 5 -->
+                <!-- Tarjeta 5 -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-trending-card">
-                    <div class="yb-trending-image">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1200&q=80"
-                        alt="Clase de entrenamiento"
-                        loading="lazy">
+                        alt="Entrenamiento">
                     </div>
-                    <div class="yb-trending-body">
-                      <span class="yb-trending-tag">Fitness · Córdoba</span>
-                      <h3 class="yb-trending-name">Gimnasios y clases</h3>
-                      <p class="yb-trending-text">
-                        Gimnasios, entrenadores personales y clases grupales.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Fitness · Córdoba</span>
+                      <h3 class="tarjeta-nombre">Gimnasios y clases</h3>
+                      <p class="tarjeta-texto">
+                        Gimnasios, entrenadores y clases grupales.
                       </p>
-                      <p class="yb-trending-meta">+11k búsquedas este mes</p>
+                      <p class="tarjeta-datos">+11k búsquedas este mes</p>
                     </div>
                   </article>
                 </div>
 
-                <!-- Card 6 -->
+                <!-- Tarjeta 6 -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-trending-card">
-                    <div class="yb-trending-image">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Electricista trabajando"
-                        loading="lazy">
+                        alt="Electricista">
                     </div>
-                    <div class="yb-trending-body">
-                      <span class="yb-trending-tag">Servicios · Todo el país</span>
-                      <h3 class="yb-trending-name">Oficios y profesionales</h3>
-                      <p class="yb-trending-text">
-                        Plomeros, electricistas, gasistas y más profesionales de confianza.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Servicios · Todo el país</span>
+                      <h3 class="tarjeta-nombre">Oficios y profesionales</h3>
+                      <p class="tarjeta-texto">
+                        Plomeros, electricistas y gasistas.
                       </p>
-                      <p class="yb-trending-meta">+20k búsquedas este mes</p>
+                      <p class="tarjeta-datos">+20k búsquedas este mes</p>
                     </div>
                   </article>
                 </div>
 
-                <!-- Card 7 -->
+                <!-- Tarjeta 7 -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-trending-card">
-                    <div class="yb-trending-image">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Persona usando aplicaciones en un smartphone"
-                        loading="lazy">
+                        alt="Smartphone con apps">
                     </div>
-                    <div class="yb-trending-body">
-                      <span class="yb-trending-tag">Tecnología · Todo el país</span>
-                      <h3 class="yb-trending-name">Apps útiles del día a día</h3>
-                      <p class="yb-trending-text">
-                        Recomendaciones de apps para organizar gastos, entrenar, cocinar y mejorar tu rutina.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Tecnología · Todo el país</span>
+                      <h3 class="tarjeta-nombre">Apps útiles del día a día</h3>
+                      <p class="tarjeta-texto">
+                        Apps para organizar gastos, entrenar y cocinar.
                       </p>
-                      <p class="yb-trending-meta">+17k búsquedas este mes</p>
+                      <p class="tarjeta-datos">+17k búsquedas este mes</p>
                     </div>
                   </article>
                 </div>
 
-                <!-- Card 8 -->
+                <!-- Tarjeta 8 -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                  <article class="yb-trending-card">
-                    <div class="yb-trending-image">
+                  <article class="tarjeta">
+                    <div class="tarjeta-imagen">
                       <img
                         src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=1200&q=80"
-                        alt="Paisaje económico para viajar"
-                        loading="lazy">
+                        alt="Paisaje de viaje">
                     </div>
-                    <div class="yb-trending-body">
-                      <span class="yb-trending-tag">Viajes · Argentina</span>
-                      <h3 class="yb-trending-name">Viajes baratos y escapadas</h3>
-                      <p class="yb-trending-text">
-                        Opciones low-cost para viajar por Argentina sin gastar de más: buses, hostels y destinos económicos.
+                    <div class="tarjeta-cuerpo">
+                      <span class="tarjeta-etiqueta">Viajes · Argentina</span>
+                      <h3 class="tarjeta-nombre">Viajes baratos y escapadas</h3>
+                      <p class="tarjeta-texto">
+                        Opciones low-cost para viajar por Argentina.
                       </p>
-                      <p class="yb-trending-meta">+22k búsquedas este mes</p>
+                      <p class="tarjeta-datos">+22k búsquedas este mes</p>
                     </div>
                   </article>
                 </div>
@@ -610,23 +538,21 @@
 
           </div>
 
-          <!-- Controles  -->
+          <!-- Controles del carrusel -->
           <button
-            class="yb-arrow yb-arrow--left"
+            class="carousel-control-prev"
             type="button"
-            data-bs-target="#ybTrendingCarousel"
-            data-bs-slide="prev"
-            aria-label="Ver categorías anteriores">
-            ‹
+            data-bs-target="#carruselBuscado"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           </button>
 
           <button
-            class="yb-arrow yb-arrow--right"
+            class="carousel-control-next"
             type="button"
-            data-bs-target="#ybTrendingCarousel"
-            data-bs-slide="next"
-            aria-label="Ver categorías siguientes">
-            ›
+            data-bs-target="#carruselBuscado"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
           </button>
 
         </div>
@@ -636,31 +562,25 @@
 
   </main>
 
-  <!-- =========================================================
-       FOOTER
-  ========================================================= -->
-  <footer class="yb-footer">
-    <div class="container d-flex justify-content-between align-items-center">
+  <!-- Footer -->
+  <footer class="pie">
+    <div class="container pie-contenido">
 
-      <span class="yb-footer-copy">© 2025 Yo Busco</span>
+      <span class="pie-texto">© 2025 Yo Busco</span>
 
-      <nav class="yb-footer-nav">
+      <nav class="pie-nav">
         <a href="./Pages/preguntasfrecuentes.html">Preguntas frecuentes</a>
         <a href="./Pages/contacto.html">Contacto</a>
         <a href="./Pages/about.html">Sobre nosotros</a>
       </nav>
 
-      <span class="yb-footer-made">
-        Hecho con <span class="yb-heart">♥</span> en Santa Fe
-      </span>
+      <span class="pie-texto">Hecho en Santa Fe</span>
 
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
   <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous">
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
   </script>
 
 </body>

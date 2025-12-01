@@ -1,2096 +1,1192 @@
-/* =========================================================
-   📌 ÍNDICE CSS — YO BUSCO
-   =========================================================
-1 - RESET
-2 - NAVBAR (GLOBAL)
-3 - FOOTER (GLOBAL)
-4 - HERO (INDEX)
-5 - SECCIÓN “INFLUENCERS DESTACADOS” (INDEX)
-6 - SECCIÓN “LO MÁS BUSCADO” (INDEX)
-7 - PAGINA INFLUENCER Y BENEFICIOS & DESCUENTOS
-8 - PAGINA SOBRE NOSTROS
-9 - PAGINA CONTACTO
-10- PAGINA INGRESAR
-11- PAGINA PUBLICAR
-12- PAGINA PREGUNTAS FRECUENTES
-13- RESPONSIVE GENERAL(TENER EN CUENTA QUE NO HABRA NADA RESPOSIVE EN LAS SECCIONES ANTERIORES TODO ESTA ACA AL FINAL)
-   ========================================================= */
-
-/*-----------------------------------------------------------------------------------------------------------------------*/
-/* =========================================================
-   1 — RESET GLOBAL 
-   ========================================================= */
-
-/* 1. Box-sizing moderno */
-*,
-*::before,
-*::after {
+@charset "UTF-8";
+/* BASE */
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* 2. Remover márgenes y paddings por defecto */
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-/* 3. Tipografía y legibilidad básica */
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #222222;
-  background-color: #ffffff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* 4. Imágenes fluidas y no arrastrables (mobile friendly) */
 img {
   max-width: 100%;
   height: auto;
   display: block;
-  -webkit-user-drag: none;
-  user-select: none;
 }
 
-/* 5. Enlaces limpios */
+ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
 a {
   text-decoration: none;
   color: inherit;
-  cursor: pointer;
 }
 
-a:focus {
-  outline: none;
-}
-
-/* 6. Quitar estilos por defecto en inputs, selects, buttons */
-input,
-textarea,
-select,
-button {
-  font: inherit;
-  color: inherit;
-  background: transparent;
-  border-radius: 0;
-  outline: none;
-  box-shadow: none;
-}
-
-/* Botones sin estilos raros del navegador */
 button {
   border: none;
   cursor: pointer;
+  background: none;
 }
 
-/* 7. Listas sin sangría ni bullets */
-ul, ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* 8. Evitar scroll horizontal accidental */
-html, body {
-  overflow-x: hidden;
-}
-
-/* 9. Desactivar highlight azul en móviles */
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* 10. Compatibilidad Bootstrap: evitar box-shadow azul en focus */
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  box-shadow: none !important;
-}
-
-:root {
-  --yb-primary: #6f42c1;
-  --yb-primary-dark: #5a32a0;
-  --yb-primary-light: #f3e8ff;
-  --yb-gray-800: #2f2f2f;
-  --yb-gray-600: #707070;
-  --yb-gray-100: #f5f5f5;
-  --yb-radius-lg: 1rem;
-  --yb-radius-xl: 1.5rem;
-}
-/*-----------------------------------------------------------------------------------------------------------------------*/
-/* =========================================================
-   2 — NAVBAR (GLOBAL)
-   ========================================================= */
-
-/* Barra principal */
-.yb-navbar {
-  background: linear-gradient(90deg, #6f42c1, #9333ea);
-  color: #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.30);
-  z-index: 1030; /* por encima del contenido */
-}
-
-/* Alineación general dentro del navbar */
-.yb-navbar .navbar-collapse {
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Logo */
-.yb-navbar .navbar-brand img {
-  height: 46px;
-  display: block;
-}
-
-/* Lista de links centrada */
-.yb-navbar .navbar-nav {
-  align-items: center;
-  gap: 0.25rem;
-}
-
-/* Links del menú */
-.yb-navbar .nav-link {
-  color: rgba(255, 255, 255, 0.92);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding-inline: 1rem;
-  position: relative;
-  cursor: pointer;
-  transition: color 0.2s ease, transform 0.15s ease;
-}
-
-.yb-navbar .nav-link:hover,
-.yb-navbar .nav-link:focus {
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-.yb-navbar .nav-link.active {
-  color: #ffffff;
-}
-
-/* Subrayado animado */
-.yb-navbar .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0.35rem;
-  width: 0;
-  height: 2px;
+/* Colores principales */
+/* Base de texto del body */
+body {
   background-color: #ffffff;
-  border-radius: 999px;
-  transform: translateX(-50%);
-  transition: width 0.25s ease;
-}
-
-.yb-navbar .nav-link:hover::after,
-.yb-navbar .nav-link.active::after {
-  width: 55%;
-}
-
-/* Botón INGRESAR */
-.yb-navbar .btn-ingresar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  color: #ffffff;
-  border-radius: 999px;
-  font-weight: 600;
-  padding: 0.45rem 1.2rem;
-  font-size: 0.9rem;
-  transition: background-color 0.15s ease,
-              color 0.15s ease,
-              transform 0.15s ease,
-              box-shadow 0.15s ease;
-}
-
-.yb-navbar .btn-ingresar:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.35);
-}
-
-/* Botón PUBLICAR */
-.yb-navbar .btn-publicar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff;
-  border: 1px solid #ffffff;
-  color: #6f42c1;
-  border-radius: 999px;
-  font-weight: 600;
-  padding: 0.45rem 1.2rem;
-  font-size: 0.9rem;
-  transition: background-color 0.15s ease,
-              color 0.15s ease,
-              transform 0.15s ease,
-              box-shadow 0.15s ease;
-}
-
-.yb-navbar .btn-publicar:hover {
-  background-color: #f8f4ff;
-  color: #4c1d95;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.35);
-}
-
-/* Toggler (hamburguesa) */
-.yb-navbar .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.6);
-  padding: 0.25rem 0.5rem;
-}
-
-.yb-navbar .navbar-toggler-icon {
-  background-image:
-    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Quitamos cualquier fondo raro que pueda venir de Bootstrap */
-.yb-navbar .navbar-toggler:focus {
-  box-shadow: none;
-}
-
-/*-----------------------------------------------------------------------------------------------------------------------*/
-/* =========================================================
-    3 — FOOTER (GLOBAL)
-   ========================================================= */
-
-/* Estructura principal */
-.yb-footer {
-  background: linear-gradient(90deg, #6f42c1, #9333ea);
-  padding: 1.25rem 0;
-  color: #ffffff;
-  margin-top: 3rem;
-
-  display: flex;
-  align-items: center;
-  z-index: 1020;
-}
-
-.yb-footer .container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-/* ---------------------------------------------------------
-   TEXTO ( HECHO CON AMOR)
---------------------------------------------------------- */
-
-.yb-footer-copy,
-.yb-footer-made {
-  font-size: 0.90rem;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.yb-heart {
-  color: #ffb3d1;
-  margin: 0 .25rem;
-}
-
-/* ---------------------------------------------------------
-   LINKS DE NAVEGACIÓN (CENTRALES)
---------------------------------------------------------- */
-
-.yb-footer-nav {
-  display: flex;
-  align-items: center;
-  gap: 1.75rem;
-}
-
-.yb-footer-nav a {
-  color: #ffffff;
-  font-size: 0.95rem;
-  text-decoration: none;
-  opacity: 0.9;
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
-}
-
-.yb-footer-nav a:hover {
-  opacity: 1;
-  transform: translateY(-1px);
-}
-
-
-/*-----------------------------------------------------------------------------------------------------------------------*/
-
-/* =========================================================
-   4 — HERO (INDEX) 
-   ========================================================= */
-
-/* Fondo general del hero */
-.yb-hero {
-  position: relative;
-  color: #ffffff;
-  background:
-    linear-gradient(
-      400deg,
-      rgba(111, 66, 193, 0.92) 0%,
-      rgba(124, 58, 237, 0.78) 35%,
-      rgba(168, 85, 247, 0.45) 60%,
-      rgba(245, 243, 255, 0.0) 100%
-    ),
-    url("./Assets/hero-bg.jpg") center center / cover no-repeat;
-}
-
-.yb-hero .container {
-  padding-top: 1.5rem;
-  padding-bottom: 2rem;
-}
-
-/* Tag superior “Beta · Proyecto Yo Busco” */
-.yb-hero-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  background: rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  margin-bottom: 1rem;
-}
-
-/* Título principal */
-.yb-hero-title {
-  font-size: clamp(2.2rem, 3vw + 1rem, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  line-height: 1;
-  margin-bottom: 1rem;
-}
-
-.yb-hero-title span {
-  display: inline-block;
-}
-
-/* Subtítulo */
-.yb-hero-subtitle {
-  font-size: 1.15rem;
-  max-width: 38rem;
-  line-height: 1.55;
-  margin-bottom: 1.6rem;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-/* Bullets de beneficio */
-.yb-hero-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.yb-hero-bullets li + li {
-  margin-top: 0.55rem;
-}
-/* Base general para cualquier botón de acción principal */
-.btn-publicar {
-  background: linear-gradient(135deg, #6f42c1, #9333ea);
-  color: #fff !important;
-  border-radius: .75rem;
-  border: none;
-  font-weight: 600;
-  padding: .7rem 1.6rem;
-  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
-}
-
-.btn-publicar:hover {
-  background: linear-gradient(135deg, #5b35a8, #7e22ce);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(88, 28, 135, 0.45);
-}
-
-
-/* =========================================================
-    BUSCADOR PRINCIPAL (INDEX)
-   ========================================================= */
-
-/* Caja “glass” del buscador */
-.yb-search-box {
-  background: rgba(255, 255, 255, 0.96);
-  border-radius: 1.9rem;
-  padding: 1.7rem 2rem;
-  margin: 1.8rem auto 0;
-  max-width: 960px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.40);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-
-  opacity: 0;
-  transform: translateY(18px) scale(0.98);
-  animation: yb-fade-up 0.65s ease-out 0.1s forwards;
-}
-
-/* Contenido interno del buscador */
-.yb-search-flex {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.6rem;
-  background: rgba(255, 255, 255, 0.96);
-  border-radius: 2rem;
-  border: 1px solid #e8e8e8;
-}
-
-/* Contenedor de cada input (localidad y texto) */
-.yb-input-wrap {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.5rem 1rem;
-  background: #f8f6ff;
-  border: 1px solid #e5e1ff;
-  border-radius: 1.6rem;
-}
-
-/* Iconos redondos dentro del buscador */
-.yb-icon {
-  width: 30px;
-  height: 30px;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #fdf8ff 0, #f2e5ff 45%, #ddc9ff 100%);
-  box-shadow: 0 4px 10px rgba(148, 92, 228, 0.35);
-}
-
-/* Inputs y select  */
-.yb-select,
-.yb-input {
-  border: none !important;
-  background: transparent;
-  font-size: 0.95rem;
-}
-
-.yb-select:focus,
-.yb-input:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-/* Botón “Buscar” */
-.yb-search-btn2 {
-  border: none;
-  background: linear-gradient(135deg, #6f42c1, #9333ea);
-  color: #ffffff;
-  padding: 0.85rem 2rem;
-  border-radius: 1.6rem;
-  font-weight: 600;
-  font-size: 1rem;
-  white-space: nowrap;
-  box-shadow: 0 10px 25px rgba(88, 28, 135, 0.55);
-  transition: 0.15s ease;
-}
-
-.yb-search-btn2:hover {
-  background: linear-gradient(135deg, #5b35a8, #7e22ce);
-  transform: translateY(-1px);
-}
-
-/* Tags rápidos debajo del buscador */
-.yb-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-top: 1rem;
-}
-
-.yb-tag2 {
-  padding: 0.35rem 0.9rem;
-  border-radius: 1.2rem;
-  background: #f5f0ff;
-  border: 1px solid #e4d7ff;
-  font-size: 0.8rem;
-  color: #4c1d95;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.yb-tag2:hover {
-  background: #ede4ff;
-  transform: translateY(-1px);
-}
-
-/* Animación de aparición del glass-card */
-@keyframes yb-fade-up {
-  0% {
-    opacity: 0;
-    transform: translateY(18px) scale(0.98);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-/*-----------------------------------------------------------------------------------------------------------------------*/
-
-/* =========================================================
-   5 — SECCIÓN “INFLUENCERS DESTACADOS” (INDEX)
-   ========================================================= */
-
-/* Fondo suave degradado de la sección */
-.yb-section.yb-influencers {
-  background: linear-gradient(to bottom, #f8f5ff 0%, #fdfbff 40%, #ffffff 100%);
-  padding: 3rem 0 2.5rem;
-}
-
-/* ---------------------------------------------------------
-   Encabezado
---------------------------------------------------------- */
-
-.yb-section-title {
-  font-size: 1.9rem;
-  font-weight: 700;
-  color: #1b1330;
-  letter-spacing: -0.01em;
-}
-
-.yb-section-subtitle {
-  font-size: 0.95rem;
-  color: #6b6a86;
-  max-width: 38rem;
-}
-
-/* Botón “Ver todos los influencers” */
-.yb-see-all-btn {
-  padding: 0.45rem 0.95rem;
-  border-radius: 999px;
-  border: 1px solid #e4d7ff;
-  color: #6f42c1;
-  background: #ffffff;
-  font-weight: 600;
-  font-size: 0.85rem;
-  transition: .15s ease;
-}
-
-.yb-see-all-btn:hover {
-  background: #f5f0ff;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(149, 92, 228, 0.18);
-  color: #5b35a8;
-}
-
-/* ---------------------------------------------------------
-   Tarjetas del carrusel
---------------------------------------------------------- */
-
-.yb-influencer-card {
-  background: #ffffff;
-  border-radius: 1.25rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-
-  box-shadow: 0 16px 45px rgba(15, 23, 42, 0.11);
-  transform-origin: center bottom;
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-
-.yb-influencer-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.18);
-}
-
-/* Imagen superior */
-.yb-influencer-img-wrap {
-  position: relative;
-  height: 150px;
-  overflow: hidden;
-}
-
-.yb-influencer-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  transform: scale(1.03);
-  transition: transform .25s ease;
-}
-
-.yb-influencer-card:hover .yb-influencer-img-wrap img {
-  transform: scale(1.06);
-}
-
-/* Cuerpo de la tarjeta */
-.yb-influencer-body {
-  padding: .85rem 1rem 1rem;
-}
-
-/* Tag de rubro + ciudad */
-.yb-influencer-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: .18rem .7rem;
-  border-radius: 999px;
-
-  font-size: .72rem;
-  background: #f5f0ff;
-  color: #6d28d9;
-  margin-bottom: .4rem;
-}
-
-/* Nombre */
-.yb-influencer-name {
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0 0 .35rem;
-  color: #111827;
-}
-
-/* Descripción */
-.yb-influencer-desc {
-  font-size: .85rem;
-  line-height: 1.45;
-  color: #4b5563;
-  margin: 0 0 .55rem;
-}
-
-/* Meta: seguidores, reseñas, etc */
-.yb-influencer-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-  font-size: .8rem;
-  color: #6b7280;
-}
-
-/* ---------------------------------------------------------
-   Flechas del carrusel
---------------------------------------------------------- */
-
-.yb-arrow {
-  position: absolute;
-  top: 62%;
-  transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  border: none;
-
-  background: #ffffff;
-  color: #6f42c1;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 1.4rem;
-  cursor: pointer;
-  z-index: 5;
-
-  box-shadow: 0 10px 26px rgba(148, 92, 228, 0.35);
-  transition: background .15s ease, transform .12s ease, box-shadow .15s ease;
-}
-
-.yb-arrow:hover {
-  background: #f5f0ff;
-  transform: translateY(-50%) translateY(-1px);
-  box-shadow: 0 14px 32px rgba(76, 29, 149, 0.55);
-}
-
-.yb-arrow--left { left: -14px; }
-.yb-arrow--right { right: -14px; }
-/*-----------------------------------------------------------------------------------------------------------------------*/
-/* =========================================================
-   6 — SECCIÓN “LO MÁS BUSCADO” (INDEX)
-   ========================================================= */
-
-.yb-section.yb-trending {
-  background: linear-gradient(to bottom, #f8f5ff 0%, #ffffff 100%);
-  padding: 3rem 0 3.25rem;
-}
-
-/* Encabezado */
-.yb-trending-header {
-  margin-bottom: 2rem;
-}
-
-.yb-trending-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #331f26;
-  margin-bottom: .25rem;
-}
-
-.yb-trending-subtitle {
-  margin: 0;
-  font-size: .95rem;
-  color: #6b7280;
-}
-
-/* Botón "Ver todas las categorías" */
-.yb-trending-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: .45rem .95rem;
-  border-radius: 999px;
-  font-size: .85rem;
-  font-weight: 600;
-  border: 1px solid #e4d7ff;
-  color: #6f42c1;
-  background: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
-  transition:
-    background .15s ease,
-    box-shadow .15s ease,
-    transform .1s ease,
-    color .15s ease;
-}
-
-.yb-trending-link:hover {
-  background: #f5f0ff;
-  box-shadow: 0 8px 20px rgba(149, 92, 228, 0.18);
-  transform: translateY(-1px);
-  color: #5b35a8;
-}
-
-/* Tarjetas  */
-.yb-trending-card {
-  background: #ffffff;
-  border-radius: 1.25rem;
-  box-shadow: 0 16px 45px rgba(15, 23, 42, 0.058);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transform-origin: center bottom;
-  min-height: 260px;
-  transition: box-shadow .18s ease;
-}
-
-.yb-trending-card:hover {
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
-}
-
-/* Imagen */
-.yb-trending-image {
-  position: relative;
-  overflow: hidden;
-  height: 150px;
-  display: block;
-}
-
-.yb-trending-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.03);
-  transition: transform .25s ease;
-}
-
-.yb-trending-card:hover .yb-trending-image img {
-  transform: scale(1.06);
-}
-
-/* Contenido */
-.yb-trending-body {
-  padding: .85rem 1rem 1rem;
-}
-
-.yb-trending-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: .18rem .7rem;
-  border-radius: 999px;
-  font-size: .72rem;
-  background: #f5f0ff;
-  color: #6d28d9;
-  margin-bottom: .4rem;
-}
-
-.yb-trending-name {
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0 0 .35rem;
-  color: #111827;
-}
-
-.yb-trending-text {
-  font-size: .85rem;
-  line-height: 1.45;
-  color: #4b5563;
-  margin: 0 0 .55rem;
-}
-
-.yb-trending-meta {
-  font-size: .8rem;
-  color: #6b7280;
-  margin: 0;
-}
-
-/* Flechas para esta sección (usa las generales) */
-.yb-section.yb-trending .yb-arrow {
-  top: 50%;
-}
-
-
-/*-----------------------------------------------------------------------------------------------------------------------*/
-/* =========================================================
-   7. PAGINA INFLUENCER y  BENEFICIOS & DESCUENTOS
-   ========================================================= */
-
-/* Sección del buscador en las páginas de listado */
-.yb-searchbar-influencers,
-.yb-searchbar-beneficios {
-  padding: 20px 0 32px;
-  background: linear-gradient(to bottom, #f6f1ff 0%, #ffffff 55%);
-}
-
-/* Contenedor principal tipo cápsula */
-.yb-searchbar-influencers .yb-search-wrapper,
-.yb-searchbar-beneficios .yb-search-wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  padding: 12px 20px;
-  border-radius: 999px;
-  border: 1px solid #ece4ff;
-  background: #ffffff;
-  box-shadow:
-    0 0 0 2px #f6f1ff,
-    0 14px 32px rgba(145, 70, 255, 0.22);
-}
-
-/* Pill general */
-.yb-searchbar-influencers .yb-input-pill,
-.yb-searchbar-beneficios .yb-input-pill {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid #e6dfff;
-  background: #fff;
-  box-shadow: 0 3px 12px rgba(157, 104, 255, 0.12);
-}
-
-.yb-section-subtitle {
-  max-width: 620px;
-  line-height: 1.45;
-}
-
-/* Pill de localidad */
-.yb-pill-location {
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-/* Pill de búsqueda ocupa todo */
-.yb-pill-search {
-  flex: 1;
-}
-
-/* Icono redondo */
-.yb-searchbar-influencers .yb-pill-icon,
-.yb-searchbar-beneficios .yb-pill-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at 30% 30%, #ff88c3 0%, #c67bff 45%, #8c5dff 100%);
-  box-shadow: 0 4px 16px rgba(157, 104, 255, 0.55);
-  color: #ffffff;
-  font-size: 0.9rem;
-}
-
-/* Input */
-.yb-pill-input {
-  border: none;
-  outline: none;
-  width: 100%;
-  background: transparent;
-  font-size: 0.92rem;
-  color: #262637;
-}
-
-.yb-pill-input::placeholder {
-  color: #8b8ba5;
-}
-
-/* Select dentro de la pill de localidad */
-.yb-pill-select {
-  border: none;
-  outline: none;
-  width: 100%;
-  background: transparent;
-  font-size: 0.92rem;
-  font-weight: 500;
-  color: #222222;
-  padding-right: 4px;
-  cursor: pointer;
-
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-/* Para que icono + select se repartan bien el espacio */
-.yb-pill-location {
-  flex: 0 0 auto;
-}
-
-/* Botón buscar */
-.yb-searchbar-influencers .yb-search-btn,
-.yb-searchbar-beneficios .yb-search-btn {
-  border: none;
-  border-radius: 999px;
-  padding: 10px 30px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #ffffff;
-  background-image: linear-gradient(135deg, #8b46ff 0%, #bf3cff 50%, #ff4fb0 100%);
-  box-shadow: 0 14px 32px rgba(174, 62, 255, 0.6);
-  cursor: pointer;
-  transition: transform 0.12s ease, box-shadow 0.15s ease, filter 0.12s ease;
-}
-
-.yb-searchbar-influencers .yb-search-btn:hover,
-.yb-searchbar-beneficios .yb-search-btn:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.06);
-  box-shadow: 0 20px 45px rgba(174, 62, 255, 0.7);
-}
-
-/* Fondo general */
-.yb-page-influencers,
-.yb-page-beneficios {
-  background-color: #f6f1ff;
-}
-
-/* ---------------------------------------------------------
-   TOOLBAR (Botón Filtros + select Relevancia)
---------------------------------------------------------- */
-
-.yb-toolbar {
-  margin-top: 1.25rem;
-}
-
-.yb-filtros-toggle {
-  border-radius: 999px;
-  background: #ffffff;
-  border: 1px solid #e4d7ff;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #6f42c1;
-  padding: 0.45rem 1rem;
-  box-shadow: 0 10px 26px rgba(148, 92, 228, 0.18);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-/* ---------------------------------------------------------
-   LAYOUT PRINCIPAL (filtros + listado)
---------------------------------------------------------- */
-
-.yb-page-beneficios .yb-layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 32px;
-  margin-top: 22px;
-}
-
-.yb-page-influencers .yb-layout {
-  margin-top: 22px;
-}
-
-/* =========================================================
-   FILTROS — (EXPANDIBLE)
-   ========================================================= */
-
-/* (1) Estado normal: sidebar desktop */
-.yb-page-influencers .yb-filtros,
-.yb-page-beneficios .yb-filtros {
-  width: 260px;
-  background: #fff;
-  border: 1px solid #ece4ff;
-  border-radius: 24px;
-  padding: 22px;
-  box-shadow: 0 18px 42px rgba(148, 84, 255, 0.16);
-  position: sticky;
-  top: 96px;
-  height: fit-content;
-  display: block;
-}
-
-/* (2) Modo expandido — MOBILE / cuando se toca el botón */
-.yb-page-influencers .yb-filtros.is-open,
-.yb-page-beneficios .yb-filtros.is-open {
-  width: 100%;
-  max-width: 780px;
-  margin-top: 12px;
-  position: static;
-  display: block;
-  height: auto;
-}
-
-/* Tipografías dentro del panel */
-.yb-page-influencers .yb-filtros h4,
-.yb-page-beneficios .yb-filtros h4 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #1b1330;
-  margin-bottom: 16px;
-}
-
-.yb-page-influencers .yb-filtros span,
-.yb-page-beneficios .yb-filtros span {
-  display: block;
-  font-size: 0.9rem;
-  padding: 3px 0;
-  color: #7a7694;
-  cursor: pointer;
-}
-
-.yb-page-influencers .yb-filtros span:hover,
-.yb-page-beneficios .yb-filtros span:hover {
-  color: #8b46ff;
-}
-
-/* Select Ordenar */
-.yb-page-influencers .yb-order-box,
-.yb-page-beneficios .yb-order-box {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 16px;
-}
-
-.yb-page-influencers .yb-order-select,
-.yb-page-beneficios .yb-order-select {
-  border-radius: 999px;
-  padding: 9px 20px;
-  border: 1px solid #e1d7ff;
-  background: #fff;
-  box-shadow: 0 6px 16px rgba(140, 63, 255, 0.16);
-  color: #5f567d;
-  font-size: 0.92rem;
-}
-
-/* GRID compartido */
-.yb-page-influencers .yb-grid,
-.yb-page-beneficios .yb-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 30px;
-}
-/* =========================
-   CARDS – INFLUENCERS
-   ========================= */
-
-.yb-page-influencers .yb-card {
-  background: #fff;
-  border: 1px solid #ece4ff;
-  border-radius: 26px;
-  overflow: hidden;
-  box-shadow: 0 16px 40px rgba(140, 63, 255, 0.18);
-  transition: 0.18s all ease;
-}
-
-.yb-page-influencers .yb-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 22px 50px rgba(140, 63, 255, 0.28);
-}
-
-.yb-page-influencers .yb-card img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-}
-
-.yb-page-influencers .yb-card-body {
-  padding: 18px 20px 14px;
-}
-
-.yb-page-influencers .yb-card-title {
-  font-size: 1.12rem;
-  font-weight: 700;
-  color: #1b1330;
-  margin-bottom: 6px;
-}
-
-.yb-page-influencers .yb-card-sub {
-  font-size: 0.93rem;
-  font-weight: 500;
-  color: #747090;
-  margin-bottom: 8px;
-}
-
-.yb-page-influencers .yb-tag {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: #f3e8ff;
-  color: #7c3aed;
-  font-size: 0.78rem;
-  margin-bottom: 6px;
-}
-
-.yb-page-influencers .yb-card-footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 20px 18px;
-  gap: 10px;
-}
-
-.yb-page-influencers .yb-btn-outline {
-  flex: 1;
-  border-radius: 999px;
-  padding: 7px 0;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border: 1px solid #c8b4ff;
-  color: #6f42c1;
-  background: #fff;
-  transition: all 0.2s ease;
-}
-
-.yb-page-influencers .yb-btn-outline:hover {
-  color: #fff;
-  background-image: linear-gradient(135deg, #8b46ff, #bf3cff, #ff4fb0);
-  border-color: transparent;
-  box-shadow: 0 10px 26px rgba(174, 62, 255, 0.65);
-}
-
-/* =========================
-   CARDS – BENEFICIOS
-   ========================= */
-
-.yb-page-beneficios .yb-benefit-card {
-  background: #fff;
-  border: 1px solid #ece4ff;
-  border-radius: 26px;
-  overflow: hidden;
-  box-shadow: 0 16px 40px rgba(140, 63, 255, 0.18);
-  display: flex;
-  flex-direction: column;
-  transition: 0.18s all ease;
-}
-
-.yb-page-beneficios .yb-benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 22px 50px rgba(140, 63, 255, 0.28);
-}
-
-.yb-page-beneficios .yb-benefit-img {
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-}
-
-.yb-page-beneficios .yb-benefit-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.yb-page-beneficios .yb-benefit-body {
-  padding: 16px 18px 10px;
-}
-
-.yb-page-beneficios .yb-benefit-tag {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: #f3e8ff;
-  color: #7c3aed;
-  font-size: 0.78rem;
-  margin-bottom: 6px;
-}
-
-.yb-page-beneficios .yb-benefit-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #1b1330;
-  margin-bottom: 4px;
-}
-
-.yb-page-beneficios .yb-benefit-highlight {
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: #4338ca;
-  margin-bottom: 4px;
-}
-
-.yb-page-beneficios .yb-benefit-text {
-  font-size: 0.85rem;
-  color: #4b5563;
-  margin-bottom: 8px;
-}
-
-.yb-page-beneficios .yb-benefit-meta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  color: #6b7280;
-}
-
-.yb-page-beneficios .yb-benefit-footer {
-  display: flex;
-  gap: 10px;
-  padding: 10px 18px 16px;
-}
-
-/* Footer genérico para cards con botones */
-.yb-card-footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 20px 18px;
-  gap: 10px;
-}
-
-.yb-card-footer .yb-btn-outline {
-  flex: 1;
-  border-radius: 999px;
-  padding: 7px 0;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border: 1px solid #c8b4ff;
-  color: #6f42c1;
-  background: #ffffff;
-  transition: all 0.2s ease;
-}
-
-.yb-card-footer .yb-btn-outline:hover {
-  color: #ffffff;
-  background-image: linear-gradient(135deg, #8b46ff, #bf3cff, #ff4fb0);
-  border-color: transparent;
-  box-shadow: 0 10px 26px rgba(174, 62, 255, 0.65);
-  transform: translateY(-1px);
-}
-
-
-/* =========================================================
-   8 - PAGINA SOBRE NOSTROS
-========================================================= */
-
-.yb-hero-about {
-  background: linear-gradient(180deg, #ffffff 0%, #f7f2ff 100%);
-}
-
-.yb-hero-about h1 span {
-  color: var(--yb-primary, #6f42c1);
-}
-
-.yb-hero-card {
-  border-radius: 1.5rem;
-  border: 1px solid #ececec;
-  background: #ffffff;
-}
-
-.yb-hero-card h5 {
-  color: var(--yb-primary-dark, #542d9a);
-}
-
-.yb-hero-card p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
   line-height: 1.5;
+  color: #333333;
+  /* Párrafos */
+}
+body p {
+  margin-bottom: 1rem;
+}
+body {
+  /* Enlaces */
+}
+body a {
+  font-weight: 500;
+}
+body {
+  /* Texto pequeño */
+}
+body small {
+  font-size: 0.875rem;
 }
 
-.yb-about-subtitle {
-  max-width: 40rem;
+/* Títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* COMPONENTES*/
+/* PAGINA INICIO Y ESTILOS GENERALES */
+.encabezado {
+  background: #7b3ec8;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(226, 206, 246, 0.568);
+  /* NAVBAR */
+}
+.encabezado .navbar {
+  padding: 0;
+  /* LOGO */
+}
+.encabezado .navbar .navbar-brand img {
+  height: 40px;
+  width: auto;
+}
+.encabezado .navbar {
+  /* LINKS */
+}
+.encabezado .navbar .navbar-nav .nav-link {
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 15px;
+}
+.encabezado .navbar .navbar-nav .nav-link:hover {
+  background: rgba(226, 206, 246, 0.568);
+}
+.encabezado .navbar .navbar-nav .nav-link.active {
+  background: #ffffff;
+  color: #7b3ec8 !important;
+  font-weight: 600;
+}
+.encabezado {
+  /* BOTONES DERECHA */
+}
+.encabezado .botones {
+  display: flex;
+  gap: 10px;
+}
+.encabezado .botones .boton-ingresar,
+.encabezado .botones .boton-publicar {
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  text-decoration: none;
+}
+.encabezado {
+  /* Hamburguesa */
+}
+.encabezado .navbar-toggler {
+  border: 1px solid #ffffff;
+}
+
+/* Clase global para centrar navegación */
+.nav-centro {
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Contenedor básico */
+.contenedor {
+  padding: 20px;
+}
+
+/* Secciones generales */
+.seccion {
+  padding: 40px 0;
+}
+
+/* Imagen centrada */
+.img-centro {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Texto centrado simple */
+.texto-centro {
   text-align: center;
 }
-/* =========================================================
-   TIMELINE
-========================================================= */
 
-.yb-timeline {
-  padding-left: 1rem;
-  border-left: 3px solid var(--yb-primary, #6f42c1);
+/* Borde básico */
+.borde {
+  border: 1px solid #dddddd;
+  padding: 10px;
 }
 
-.yb-timeline-item {
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.yb-timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -0.55rem;
-  top: 0.4rem;
-  width: 12px;
-  height: 12px;
-  background: var(--yb-primary, #6f42c1);
-  border-radius: 50%;
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 0 3px #e7d8ff;
-}
-
-/* =========================================================
-   SECCIONES CLARAS / OSCURAS
-========================================================= */
-
-.yb-section-light {
-  background: #faf6ff;
-  border-top: 1px solid #ede4ff;
-  border-bottom: 1px solid #ede4ff;
-}
-
-.yb-section h2,
-.yb-section-title {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   CARDS BENEFICIOS (USUARIOS / COMERCIOS / INFLUENCERS)
-========================================================= */
-
-.yb-card {
-  border-radius: 1.2rem;
-  background: #ffffff;
-  border: 1px solid #e8e8e8;
-  transition: all 0.25s ease;
-}
-
-.yb-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(150, 80, 255, 0.18);
-}
-
-/* Badges para categorías */
-.yb-badge {
-  display: inline-block;
-  background: rgba(111, 66, 193, 0.12);
-  color: var(--yb-primary, #6f42c1);
-  padding: 4px 10px;
-  font-size: 0.75rem;
-  border-radius: 50px;
-  font-weight: 600;
-}
-
-/* =========================================================
-   MINI CARDS — VALORES
-========================================================= */
-
-.yb-mini-card {
-  background: #ffffff;
-  border-radius: 1rem;
-  border: 1px solid #ececec;
-  transition: 0.25s ease;
-}
-
-.yb-mini-card:hover {
-  background: #f7f1ff;
-  border-color: var(--yb-primary, #6f42c1);
-}
-
-/* =========================================================
-   TIPOGRAFÍA Y ESPACIADO
-========================================================= */
-
-.yb-section {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-}
-
-.yb-hero-about p,
-.yb-section p {
-  line-height: 1.6;
-}
-
-ul li {
-  margin-bottom: 6px;
-}
-/*-----------------------------------------------------------------------------------------------------------------------*/
-
-/* =========================================================
-   9 - PAGINA CONTACTO
-========================================================= */
-
-.yb-page-contact {
-  background-color: #f6f1ff; /* mismo clima que Publicar */
-}
-
-/* Espaciado general del main */
-.yb-page-contact main {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-/* Título y textos de la intro */
-.yb-page-contact h1 {
-  letter-spacing: -0.02em;
-}
-
-.yb-page-contact .lead {
-  color: #4b5563;
-}
-
-/* Cartitas de correo / WhatsApp (reutilizamos mini-card) */
-.yb-page-contact .yb-mini-card {
-  border-radius: 1rem;
-  border: 1px solid #ece4ff;
-  background: #ffffff;
-  transition: 0.22s ease;
-}
-
-.yb-page-contact .yb-mini-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(140, 63, 255, 0.22);
-}
-
-/* Bloque del formulario: card grande tipo PUBLICAR */
-.yb-page-contact .yb-card {
-  border-radius: 1.5rem;
-  border: 1px solid #ece4ff;
-  background: #ffffff;
-  box-shadow: 0 18px 42px rgba(140, 63, 255, 0.16);
-}
-
-/* Inputs SOLO dentro del formulario de contacto */
-.yb-page-contact .yb-card .form-control,
-.yb-page-contact .yb-card .form-select,
-.yb-page-contact .yb-card textarea.form-control {
-  border-radius: 0.9rem;
-  border: 1px solid #dcd6e8;
-  font-size: 0.95rem;
-}
-
-/* Altura del textarea */
-.yb-page-contact #contactoMensaje.form-control {
-  min-height: 140px;
-}
-
-/* Focus con borde violeta, sin tocar otros forms del sitio */
-.yb-page-contact .yb-card .form-control:focus,
-.yb-page-contact .yb-card .form-select:focus {
-  border-color: var(--yb-primary, #6f42c1);
-  box-shadow: 0 0 0 0.15rem rgba(111, 66, 193, 0.25);
-}
-
-/* Texto del checkbox */
-.yb-page-contact .form-check-label {
-  font-size: 0.85rem;
-  color: #4b5563;
-}
-
-/* Botón enviar: usamos la clase global .btn-publicar,
-   acá sólo ajustamos un poquito la forma */
-.yb-page-contact .btn.btn-publicar {
-  border-radius: 999px;
-  padding-inline: 2.2rem;
-}
-
-/* Redes sociales */
-.yb-page-contact .yb-contact-social a {
-  color: #444;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
-  transition: color 0.2s ease, transform 0.12s ease;
-}
-
-.yb-page-contact .yb-contact-social a i {
-  font-size: 1rem;
-}
-
-.yb-page-contact .yb-contact-social a:hover {
-  color: var(--yb-primary, #6f42c1);
-  transform: translateY(-1px);
-}
-
-/* Mapa / sección final */
-.yb-page-contact .yb-section-light {
-  background: #faf6ff;
-  border-top: 1px solid #ede4ff;
-}
-
-/*-----------------------------------------------------------------------------------------------------------------------*/
-/* =========================================================
-   10 - PAGINA INGRESAR 
-========================================================= */
-
-/* Fondo y estructura general del bloque de login */
-.yb-login-section {
-  background: linear-gradient(180deg, #ffffff 0%, #f7f2ff 100%);
-}
-
-/* Card principal del formulario */
-.yb-login-card {
-  border-radius: 1.5rem;
-  border: 1px solid #e8e8e8;
-  background: #ffffff;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-}
-
-/* Título dentro del formulario */
-.yb-login-card h5 {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-/* Inputs y selects dentro del login (solo visual) */
-.yb-login-card .form-control,
-.yb-login-card .form-select {
-  border-radius: 0.9rem;
-  border: 1px solid #dcd6e8;
-  padding: 0.9rem 1rem;
-  font-size: 0.95rem;
-}
-
-.yb-login-card .form-control:focus,
-.yb-login-card .form-select:focus {
-  border-color: var(--yb-primary, #6f42c1);
-  box-shadow: 0 0 0 0.15rem rgba(111, 66, 193, 0.25);
-}
-
-/* Label flotante más suave */
-.yb-login-card .form-floating > label {
-  color: #777;
-  font-size: 0.9rem;
-}
-
-/* Checkbox y enlaces pequeños */
-.yb-login-card .form-check-label {
-  font-size: 0.85rem;
-}
-
-.yb-login-card a.small {
-  color: var(--yb-primary, #6f42c1);
-  text-decoration: none;
-}
-
-.yb-login-card a.small:hover {
+/* Enlaces con hover (regla general) */
+a:hover {
+  color: #7b3ec8;
   text-decoration: underline;
 }
 
-/* Separador "o" */
-.yb-login-card hr {
-  opacity: 0.3;
-  border-top: 1px solid #ddd;
+.hero-inicio {
+  background: #7b3ec8;
+  color: #ffffff;
+  padding: 60px 0 80px;
+  text-align: center;
 }
-
-/* Botón principal  */
-.yb-login-card .btn.btn-publicar {
-  padding: 0.7rem 1rem;
-  font-weight: 600;
-  border-radius: 0.9rem;
+.hero-inicio h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
 }
-
-/* Botones sociales */
-.yb-login-card .btn.btn-outline-secondary {
-  border-radius: 0.9rem;
-  border-color: #ddd;
-  font-size: 0.9rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
+.hero-inicio .texto-hero {
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
 }
-
-.yb-login-card .btn.btn-outline-secondary:hover {
-  border-color: var(--yb-primary, #6f42c1);
-  color: var(--yb-primary, #6f42c1);
+.hero-inicio {
+  /* Caja del buscador */
 }
-/*-----------------------------------------------------------------------------------------------------------------------*/
-
-/* =========================================================
-  11 - PAGINA PUBLICAR
-   ========================================================= */
-
-/* Fondo y estructura de la sección */
-.yb-publicar-hero {
-  background: #f8f2ff;              
-  border-bottom: 1px solid #e8dfff;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-/* Card del formulario */
-.yb-publicar-card {
+.hero-inicio .buscador-inicio {
+  margin-top: 25px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   background: #ffffff;
-  border-radius: 1rem;
-  border: 1px solid #eee;
-  padding: 2rem;
-  transition: transform .2s ease, box-shadow .2s ease;
+  border-radius: 40px;
+  padding: 10px;
 }
-
-.yb-publicar-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+.hero-inicio .buscador-inicio form {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
 }
-
-/* Títulos y textos del bloque izquierdo */
-.yb-publicar-hero h1 {
-  font-weight: 700;
-  color: #070707;  
-}
-
-.yb-publicar-hero p.lead {
-  color: #4a4a4a;
-}
-
-.yb-publicar-hero ul li {
-  margin-bottom: .4rem;
-}
-
-/* Inputs dentro del formulario */
-.yb-publicar-card .form-floating > .form-control,
-.yb-publicar-card .form-floating > .form-select {
-  border-radius: .75rem;
-  border: 1px solid #d5c7f7;
-}
-
-.yb-publicar-card .form-floating label {
-  color: #7a5fc1 !important;
-}
-
-/* File input */
-.yb-publicar-card input[type="file"] {
-  border-radius: .75rem;
-  padding: .6rem;
-  background: #faf7ff;
-  border: 1px solid #d9cfff;
-}
-
-.yb-publicar-card input[type="file"]:hover {
-  background: #f2ecff;
-}
-
-/* ✅ Botón “Crear publicación” SOLO dentro de la card PUBLICAR */
-/* Botones principales de formularios
-   (Publicar, Ingresar, Enviar mensaje) */
-.yb-card form .btn-publicar {
-  background: #6f42c1;
-  color: #fff !important;
-  border-radius: .75rem;
+.hero-inicio .buscador-inicio select,
+.hero-inicio .buscador-inicio input {
   border: none;
-  font-weight: 600;
-  padding: .7rem 1.6rem;
-  transition: background .2s ease, transform .2s ease;
+  border-radius: 25px;
+  padding: 10px 14px;
+  font-size: 14px;
+  outline: none;
+}
+.hero-inicio .buscador-inicio select {
+  width: 30%;
+}
+.hero-inicio .buscador-inicio input {
+  width: 45%;
+}
+.hero-inicio .buscador-inicio .boton-principal {
+  width: 25%;
+  border-radius: 25px;
+  border: none;
 }
 
-.yb-card form .btn-publicar:hover {
-  background: #5b33a0;
-  transform: translateY(-2px);
-}
-
-.yb-card form .btn-publicar:active {
-  transform: scale(.97);
-}
-
-
-/* Checkbox */
-.yb-publicar-card .form-check-input {
-  border-color: #6f42c1;
-}
-
-.yb-publicar-card .form-check-input:checked {
-  background-color: #6f42c1;
-  border-color: #6f42c1;
-}
-
-/* Links dentro del formulario */
-.yb-publicar-card a {
-  color: #6f42c1;
-  font-weight: 600;
-}
-
-.yb-publicar-card a:hover {
-  text-decoration: underline;
-}
-/*-----------------------------------------------------------------------------------------------------------------------*/
-
-/* =========================================================
-   12 - PÁGINA — PREGUNTAS FRECUENTES (FAQ)
-========================================================= */
-
-/* Fondo suave para la sección completa  */
-.yb-faq-section {
-  background: #faf6ff;              
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-/* Contenedor de cada item del acordeón */
-.accordion-item {
-  border: 1px solid #e0d2ff !important;
-  border-radius: .9rem;
-  overflow: hidden;
-  margin-bottom: .8rem;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
-}
-
-/* Botón (la pregunta) */
-.accordion-button {
-  background-color: #f5efff;       
-  color: #3a2b71;                   
-  font-weight: 600;
-  padding-top: .9rem;
-  padding-bottom: .9rem;
-  box-shadow: none;
-}
-
-/* Botón cuando está abierto */
-.accordion-button:not(.collapsed) {
-  background-color: #e8d8ff;        
-  color: #311d63;
-}
-
-/* Quitar el borde azul de foco feo y usar uno violeta suave */
-.accordion-button:focus {
-  box-shadow: 0 0 0 .12rem rgba(111, 66, 193, 0.35);
-  border-color: transparent;
-}
-
-/* Cuerpo de la respuesta */
-.accordion-body {
+/* Mixin para tarjetas */
+/* Mixin para usar flex */
+/* Mixin botones */
+/* ============================
+   SECCIONES DESTACADAS
+============================ */
+.seccion-influencers {
   background-color: #ffffff;
-  color: #333;
-  padding: 1rem 1.3rem 1.2rem;
-  font-size: .95rem;
+  box-shadow: 0 8px 15px -10px rgba(0, 0, 0, 0.15);
 }
 
-/* Último párrafo sin margen extra */
-.accordion-body p:last-child {
+.seccion-buscado {
+  background-color: #ffffff;
+  box-shadow: 0 -8px 15px -10px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================
+   ENCABEZADO DE SECCIÓN
+============================ */
+.encabezado-seccion .col-md-4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.encabezado-seccion .titulo-seccion {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+.encabezado-seccion .subtitulo-seccion {
+  font-size: 14px;
+  color: #333333;
+  opacity: 0.8;
   margin-bottom: 0;
 }
 
-/* Flechita del acordeón en tono violeta */
-.accordion-button::after {
-  filter: hue-rotate(260deg) saturate(1.4);
+/* ============================
+   CARRUSEL
+============================ */
+.carousel {
+  margin-top: 10px;
+}
+.carousel .carousel-control-prev-icon,
+.carousel .carousel-control-next-icon {
+  background-color: #7b3ec8;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.carousel .carousel-control-prev {
+  left: -110px;
+}
+.carousel .carousel-control-next {
+  right: -110px;
 }
 
+/* aca voy a estilar de modo especifico las tarjetas del carrousel */
+/* Contenedor de todas las tarjetas */
+.lista-tarjetas {
+  margin-top: 0;
+}
+.lista-tarjetas .col-12 {
+  margin-bottom: 15px;
+}
 
-/*-----------------------------------------------------------------------------------------------------------------------*/
-/* =========================================================
-   13 — RESPONSIVE GENERAL
-   ========================================================= */
+/* Tarjeta genérica (se usa en resultados, beneficios, influencers) */
+.tarjeta {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  margin-right: 5px;
+  /* Imagen */
+}
+.tarjeta .tarjeta-imagen img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.tarjeta {
+  /* Cuerpo */
+}
+.tarjeta .tarjeta-cuerpo {
+  padding: 10px;
+  font-size: 14px;
+}
+.tarjeta .tarjeta-cuerpo .tarjeta-etiqueta {
+  font-size: 12px;
+  color: #7b3ec8;
+  display: block;
+  margin-bottom: 4px;
+}
+.tarjeta .tarjeta-cuerpo .tarjeta-titulo {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+.tarjeta .tarjeta-cuerpo .tarjeta-sub {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+.tarjeta .tarjeta-cuerpo .tarjeta-dato {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #333333;
+}
+.tarjeta .tarjeta-cuerpo .tarjeta-texto {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.tarjeta .tarjeta-cuerpo .tarjeta-datos {
+  font-size: 12px;
+  color: #333333;
+  opacity: 0.8;
+}
+.tarjeta {
+  /* Pie */
+}
+.tarjeta .tarjeta-pie {
+  padding: 8px;
+  border-top: 1px solid #dddddd;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
 
-/* =========================================================
-   13.1 — NAVBAR & FOOTER (TODAS LAS PÁGINAS)
-   ========================================================= */
+/* aca voy a estilar las tarjetas de resultados, influencer y beneficios  */
+/* ============================
+   BOTONES DEL HEADER
+============================ */
+.boton-ingresar,
+.boton-publicar {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+}
+.boton-ingresar:hover,
+.boton-publicar:hover {
+  background: #ffffff;
+  color: #7b3ec8;
+}
 
-/* Tablet y móvil */
+.botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ============================
+   BOTON PRINCIPAL
+============================ */
+.boton-principal {
+  background: #7b3ec8;
+  color: #ffffff;
+  border: 1px solid #7b3ec8;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 20px;
+  text-align: center;
+}
+.boton-principal:hover {
+  background: #ffffff;
+  color: #7b3ec8;
+}
+
+/* ============================
+   BOTONES DE TARJETAS
+============================ */
+.boton-tarjetas {
+  background: #ffffff;
+  color: #7b3ec8;
+  border: 1px solid #7b3ec8;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 16px;
+}
+.boton-tarjetas:hover {
+  background: #7b3ec8;
+  color: #ffffff;
+}
+
+/* ============================
+   BOTON SECUNDARIO
+============================ */
+.boton-secundario {
+  background: rgba(226, 206, 246, 0.568);
+  color: #7b3ec8;
+  border: 1px solid #7b3ec8;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.boton-secundario:hover {
+  background: #7b3ec8;
+  color: #ffffff;
+}
+
+.pie {
+  background: #7b3ec8;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+.pie .pie-contenido {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 16px;
+}
+.pie .pie-contenido .pie-texto {
+  color: #ffffff;
+  font-size: 14px;
+}
+.pie .pie-contenido .pie-nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.pie .pie-contenido .pie-nav a {
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+}
+.pie .pie-contenido .pie-nav a:hover {
+  text-decoration: underline;
+}
+
+/* PÁGINAS */
+/* ===========================
+   BUSCADOR SUPERIOR
+=========================== */
+.seccion-buscador {
+  padding: 30px 0;
+  background-image: url("../Assets/hero2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.seccion-buscador .formulario-buscador {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.seccion-buscador .formulario-buscador .form-select,
+.seccion-buscador .formulario-buscador .form-control {
+  background-color: rgba(226, 206, 246, 0.568);
+  height: 34px;
+  font-size: 14px;
+  border-radius: 20px;
+  border: 1px solid #dddddd;
+  padding: 4px 10px;
+  text-align: center;
+}
+.seccion-buscador .formulario-buscador .boton-principal {
+  width: 100%;
+  height: 34px;
+  font-size: 14px;
+}
+.seccion-buscador .formulario-buscador .fila-buscador {
+  row-gap: 8px;
+}
+
+/* ===========================
+   CUERPO GENERAL DE PÁGINA
+=========================== */
+.cuerpo-pagina {
+  padding: 30px 0 50px;
+  background-color: #ffffff;
+}
+.cuerpo-pagina .bloque-titulo {
+  margin-bottom: 15px;
+}
+.cuerpo-pagina .bloque-titulo .titulo-seccion {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+.cuerpo-pagina .bloque-titulo .subtitulo-seccion {
+  font-size: 14px;
+  color: #333333;
+  opacity: 0.8;
+}
+
+/* ===========================
+   ORDEN (select + botón filtros)
+=========================== */
+.bloque-orden {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.bloque-orden .selector-orden {
+  max-width: 220px;
+  margin-left: auto;
+  font-size: 14px;
+}
+.bloque-orden .boton-filtros {
+  padding: 6px 14px;
+}
+
+.solo-mobile {
+  display: inline-block;
+}
+
+/* ===========================
+   LAYOUT PRINCIPAL
+=========================== */
+.fila-principal {
+  margin-top: 20px;
+}
+
+/* ===========================
+   FILTROS LATERALES
+=========================== */
+.filtros-lateral {
+  background-color: #ffffff;
+  border: 1px solid #7b3ec8;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.filtros-lateral .titulo-filtros {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.filtros-lateral .bloque-filtro {
+  margin-bottom: 15px;
+}
+.filtros-lateral .bloque-filtro .texto-filtro-titulo,
+.filtros-lateral .bloque-filtro .titulo-filtro-chico {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.filtros-lateral .bloque-filtro .item-filtro {
+  display: inline-block;
+  padding: 4px 9px;
+  margin: 0 6px 6px 0;
+  font-size: 12px;
+  color: #333333;
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  background-color: #dddddd;
+}
+
+/* aca voy a estilar las 3 paginas (resultados, influencer y beneficios) por que son muy parecidas */
+/* ================================
+   GENERAL DE LA PAGINA ABOUT
+================================ */
+.seccion-pagina {
+  padding: 40px 0;
+  /* Fondo alternativo */
+}
+.seccion-pagina.fondo-claro {
+  background-color: rgba(226, 206, 246, 0.568);
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+.seccion-pagina {
+  /* ---- TEXTOS ---- */
+}
+.seccion-pagina h1, .seccion-pagina h2 {
+  color: #5a2da0;
+}
+.seccion-pagina h5, .seccion-pagina h6 {
+  color: #7b3ec8;
+}
+.seccion-pagina p {
+  color: #333333;
+}
+.seccion-pagina {
+  /* ---- FILAS ---- */
+}
+.seccion-pagina .fila-historia,
+.seccion-pagina .fila-timeline,
+.seccion-pagina .fila-personas,
+.seccion-pagina .fila-valores,
+.seccion-pagina .fila-valores-internos {
+  row-gap: 20px;
+}
+.seccion-pagina .fila-valores,
+.seccion-pagina .fila-historia {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.seccion-pagina .fila-valores-internos {
+  row-gap: 15px;
+}
+.seccion-pagina {
+  /* ===========================
+     CAJAS SIMPLES
+  ============================ */
+}
+.seccion-pagina .caja-simple {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+.seccion-pagina .caja-simple h5, .seccion-pagina .caja-simple h6 {
+  margin-bottom: 8px;
+}
+.seccion-pagina .caja-simple p {
+  margin-bottom: 10px;
+}
+.seccion-pagina {
+  /* ===========================
+     TARJETAS DE PERSONAS
+  ============================ */
+}
+.seccion-pagina .tarjeta-persona {
+  border-left: 5px solid #7b3ec8;
+}
+.seccion-pagina .tarjeta-persona .etiqueta {
+  background: #7b3ec8;
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.seccion-pagina {
+  /* ===========================
+     TARJETAS DE VALORES
+  ============================ */
+}
+.seccion-pagina .tarjeta-valor {
+  text-align: center;
+  border: 1px solid #7b3ec8;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+}
+.seccion-pagina .tarjeta-valor h6 {
+  color: #5a2da0;
+  margin-bottom: 4px;
+}
+.seccion-pagina .tarjeta-valor p {
+  font-size: 13px;
+  opacity: 0.9;
+}
+.seccion-pagina .tarjeta-valor:hover {
+  background-color: rgba(226, 206, 246, 0.568);
+  border-color: #7b3ec8;
+  transition: 0.2s;
+}
+.seccion-pagina {
+  /* ---- SECCIÓN CENTRADA ---- */
+}
+.seccion-pagina.seccion-centrada {
+  text-align: center;
+}
+.seccion-pagina.seccion-centrada h2 {
+  margin-bottom: 5px;
+}
+.seccion-pagina.seccion-centrada p {
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.seccion-pagina {
+  /* --------- Bloque de datos (izquierda) --------- */
+}
+.seccion-pagina .item-contacto {
+  margin-bottom: 10px;
+}
+.seccion-pagina .item-contacto strong {
+  display: block;
+  font-size: 14px;
+  color: #5a2da0;
+  margin-bottom: 2px;
+}
+.seccion-pagina .item-contacto .texto-chico {
+  margin-bottom: 0;
+}
+.seccion-pagina {
+  /* --------- Botones en caja-simple --------- */
+}
+.seccion-pagina .caja-simple a {
+  display: inline-block;
+  width: auto;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.seccion-pagina .caja-simple .boton-principal,
+.seccion-pagina .caja-simple .boton-secundario {
+  min-width: 180px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 30px;
+}
+.seccion-pagina .caja-simple .boton-secundario {
+  width: auto !important;
+}
+.seccion-pagina {
+  /* ================================
+     FORMULARIO DE CONTACTO 
+  ================================= */
+}
+.seccion-pagina .formulario-contacto {
+  margin-top: 10px;
+}
+.seccion-pagina .formulario-contacto h5 {
+  margin-bottom: 10px;
+  color: #5a2da0;
+}
+.seccion-pagina .formulario-contacto .fila-form {
+  row-gap: 10px;
+}
+.seccion-pagina .formulario-contacto .campo-formulario {
+  margin-bottom: 12px;
+}
+.seccion-pagina .formulario-contacto .campo-formulario .form-label {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #333333;
+}
+.seccion-pagina .formulario-contacto .campo-formulario .form-control,
+.seccion-pagina .formulario-contacto .campo-formulario .form-select {
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #dddddd;
+}
+.seccion-pagina .formulario-contacto .campo-formulario textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+.seccion-pagina .formulario-contacto {
+  /* CAJAS */
+}
+.seccion-pagina .formulario-contacto .fila-opciones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.seccion-pagina .formulario-contacto .fila-opciones .form-check-label {
+  cursor: pointer;
+}
+.seccion-pagina .formulario-contacto .boton-principal {
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+.seccion-pagina .formulario-contacto .texto-centro {
+  margin-bottom: 0;
+}
+.seccion-pagina {
+  /* ================================
+     SOPORTE RÁPIDO
+  ================================= */
+}
+.seccion-pagina h2 {
+  color: #5a2da0;
+  margin-bottom: 16px;
+}
+.seccion-pagina .caja-simple h6 {
+  color: #7b3ec8;
+  margin-bottom: 6px;
+}
+.seccion-pagina .caja-simple .texto-chico {
+  margin-bottom: 10px;
+}
+
+.seccion-login {
+  padding: 60px 0;
+  /* ---- TITULOS Y TEXTOS ---- */
+}
+.seccion-login h1 {
+  color: #5a2da0;
+  margin-bottom: 12px;
+}
+.seccion-login p,
+.seccion-login ul li {
+  color: #333333;
+  font-size: 15px;
+}
+.seccion-login ul {
+  margin-bottom: 18px;
+  padding-left: 18px;
+}
+.seccion-login ul li {
+  margin-bottom: 6px;
+}
+.seccion-login {
+  /* ---- COLUMNA IZQUIERDA ---- */
+}
+.seccion-login .col-lg-5:first-child {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.seccion-login {
+  /* ============================================
+     CAJA DEL FORMULARIO
+  ============================================= */
+}
+.seccion-login .formulario-login,
+.seccion-login .caja-simple {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  padding: 24px;
+  border-radius: 12px;
+}
+.seccion-login h5 {
+  color: #5a2da0;
+  margin-bottom: 14px;
+}
+.seccion-login {
+  /* ---- INPUTS ---- */
+}
+.seccion-login .campo-formulario .form-control,
+.seccion-login .campo-formulario .form-select {
+  border-radius: 10px;
+  border: 1px solid #dddddd;
+  font-size: 14px;
+}
+.seccion-login {
+  /* ---- RECORDARME / OLVIDO CONTRASEÑA ---- */
+}
+.seccion-login .fila-opciones {
+  margin-bottom: 12px;
+}
+.seccion-login .fila-opciones a {
+  font-size: 13px;
+  color: #7b3ec8;
+  text-decoration: none;
+}
+.seccion-login .fila-opciones a:hover {
+  text-decoration: underline;
+}
+.seccion-login {
+  /* ---- BOTÓN PRINCIPAL ---- */
+}
+.seccion-login .boton-tarjetas {
+  width: 100%;
+  margin: 10px 0;
+  text-align: center;
+}
+.seccion-login {
+  /* ---- SEPARADOR ---- */
+}
+.seccion-login hr {
+  border-top: 1px solid #dddddd;
+}
+.seccion-login {
+  /* ---- BOTONES SECUNDARIOS (Google / Facebook) ---- */
+}
+.seccion-login .boton-secundario {
+  display: inline-block;
+  max-width: 250px;
+  margin: 0 6px;
+  text-align: center;
+}
+
+.seccion-publicar {
+  padding: 60px 0;
+  /* Columna izquierda: texto */
+}
+.seccion-publicar .col-lg-5 h1 {
+  color: #5a2da0;
+  margin-bottom: 12px;
+}
+.seccion-publicar .col-lg-5 p,
+.seccion-publicar .col-lg-5 ul li {
+  color: #333333;
+  font-size: 15px;
+}
+.seccion-publicar .col-lg-5 ul {
+  margin-bottom: 18px;
+  padding-left: 18px;
+}
+.seccion-publicar .col-lg-5 ul li {
+  margin-bottom: 6px;
+}
+.seccion-publicar .col-lg-5 .texto-chico {
+  margin-top: 10px;
+}
+.seccion-publicar {
+  /* Columna derecha: formulario */
+}
+.seccion-publicar .caja-publicar {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  border-radius: 12px;
+  padding: 24px;
+}
+.seccion-publicar .caja-publicar .titulo-form {
+  color: #5a2da0;
+  margin-bottom: 14px;
+}
+.seccion-publicar .caja-publicar {
+  /* Cada bloque del formulario */
+}
+.seccion-publicar .caja-publicar .campo-formulario {
+  margin-bottom: 12px;
+}
+.seccion-publicar .caja-publicar .campo-formulario .form-label {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #333333;
+}
+.seccion-publicar .caja-publicar .campo-formulario .form-control,
+.seccion-publicar .caja-publicar .campo-formulario .form-select {
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #dddddd;
+}
+.seccion-publicar .caja-publicar .campo-formulario textarea.form-control {
+  min-height: 100px;
+}
+.seccion-publicar .caja-publicar .campo-formulario .form-check-label {
+  font-size: 14px;
+  color: #333333;
+}
+.seccion-publicar .caja-publicar {
+  /* Botón enviar */
+}
+.seccion-publicar .caja-publicar .boton-tarjetas {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* ==========================================
+   SECCIÓN DE PREGUNTAS FRECUENTES
+========================================== */
+.seccion-pagina.faq {
+  /* -------- TÍTULOS PRINCIPALES -------- */
+}
+.seccion-pagina.faq h1, .seccion-pagina.faq h2 {
+  color: #5a2da0;
+  margin-bottom: 10px;
+}
+.seccion-pagina.faq p {
+  color: #333333;
+}
+.seccion-pagina.faq .texto-chico {
+  font-size: 13px;
+  opacity: 0.9;
+}
+.seccion-pagina.faq {
+  /* Fondo alterno */
+}
+.seccion-pagina.faq.fondo-claro {
+  background-color: rgba(226, 206, 246, 0.568);
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+.seccion-pagina.faq {
+  /* ==========================================
+     LISTA COMPLETA DE PREGUNTAS
+  =========================================== */
+}
+.seccion-pagina.faq .lista-simple {
+  margin-top: 20px;
+}
+.seccion-pagina.faq .lista-simple .item-simple {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.seccion-pagina.faq .lista-simple .item-simple h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #7b3ec8;
+}
+.seccion-pagina.faq .lista-simple .item-simple p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.seccion-pagina.faq .lista-simple .item-simple ol {
+  padding-left: 20px;
+}
+.seccion-pagina.faq .lista-simple .item-simple ol li {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.seccion-pagina.faq {
+  /* ==========================================
+     BLOQUE FINAL CENTRADO
+  =========================================== */
+}
+.seccion-pagina.faq .bloque-titulo-centrado {
+  text-align: center;
+  margin-top: 20px;
+}
+.seccion-pagina.faq .bloque-titulo-centrado p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.seccion-pagina.faq .bloque-titulo-centrado .boton-tarjetas {
+  margin-top: 5px;
+}
+
+/* RESPONSIVE */
+/* ===========================
+     HEADER
+   =========================== */
 @media (max-width: 991.98px) {
-  .yb-navbar .navbar-collapse {
-    align-items: flex-start;
-    padding-block: 0.5rem;
+  .encabezado .navbar {
+    padding: 8px 12px;
   }
-
-  .yb-navbar .navbar-nav {
-    align-items: flex-start;
-    gap: 0.15rem;
-  }
-
-  .yb-navbar .nav-link {
-    padding-inline: 0;
-    padding-block: 0.25rem;
-  }
-
-  .yb-navbar .btn-ingresar,
-  .yb-navbar .btn-publicar {
-    margin-top: 0.4rem;
-  }
-}
-
-/* Footer en columna en mobile */
-@media (max-width: 767.98px) {
-  .yb-footer {
+  .encabezado .navbar .navbar-collapse {
     text-align: left;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
   }
-
-  .yb-footer .container {
+  .encabezado .navbar .navbar-nav {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
+    gap: 6px;
+    margin-bottom: 15px;
   }
-
-  .yb-footer-copy,
-  .yb-footer-made {
-    white-space: normal;
-  }
-
-  .yb-footer-nav {
-    flex-wrap: wrap;
-    row-gap: 0.35rem;
-  }
-}
-
-/* =========================================================
-   13.2 — INDEX: HERO + BUSCADOR PRINCIPAL
-   ========================================================= */
-
-@media (max-width: 991.98px) {
-  .yb-hero .container {
-    padding-top: 1.25rem;
-    padding-bottom: 1.75rem;
-  }
-
-  .yb-hero-title {
-    font-size: clamp(2rem, 3vw + 1rem, 2.5rem);
-  }
-
-  .yb-hero-subtitle {
-    font-size: 1rem;
-    max-width: 32rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  
-  .yb-search-box {
-    padding: 1.2rem 1.25rem;
-    margin-top: 1.2rem;
-  }
-
-  .yb-search-flex {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .yb-input-wrap {
-    width: 100%;
-  }
-
-  .yb-search-btn2 {
-    width: 100%;
-    text-align: center;
-  }
-
-  .yb-tags {
-    gap: 0.25rem;
-  }
-}
-
-/* =========================================================
-   13.3 — INDEX: INFLUENCERS DESTACADOS & LO MÁS BUSCADO
-   ========================================================= */
-
-@media (max-width: 991.98px) {
-  .yb-section.yb-influencers,
-  .yb-section.yb-trending {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-
-  .yb-section-title {
-    font-size: 1.6rem;
-  }
-}
-
-/* Ajuste flechas del carrusel en pantallas chicas */
-@media (max-width: 767.98px) {
-  .yb-arrow {
-    width: 32px;
-    height: 32px;
-    top: 55%;
-  }
-
-  .yb-arrow--left {
-    left: -6px;
-  }
-  .yb-arrow--right {
-    right: -6px;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .yb-arrow {
-    display: none;
-  }
-}
-
-/* =========================================================
-   13.4 — PÁGINA INFLUENCERS & BENEFICIOS
-   ========================================================= */
-
-@media (max-width: 991.98px) {
-  /* Layout: filtros arriba + grid abajo */
-  .yb-page-influencers .yb-layout,
-  .yb-page-beneficios .yb-layout {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  /* Panel de filtros a ancho completo y centrado */
-  .yb-page-influencers .yb-filtros,
-  .yb-page-beneficios .yb-filtros {
-    width: 100%;
-    max-width: 780px;
-    margin: 0 auto;
-    position: static;
-    top: auto;
-    height: auto;
-  }
-
-  .yb-page-influencers .yb-grid,
-  .yb-page-beneficios .yb-grid {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  }
-
-  /* Buscadores tipo cápsula más flexibles */
-  .yb-searchbar-influencers .yb-search-wrapper,
-  .yb-searchbar-beneficios .yb-search-wrapper {
-    flex-wrap: wrap;
-    row-gap: 10px;
-    border-radius: 1.5rem;
-  }
-
-  .yb-searchbar-influencers .yb-input-pill,
-  .yb-searchbar-beneficios .yb-input-pill {
-    flex: 1 1 100%;
-  }
-
-  .yb-searchbar-influencers .yb-search-btn,
-  .yb-searchbar-beneficios .yb-search-btn {
-    flex: 1 1 100%;
+  .encabezado .navbar .navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
     justify-content: center;
     text-align: center;
-  }
-
-  /* Toolbar: botón Filtros + select Ordenar en una línea */
-  .yb-toolbar {
-    flex-wrap: nowrap;
-  }
-
-  .yb-filtros-toggle {
-    flex: 0 0 auto;
-  }
-
-  .yb-toolbar .yb-order-box {
-    flex: 1 1 auto;
-    text-align: right;
-    margin-bottom: 0;
-  }
-
-  .yb-toolbar .yb-order-select {
     width: 100%;
-    max-width: 230px;
   }
-}
-
-@media (max-width: 575.98px) {
-  .yb-page-influencers .yb-grid,
-  .yb-page-beneficios .yb-grid {
-    grid-template-columns: 1fr;
+  .encabezado {
+    /* Botones */
   }
-
-  .yb-page-influencers .yb-card img {
-    height: 220px;
+  .encabezado .botones {
+    width: 100%;
+    flex-direction: column;
   }
-
-  .yb-page-beneficios .yb-benefit-img {
-    height: 200px;
-  }
-}
-
-/* =========================================================
-   13.5 — PÁGINA SOBRE NOSOTROS
-   ========================================================= */
-
-@media (max-width: 991.98px) {
-  .yb-hero-about {
+  .encabezado .botones .boton-ingresar,
+  .encabezado .botones .boton-publicar {
+    width: 100%;
     text-align: center;
   }
-
-  .yb-hero-about .row > div + div {
-    margin-top: 1.5rem;
+}
+/* Mobile chico */
+@media (max-width: 575.98px) {
+  .encabezado .navbar-brand img {
+    height: 36px;
   }
-
-  .yb-about-subtitle {
-    max-width: 32rem;
-    padding-inline: 0.5rem;
+  .encabezado .navbar-nav .nav-link {
+    font-size: 14px;
+  }
+  .encabezado .boton-ingresar,
+  .encabezado .boton-publicar {
+    font-size: 14px;
   }
 }
-
+/* ===========================
+      FOOTER 
+   =========================== */
 @media (max-width: 767.98px) {
-  .yb-section {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+  .pie .pie-contenido {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
   }
-
-  .yb-timeline {
-    padding-left: 0.7rem;
+  .pie .pie-nav {
+    flex-direction: column;
+    gap: 10px;
   }
-
-  .yb-timeline-item {
-    padding-left: 1.2rem;
+  .pie .pie-nav a {
+    font-size: 15px;
   }
 }
-
-/* =========================================================
-   13.6 — CONTACTO / INGRESAR / PUBLICAR
-   ========================================================= */
-
+/* ===========================
+   HERO + BUSCADOR
+   =========================== */
 @media (max-width: 991.98px) {
-  /* Menos padding vertical para todas estas secciones */
-  .yb-page-contact main,
-  .yb-login-section,
-  .yb-publicar-hero {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  .hero-inicio {
+    padding: 40px 0 60px;
   }
-
-  .yb-page-contact .yb-card,
-  .yb-login-card,
-  .yb-publicar-card {
-    padding: 1.5rem;
+  .hero-inicio h1 {
+    font-size: 28px;
+  }
+  .hero-inicio .texto-hero {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+  .hero-inicio .buscador-inicio {
+    margin-top: 20px;
+    border-radius: 30px;
+    padding: 14px;
+  }
+  .hero-inicio .buscador-inicio form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero-inicio .buscador-inicio select,
+  .hero-inicio .buscador-inicio input,
+  .hero-inicio .buscador-inicio .boton-principal {
+    width: 100%;
+    border-radius: 25px;
+    font-size: 14px;
+  }
+}
+/* Mobile chico */
+@media (max-width: 575.98px) {
+  .hero-inicio {
+    padding: 30px 0 45px;
+  }
+  .hero-inicio h1 {
+    font-size: 24px;
+  }
+}
+/* ===========================
+   INFLUENCERS / BENEFICIOS
+   =========================== */
+@media (max-width: 991.98px) {
+  .bloque-orden {
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .filtros-lateral {
+    margin-top: 10px;
+  }
+}
+/* Escritorio */
+@media (min-width: 992px) {
+  .solo-mobile {
+    display: none;
+  }
+  .filtros-lateral {
+    display: block !important;
   }
 }
 
-@media (max-width: 767.98px) {
-  /* Tarjetas una debajo de la otra con respiro */
-  .yb-page-contact .yb-mini-card + .yb-mini-card {
-    margin-top: 0.75rem;
-  }
-
-  .yb-login-card,
-  .yb-publicar-card {
-    margin-top: 1.5rem;
-  }
-
-  .yb-page-contact .yb-card .form-control,
-  .yb-login-card .form-control,
-  .yb-publicar-card .form-control {
-    font-size: 0.9rem;
-  }
-}
-
-/* =========================================================
-   13.7 — PREGUNTAS FRECUENTES (FAQ)
-   ========================================================= */
-
-@media (max-width: 767.98px) {
-  .yb-faq-section {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-
-  .accordion-button {
-    font-size: 0.95rem;
-  }
-
-  .accordion-body {
-    font-size: 0.9rem;
-  }
-}
+/*# sourceMappingURL=style.css.map */

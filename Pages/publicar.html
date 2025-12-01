@@ -4,298 +4,212 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yo Busco — Publicar</title>
-  <meta name="description" content="Publicá tu comercio, emprendimiento o perfil de influencer en Yo Busco. Sumate gratis y hacete visible en tu ciudad.">
+  <title>Yo Busco - Publicar</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="../Assets/favicon.png" type="image/png">
+  <link rel="icon" href="../Assets/favicon1.png" type="image/png">
 
   <!-- Bootstrap -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    crossorigin="anonymous"
-  >
-  <!-- Íconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous">
 
-  <!-- CSS general -->
+  <!-- CSS  -->
   <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
-  <!-- =========================================================
-       HEADER / NAVBAR
-  ========================================================= -->
-  <header>
-    <nav class="navbar navbar-expand-lg yb-navbar sticky-top">
+  <!-- Header -->
+  <header class="encabezado">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
 
-        <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center" href="../index.html">
-          <img src="../Assets/logo-principal.png" alt="Yo Busco" height="46">
+        <!-- LOGO -->
+        <a class="navbar-brand" href="../index.html">
+          <img src="../Assets/logo-principal.png" alt="Yo Busco" />
         </a>
 
-        <!-- Botón mobile -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarYoBusco" aria-controls="navbarYoBusco"
-          aria-expanded="false" aria-label="Toggle navigation">
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menú -->
-        <div class="collapse navbar-collapse" id="navbarYoBusco">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <!-- MENÚ -->
+        <div class="collapse navbar-collapse" id="menu">
 
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="../index.html">Inicio</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./influencers.html">Influencers</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./beneficios.html">Beneficios & Descuentos</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./about.html">Sobre Nosotros</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./contacto.html">Contacto</a>
-            </li>
-
+          <!-- PAGINAS NAV -->
+          <ul class="navbar-nav nav-centro">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="./influencers.html">Influencers</a></li>
+            <li class="nav-item"><a class="nav-link" href="./beneficios.html">Beneficios</a></li>
+            <li class="nav-item"><a class="nav-link" href="./about.html">Sobre Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
           </ul>
 
-          <!-- Botones derecha -->
-          <div class="d-flex gap-2">
-            <a href="./login.html" class="btn btn-ingresar btn-sm px-3">Ingresar</a>
-            <a href="./publicar.html" class="btn btn-publicar btn-sm px-3">Publicar</a>
+          <!-- BOTONES DERECHA -->
+          <div class="botones">
+            <a href="./login.html" class="boton-ingresar">Ingresar</a>
+            <a href="./publicar.html" class="boton-publicar">Publicar</a>
           </div>
 
         </div>
+
       </div>
     </nav>
   </header>
 
-  <!-- =========================================================
-       HERO — INTRO PUBLICAR
-  ========================================================= -->
+  <!-- Sección principal -->
   <main>
-    <section class="py-5 yb-publicar-hero">
+    <section class="seccion-pagina seccion-publicar">
       <div class="container">
-        <div class="row g-4 align-items-center">
 
+        <div class="row">
+
+          <!-- Texto lateral -->
           <div class="col-lg-5">
-            <h1 class="fw-bold mb-3">Publicá tu negocio o perfil</h1>
-            <p class="lead mb-3">
-              Sumate gratis a Yo Busco y hacete visible para miles de personas en tu ciudad.
+            <h1>Publicar en Yo Busco</h1>
+
+            <p>
+              Completá este formulario para que tu comercio, servicio o perfil aparezca en la plataforma.
             </p>
-            <p class="mb-4">
-              Ideal para:
-            </p>
-            <ul class="mb-4">
-              <li>Comercios físicos y emprendimientos online.</li>
-              <li>Influencers y creadores de contenido.</li>
-              <li>Profesionales y servicios independientes.</li>
-              <li>Gastronomía, turismo, belleza, gimnasios y más.</li>
+
+            <p>Podés usarlo si tenés:</p>
+
+            <ul>
+              <li>Un comercio físico o emprendimiento online.</li>
+              <li>Un servicio profesional o independiente.</li>
+              <li>Un perfil de influencer o creador de contenido.</li>
             </ul>
-            <p class="small mb-0">
-              ¿Ya tenés cuenta?
-              <a href="./login.html">Ingresá acá</a>.
+
+            <p class="texto-chico">
+              Si ya tenés cuenta podés <a href="./login.html">ingresar desde acá</a>.
             </p>
           </div>
 
-          <!-- FORMULARIO PRINCIPAL -->
+          <!-- Formulario -->
           <div class="col-lg-7">
-            <div class="yb-card yb-publicar-card shadow-sm p-4">
-              <h5 class="fw-semibold mb-3 text-center">Crear publicación en Yo Busco</h5>
+            <div class="caja-simple caja-publicar">
+
+              <h5 class="titulo-form">Datos para la publicación</h5>
 
               <form>
-                <div class="row g-3">
 
-                  <!-- Tipo de publicación -->
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <select class="form-select" id="pubTipo">
-                        <option value="comercio" selected>Comercio / Emprendimiento</option>
-                        <option value="influencer">Influencer / Creador</option>
-                        <option value="servicio">Servicio / Profesional</option>
-                      </select>
-                      <label for="pubTipo">Quiero publicar</label>
-                    </div>
-                  </div>
-
-                  <!-- Nombre del comercio o influencer -->
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="pubNombre"
-                        placeholder="Ej: Panadería Don Juan"
-                        required
-                      >
-                      <label for="pubNombre">Nombre comercial / Perfil</label>
-                    </div>
-                  </div>
-
-                  <!-- Rubro -->
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <select class="form-select" id="pubRubro">
-                        <option>Gastronomía</option>
-                        <option>Moda</option>
-                        <option>Salud & Belleza</option>
-                        <option>Fitness</option>
-                        <option>Servicios</option>
-                        <option>Oficios</option>
-                        <option>Turismo</option>
-                        <option>Electrónica</option>
-                        <option>Educación</option>
-                        <option>Otro</option>
-                      </select>
-                      <label for="pubRubro">Rubro</label>
-                    </div>
-                  </div>
-
-                  <!-- Localidad -->
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="pubLocalidad"
-                        placeholder="Ciudad / Localidad"
-                        required
-                      >
-                      <label for="pubLocalidad">Ciudad / Localidad</label>
-                    </div>
-                  </div>
-
-                  <!-- Dirección (opcional) -->
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="pubDireccion"
-                        placeholder="Dirección física (opcional)"
-                      >
-                      <label for="pubDireccion">Dirección del comercio (opcional)</label>
-                    </div>
-                  </div>
-
-                  <!-- Teléfono -->
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="pubTelefono"
-                        placeholder="Teléfono / WhatsApp"
-                        required
-                      >
-                      <label for="pubTelefono">Teléfono / WhatsApp</label>
-                    </div>
-                  </div>
-
-                  <!-- Instagram -->
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="pubIG"
-                        placeholder="@usuario"
-                      >
-                      <label for="pubIG">Instagram (opcional)</label>
-                    </div>
-                  </div>
-
-                  <!-- Descripción -->
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        id="pubDescripcion"
-                        style="height: 130px"
-                        placeholder="Describe brevemente tu negocio, servicio o perfil"
-                        required
-                      ></textarea>
-                      <label for="pubDescripcion">Descripción breve</label>
-                    </div>
-                  </div>
-
-                  <!-- Upload Imagen (opcional) -->
-                  <div class="col-12">
-                    <label class="form-label">Imágenes (opcional)</label>
-                    <input
-                      class="form-control"
-                      type="file"
-                      accept="image/*"
-                      multiple
-                    >
-                  </div>
-
-                  <!-- Aceptación términos -->
-                  <div class="col-12">
-                    <div class="form-check small">
-                      <input class="form-check-input" type="checkbox" id="pubTerminos" required>
-                      <label class="form-check-label" for="pubTerminos">
-                        Acepto los <a href="#">términos y condiciones</a> de Yo Busco.
-                      </label>
-                    </div>
-                  </div>
-
-                  <!-- Botón publicar -->
-                  <div class="col-12 d-flex justify-content-end">
-                    <button type="submit" class="btn btn-publicar px-4">
-                      Crear publicación
-                    </button>
-                  </div>
-
+                <!-- Tipo -->
+                <div class="campo-formulario">
+                  <label class="form-label">Quiero publicar</label>
+                  <select class="form-select">
+                    <option>Comercio / Emprendimiento</option>
+                    <option>Servicio / Profesional</option>
+                    <option>Influencer / Creador</option>
+                  </select>
                 </div>
+
+                <!-- Nombre -->
+                <div class="campo-formulario">
+                  <label class="form-label">Nombre comercial / Perfil</label>
+                  <input type="text" class="form-control" required>
+                </div>
+
+                <!-- Rubro -->
+                <div class="campo-formulario">
+                  <label class="form-label">Rubro</label>
+                  <select class="form-select">
+                    <option>Gastronomía</option>
+                    <option>Moda</option>
+                    <option>Salud y belleza</option>
+                    <option>Fitness</option>
+                    <option>Servicios</option>
+                    <option>Oficios</option>
+                    <option>Turismo</option>
+                    <option>Electrónica</option>
+                    <option>Educación</option>
+                    <option>Otro</option>
+                  </select>
+                </div>
+
+                <!-- Localidad -->
+                <div class="campo-formulario">
+                  <label class="form-label">Ciudad / Localidad</label>
+                  <input type="text" class="form-control" required>
+                </div>
+
+                <!-- Dirección -->
+                <div class="campo-formulario">
+                  <label class="form-label">Dirección (opcional)</label>
+                  <input type="text" class="form-control">
+                </div>
+
+                <!-- Teléfono -->
+                <div class="campo-formulario">
+                  <label class="form-label">Teléfono / WhatsApp</label>
+                  <input type="text" class="form-control" required>
+                </div>
+
+                <!-- Instagram -->
+                <div class="campo-formulario">
+                  <label class="form-label">Instagram (opcional)</label>
+                  <input type="text" class="form-control">
+                </div>
+
+                <!-- Descripción -->
+                <div class="campo-formulario">
+                  <label class="form-label">Descripción breve</label>
+                  <textarea class="form-control" rows="4" required></textarea>
+                </div>
+
+                <!-- Imágenes -->
+                <div class="campo-formulario">
+                  <label class="form-label">Imágenes (opcional)</label>
+                  <input class="form-control" type="file" multiple>
+                </div>
+
+                <!-- Términos -->
+                <div class="campo-formulario">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" required>
+                    <label class="form-check-label">
+                      Acepto los términos y condiciones.
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Botón enviar -->
+                <button type="submit" class="boton-tarjetas">
+                  Enviar publicación
+                </button>
+
               </form>
 
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
   </main>
 
-  <!-- =========================================================
-       FOOTER
-  ========================================================= -->
-  <footer class="yb-footer">
-    <div class="container d-flex justify-content-between align-items-center">
+  <!-- Footer -->
+  <footer class="pie">
+    <div class="container pie-contenido">
 
-      <span class="yb-footer-copy">© 2025 Yo Busco</span>
+      <span class="pie-texto">© 2025 Yo Busco</span>
 
-      <nav class="yb-footer-nav">
-        <a href="./preguntasfrecuentes.html">Preguntas frecuentes</a>
-        <a href="./contacto.html">Contacto</a>
-        <a href="./about.html">Sobre nosotros</a>
+      <nav class="pie-nav">
+        <a href="../Pages/preguntasfrecuentes.html">Preguntas frecuentes</a>
+        <a href="../Pages/contacto.html">Contacto</a>
+        <a href="../Pages/about.html">Sobre nosotros</a>
       </nav>
 
-      <span class="yb-footer-made">
-        Hecho con <span class="yb-heart">♥</span> en Santa Fe
-      </span>
+      <span class="pie-texto">Hecho en Santa Fe</span>
 
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
-

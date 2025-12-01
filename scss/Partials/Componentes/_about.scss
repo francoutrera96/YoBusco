@@ -1,0 +1,129 @@
+@use "../Utiles/variables";
+@use "../Utiles/mixins";
+
+/* ================================
+   GENERAL DE LA PAGINA ABOUT
+================================ */
+
+.seccion-pagina {
+  padding: 40px 0;
+
+  /* Fondo alternativo */
+  &.fondo-claro {
+    background-color: variables.$violeta-claro;
+    border-top: 1px solid variables.$gris-claro;
+    border-bottom: 1px solid variables.$gris-claro;
+  }
+
+  /* ---- TEXTOS ---- */
+  h1, h2 {
+    color: variables.$violeta-oscuro;
+  }
+
+  h5, h6 {
+    color: variables.$violeta;
+  }
+
+  p {
+    color: variables.$gris-texto;
+  }
+
+  /* ---- FILAS ---- */
+  .fila-historia,
+  .fila-timeline,
+  .fila-personas,
+  .fila-valores,
+  .fila-valores-internos {
+    row-gap: 20px;
+  }
+
+  .fila-valores,
+  .fila-historia {
+    @include mixins.flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+  }
+
+  .fila-valores-internos {
+    row-gap: 15px;
+  }
+
+  /* ===========================
+     CAJAS SIMPLES
+  ============================ */
+
+  .caja-simple {
+    background-color: variables.$blanco;
+    border: 1px solid variables.$gris-claro;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 8px variables.$negro-oscuro;
+
+    h5, h6 {
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  /* ===========================
+     TARJETAS DE PERSONAS
+  ============================ */
+
+  .tarjeta-persona {
+    border-left: 5px solid variables.$violeta;
+
+    .etiqueta {
+      background: variables.$violeta;
+      color: variables.$blanco;
+      padding: 4px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+  }
+
+  /* ===========================
+     TARJETAS DE VALORES
+  ============================ */
+
+  .tarjeta-valor {
+    text-align: center;
+    border: 1px solid variables.$violeta;
+    background-color: variables.$blanco;
+    padding: 15px;
+    border-radius: 10px;
+
+    h6 {
+      color: variables.$violeta-oscuro;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    &:hover {
+      background-color: variables.$violeta-claro;
+      border-color: variables.$violeta;
+      transition: 0.2s;
+    }
+  }
+
+  /* ---- SECCIÓN CENTRADA ---- */
+  &.seccion-centrada {
+    text-align: center;
+
+    h2 {
+      margin-bottom: 5px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      opacity: 0.9;
+    }
+  }
+}

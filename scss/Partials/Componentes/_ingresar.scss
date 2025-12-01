@@ -1,0 +1,96 @@
+@use "../Utiles/variables";
+@use "../Utiles/mixins";
+
+
+.seccion-login {
+  padding: 60px 0;
+
+  /* ---- TITULOS Y TEXTOS ---- */
+  h1 {
+    color: variables.$violeta-oscuro;
+    margin-bottom: 12px;
+  }
+
+  p,
+  ul li {
+    color: variables.$gris-texto;
+    font-size: 15px;
+  }
+
+  ul {
+    margin-bottom: 18px;
+    padding-left: 18px;
+
+    li {
+      margin-bottom: 6px;
+    }
+  }
+
+  /* ---- COLUMNA IZQUIERDA ---- */
+  .col-lg-5:first-child {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  /* ============================================
+     CAJA DEL FORMULARIO
+  ============================================= */
+
+  .formulario-login,
+  .caja-simple {
+    @include mixins.tarjeta-base;
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+  h5 {
+    color: variables.$violeta-oscuro;
+    margin-bottom: 14px;
+  }
+
+  /* ---- INPUTS ---- */
+  .campo-formulario {
+
+    .form-control,
+    .form-select {
+      border-radius: 10px;
+      border: 1px solid variables.$gris-claro;
+      font-size: 14px;
+    }
+  }
+
+  /* ---- RECORDARME / OLVIDO CONTRASEÑA ---- */
+  .fila-opciones {
+    margin-bottom: 12px;
+
+    a {
+      font-size: 13px;
+      color: variables.$violeta;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  /* ---- BOTÓN PRINCIPAL ---- */
+  .boton-tarjetas {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  /* ---- SEPARADOR ---- */
+  hr {
+    border-top: 1px solid variables.$gris-claro;
+  }
+
+  /* ---- BOTONES SECUNDARIOS (Google / Facebook) ---- */
+  .boton-secundario {
+    display: inline-block;
+    max-width: 250px;
+    margin: 0 6px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,83 @@
+@use "../Utiles/variables";
+@use "../Utiles/mixins";
+
+/* ==========================================
+   SECCIÓN DE PREGUNTAS FRECUENTES
+========================================== */
+
+.seccion-pagina.faq {
+
+  /* -------- TÍTULOS PRINCIPALES -------- */
+  h1, h2 {
+    color: variables.$violeta-oscuro;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: variables.$gris-texto;
+  }
+
+  .texto-chico {
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  /* Fondo alterno */
+  &.fondo-claro {
+    background-color: variables.$violeta-claro;
+    border-top: 1px solid variables.$gris-claro;
+    border-bottom: 1px solid variables.$gris-claro;
+  }
+
+  /* ==========================================
+     LISTA COMPLETA DE PREGUNTAS
+  =========================================== */
+  .lista-simple {
+    margin-top: 20px;
+
+    .item-simple {
+      background: variables.$blanco;
+      border: 1px solid variables.$gris-claro;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 16px;
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+        color: variables.$violeta;
+      }
+
+      p {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      ol {
+        padding-left: 20px;
+
+        li {
+          font-size: 14px;
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+
+  /* ==========================================
+     BLOQUE FINAL CENTRADO
+  =========================================== */
+  .bloque-titulo-centrado {
+    text-align: center;
+    margin-top: 20px;
+
+    p {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .boton-tarjetas {
+      margin-top: 5px;
+    }
+  }
+}

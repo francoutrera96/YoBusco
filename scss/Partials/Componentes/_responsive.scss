@@ -1,0 +1,162 @@
+/* ===========================
+     HEADER
+   =========================== */
+
+@media (max-width: 991.98px) {
+  .encabezado {
+    .navbar {
+      padding: 8px 12px;
+
+      .navbar-collapse {
+        text-align: left;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255,255,255,0.25);
+      }
+
+      .navbar-nav {
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 15px;
+
+        .nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: center; 
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+
+    /* Botones */
+    .botones {
+      width: 100%;
+      flex-direction: column;
+
+      .boton-ingresar,
+      .boton-publicar {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+/* Mobile chico */
+@media (max-width: 575.98px) {
+  .encabezado {
+    .navbar-brand img {
+      height: 36px;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 14px;
+    }
+
+    .boton-ingresar,
+    .boton-publicar {
+      font-size: 14px;
+    }
+  }
+}
+
+
+/* ===========================
+      FOOTER 
+   =========================== */
+
+@media (max-width: 767.98px) {
+  .pie {
+    .pie-contenido {
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+    }
+
+    .pie-nav {
+      flex-direction: column;
+      gap: 10px;
+
+      a {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+
+/* ===========================
+   HERO + BUSCADOR
+   =========================== */
+
+@media (max-width: 991.98px) {
+  .hero-inicio {
+    padding: 40px 0 60px;
+
+    h1 {
+      font-size: 28px;
+    }
+
+    .texto-hero {
+      font-size: 15px;
+      padding: 0 10px;
+    }
+
+    .buscador-inicio {
+      margin-top: 20px;
+      border-radius: 30px;
+      padding: 14px;
+
+      form {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      select,
+      input,
+      .boton-principal {
+        width: 100%;
+        border-radius: 25px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/* Mobile chico */
+@media (max-width: 575.98px) {
+  .hero-inicio {
+    padding: 30px 0 45px;
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+}
+
+
+/* ===========================
+   INFLUENCERS / BENEFICIOS
+   =========================== */
+
+@media (max-width: 991.98px) {
+  .bloque-orden {
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .filtros-lateral {
+    margin-top: 10px;
+  }
+}
+
+/* Escritorio */
+@media (min-width: 992px) {
+  .solo-mobile {
+    display: none;
+  }
+
+  .filtros-lateral {
+    display: block !important;
+  }
+}

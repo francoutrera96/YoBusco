@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yo Busco — Resultados</title>
+  <meta name="description" content="Resultados de búsqueda de comercios, servicios y actividades.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../Assets/favicon1.png" type="image/png">
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous">
+
+  <!-- Animate.css -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="encabezado">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+
+        <!-- LOGO -->
+        <a class="navbar-brand" href="../index.html">
+          <img src="../Assets/logo-principal.png" alt="Yo Busco" />
+        </a>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- MENÚ -->
+        <div class="collapse navbar-collapse" id="menu">
+
+          <!-- PAGINAS NAV -->
+          <ul class="navbar-nav nav-centro">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="./influencers.html">Influencers</a></li>
+            <li class="nav-item"><a class="nav-link" href="./beneficios.html">Beneficios</a></li>
+            <li class="nav-item"><a class="nav-link" href="./about.html">Sobre Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+          </ul>
+
+          <!-- BOTONES DERECHA -->
+          <div class="botones">
+            <a href="./login.html" class="boton-ingresar">Ingresar</a>
+            <a href="./publicar.html" class="boton-publicar">Publicar</a>
+          </div>
+
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- Buscador -->
+  <section class="seccion-buscador">
+    <div class="container">
+      <form action="#" method="get" class="formulario-buscador">
+        <div class="row">
+
+          <div class="col-12 col-md-4">
+            <select name="localidad" class="form-select">
+              <option value="">Todas las localidades</option>
+              <option value="santa-fe">Santa Fe</option>
+              <option value="rosario">Rosario</option>
+              <option value="cordoba">Córdoba</option>
+              <option value="buenos-aires">Buenos Aires</option>
+              <option value="mendoza">Mendoza</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-md-5">
+            <input
+              type="text"
+              name="busqueda"
+              class="form-control"
+              placeholder="Ej: restaurante, hotel, gimnasio, depilación…">
+          </div>
+
+          <div class="col-12 col-md-3">
+            <button type="submit" class="boton-principal">
+              Buscar
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Tarjetas -->
+  <main class="cuerpo-pagina">
+    <div class="container">
+
+      <!-- Título de la página -->
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <div class="bloque-titulo">
+            <h1 class="titulo-seccion">Resultados de búsqueda</h1>
+            <p class="subtitulo-seccion">
+              Estos son algunos resultados según lo que buscaste. Podés cambiar filtros o volver a buscar.
+            </p>
+          </div>
+        </div>
+
+        <!-- Desplegable Ordenar + botón Filtros -->
+        <div class="col-12 col-md-4">
+          <div class="bloque-orden">
+            <select class="form-select selector-orden">
+              <option value="relevancia">Relevancia</option>
+              <option value="audiencia">Tamaño de audiencia</option>
+              <option value="engagement">Mayor engagement</option>
+              <option value="rating">Mejor rating</option>
+            </select>
+
+            <!-- Botón Filtros (solo mobile/tablet) -->
+            <button
+              type="button"
+              class="boton-filtros solo-mobile"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelFiltros">
+              Filtros
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row fila-principal">
+
+        <!-- Filtros -->
+        <div class="col-12 col-lg-3">
+          <aside class="filtros-lateral collapse" id="panelFiltros">
+            <h4 class="titulo-filtros">Filtros</h4>
+
+            <div class="bloque-filtro">
+              <p class="titulo-filtro-chico">Tipo de lugar</p>
+              <span class="item-filtro">Gastronomía</span>
+              <span class="item-filtro">Viajes</span>
+              <span class="item-filtro">Salud</span>
+              <span class="item-filtro">Servicios</span>
+              <span class="item-filtro">Compras</span>
+              <span class="item-filtro">Actividades</span>
+            </div>
+
+            <div class="bloque-filtro">
+              <p class="titulo-filtro-chico">Modalidad</p>
+              <span class="item-filtro">Presencial</span>
+              <span class="item-filtro">Online</span>
+              <span class="item-filtro">Mixto</span>
+            </div>
+
+            <div class="bloque-filtro">
+              <p class="titulo-filtro-chico">Rango de precio</p>
+              <span class="item-filtro">Bajo</span>
+              <span class="item-filtro">Medio</span>
+              <span class="item-filtro">Alto</span>
+            </div>
+
+            <div class="bloque-filtro">
+              <p class="titulo-filtro-chico">Ordenar por</p>
+              <span class="item-filtro">Cerca mío</span>
+              <span class="item-filtro">Mejor valorados</span>
+              <span class="item-filtro">Más buscados</span>
+            </div>
+
+          </aside>
+        </div>
+
+        <!-- Resultados -->
+        <div class="col-12 col-lg-9">
+          <div class="row lista-tarjetas">
+
+            <!-- Tarjeta 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="tarjeta animate__animated animate__fadeInUp">
+                <div class="tarjeta-imagen">
+                  <img
+                    src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Restaurante en Santa Fe">
+                </div>
+
+                <div class="tarjeta-cuerpo">
+                  <span class="tarjeta-etiqueta">Gastronomía · Santa Fe</span>
+                  <h3 class="tarjeta-titulo">Restaurante La Terraza</h3>
+                  <p class="tarjeta-texto">
+                    Comidas caseras, pastas y pizzas. Atención en salón y delivery.
+                  </p>
+                  <p class="tarjeta-texto">
+                    Horario: todos los días por la noche. Acepta tarjetas y efectivo.
+                  </p>
+                </div>
+
+                <div class="tarjeta-pie">
+                  <button class="boton-tarjetas" type="button">Ver más info</button>
+                  <button class="boton-tarjetas" type="button">Ver beneficios</button>
+                </div>
+              </article>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="tarjeta animate__animated animate__fadeInUp">
+                <div class="tarjeta-imagen">
+                  <img
+                    src="https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Hotel en la costa">
+                </div>
+
+                <div class="tarjeta-cuerpo">
+                  <span class="tarjeta-etiqueta">Viajes · Costa Atlántica</span>
+                  <h3 class="tarjeta-titulo">Hotel Costa Norte</h3>
+                  <p class="tarjeta-texto">
+                    Habitaciones frente al mar con desayuno incluido.
+                  </p>
+                  <p class="tarjeta-texto">
+                    Ideal para vacaciones en familia o escapadas de fin de semana.
+                  </p>
+                </div>
+
+                <div class="tarjeta-pie">
+                  <button class="boton-tarjetas" type="button">Ver detalle</button>
+                  <button class="boton-tarjetas" type="button">Visitar web</button>
+                </div>
+              </article>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="tarjeta animate__animated animate__fadeInUp">
+                <div class="tarjeta-imagen">
+                  <img
+                    src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
+                    alt="Consultorio médico">
+                </div>
+
+                <div class="tarjeta-cuerpo">
+                  <span class="tarjeta-etiqueta">Salud · Rosario</span>
+                  <h3 class="tarjeta-titulo">Centro Médico Rosario</h3>
+                  <p class="tarjeta-texto">
+                    Consultorios de varias especialidades y turnos programados.
+                  </p>
+                  <p class="tarjeta-texto">
+                    Trabajan con diferentes obras sociales y también particular.
+                  </p>
+                </div>
+
+                <div class="tarjeta-pie">
+                  <button class="boton-tarjetas" type="button">Pedir turno</button>
+                  <button class="boton-tarjetas" type="button">Ver dirección</button>
+                </div>
+              </article>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="tarjeta animate__animated animate__fadeInUp">
+                <div class="tarjeta-imagen">
+                  <img
+                    src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Gimnasio en Córdoba">
+                </div>
+
+                <div class="tarjeta-cuerpo">
+                  <span class="tarjeta-etiqueta">Fitness · Córdoba</span>
+                  <h3 class="tarjeta-titulo">Urban Fit Gimnasio</h3>
+                  <p class="tarjeta-texto">
+                    Sala de musculación, clases grupales y planes personalizados.
+                  </p>
+                  <p class="tarjeta-texto">
+                    Ofrecen abonos mensuales y pases libres.
+                  </p>
+                </div>
+
+                <div class="tarjeta-pie">
+                  <button class="boton-tarjetas" type="button">Ver más</button>
+                  <button class="boton-tarjetas" type="button">Ver redes</button>
+                </div>
+              </article>
+            </div>
+
+            <!-- Tarjeta 5 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="tarjeta animate__animated animate__fadeInUp">
+                <div class="tarjeta-imagen">
+                  <img
+                    src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Local de tecnología">
+                </div>
+
+                <div class="tarjeta-cuerpo">
+                  <span class="tarjeta-etiqueta">Tecnología · Buenos Aires</span>
+                  <h3 class="tarjeta-titulo">Tech House</h3>
+                  <p class="tarjeta-texto">
+                    Venta de celulares, accesorios y productos de informática.
+                  </p>
+                  <p class="tarjeta-texto">
+                    Cuentan con tienda física y ventas online a todo el país.
+                  </p>
+                </div>
+
+                <div class="tarjeta-pie">
+                  <button class="boton-tarjetas" type="button">Ver productos</button>
+                  <button class="boton-tarjetas" type="button">Ver beneficios</button>
+                </div>
+              </article>
+            </div>
+
+            <!-- Tarjeta 6 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="tarjeta animate__animated animate__fadeInUp">
+                <div class="tarjeta-imagen">
+                  <img
+                    src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
+                    alt="Restaurante vegetariano">
+                </div>
+
+                <div class="tarjeta-cuerpo">
+                  <span class="tarjeta-etiqueta">Gastronomía · Rosario</span>
+                  <h3 class="tarjeta-titulo">Green Bowl</h3>
+                  <p class="tarjeta-texto">
+                    Platos saludables, ensaladas y opciones veganas.
+                  </p>
+                  <p class="tarjeta-texto">
+                    Ideal para almuerzos rápidos y nutritivos.
+                  </p>
+                </div>
+
+                <div class="tarjeta-pie">
+                  <button class="boton-tarjetas" type="button">Ver menú</button>
+                  <button class="boton-tarjetas" type="button">Pedir ahora</button>
+                </div>
+              </article>
+            </div>
+
+            <!-- Tarjeta 7 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="tarjeta animate__animated animate__fadeInUp">
+                <div class="tarjeta-imagen">
+                  <img
+                    src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80"
+                    alt="Café y pastelería">
+                </div>
+
+                <div class="tarjeta-cuerpo">
+                  <span class="tarjeta-etiqueta">Cafetería · Santa Fe</span>
+                  <h3 class="tarjeta-titulo">Café del Parque</h3>
+                  <p class="tarjeta-texto">
+                    Café de especialidad y pastelería casera todos los días.
+                  </p>
+                  <p class="tarjeta-texto">
+                    Espacio tranquilo para estudiar o trabajar.
+                  </p>
+                </div>
+
+                <div class="tarjeta-pie">
+                  <button class="boton-tarjetas" type="button">Ver más</button>
+                  <button class="boton-tarjetas" type="button">Ver ubicación</button>
+                </div>
+              </article>
+            </div>
+
+            <!-- Tarjeta 8 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="tarjeta animate__animated animate__fadeInUp">
+                <div class="tarjeta-imagen">
+                  <img
+                    src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=1200&q=80"
+                    alt="Tienda de ropa">
+                </div>
+
+                <div class="tarjeta-cuerpo">
+                  <span class="tarjeta-etiqueta">Indumentaria · Online</span>
+                  <h3 class="tarjeta-titulo">Urban Style</h3>
+                  <p class="tarjeta-texto">
+                    Ropa urbana para hombres y mujeres con envíos a todo el país.
+                  </p>
+                  <p class="tarjeta-texto">
+                    Nuevas colecciones todas las semanas.
+                  </p>
+                </div>
+
+                <div class="tarjeta-pie">
+                  <button class="boton-tarjetas" type="button">Ver tienda</button>
+                  <button class="boton-tarjetas" type="button">Comprar</button>
+                </div>
+              </article>
+            </div>
+
+            <!-- Tarjeta 9 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="tarjeta animate__animated animate__fadeInUp">
+                <div class="tarjeta-imagen">
+                  <img
+                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde"
+                    alt="Taller de reparación">
+                </div>
+
+                <div class="tarjeta-cuerpo">
+                  <span class="tarjeta-etiqueta">Servicios · Córdoba</span>
+                  <h3 class="tarjeta-titulo">FixIt Reparaciones</h3>
+                  <p class="tarjeta-texto">
+                    Arreglo de celulares, tablets y notebooks en el día.
+                  </p>
+                  <p class="tarjeta-texto">
+                    Presupuestos sin costo.
+                  </p>
+                </div>
+
+                <div class="tarjeta-pie">
+                  <button class="boton-tarjetas" type="button">Consultar</button>
+                  <button class="boton-tarjetas" type="button">Más info</button>
+                </div>
+              </article>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="pie">
+    <div class="container pie-contenido">
+
+      <span class="pie-texto">© 2025 Yo Busco</span>
+
+      <nav class="pie-nav">
+        <a href="../Pages/preguntasfrecuentes.html">Preguntas frecuentes</a>
+        <a href="../Pages/contacto.html">Contacto</a>
+        <a href="../Pages/about.html">Sobre nosotros</a>
+      </nav>
+
+      <span class="pie-texto">Hecho en Santa Fe</span>
+
+    </div>
+  </footer>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+</body>
+</html>

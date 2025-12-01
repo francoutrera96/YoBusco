@@ -1,0 +1,25 @@
+/* BASE */
+@use "./Partials/Base/reset";
+@use "./Partials/Base/tipografia";
+
+/* COMPONENTES*/
+
+    /* PAGINA INICIO Y ESTILOS GENERALES */
+        @use "./Partials/Componentes/header";
+        @use "./Partials/Componentes/general";
+        @use "./Partials/Componentes/herobuscador";
+        @use "./Partials/Componentes/seccionesdestacadas"; /* aca voy a estilar de modo especifico las tarjetas del carrousel */
+        @use "./Partials/Componentes/tarjetas"; /* aca voy a estilar las tarjetas de resultados, influencer y beneficios  */
+        @use "./Partials/Componentes/botones";
+        @use "./Partials/Componentes/footer";
+
+    /* PÁGINAS */
+        @use "./Partials/Componentes/influencerybeneficios"; /* aca voy a estilar las 3 paginas (resultados, influencer y beneficios) por que son muy parecidas */
+        @use "./Partials/Componentes/about";
+        @use "./Partials/Componentes/contacto";
+        @use "./Partials/Componentes/ingresar";
+        @use "./Partials/Componentes/publicar";
+        @use "./Partials/Componentes/preguntasfrecuentes";
+
+    /* RESPONSIVE */
+        @use "./Partials/Componentes/responsive"; 

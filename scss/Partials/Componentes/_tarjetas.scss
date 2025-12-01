@@ -1,0 +1,78 @@
+@use "../Utiles/variables";
+@use "../Utiles/mixins";
+
+/* Contenedor de todas las tarjetas */
+.lista-tarjetas {
+  margin-top: 0;
+
+  .col-12 {
+    margin-bottom: 15px;
+  }
+}
+
+/* Tarjeta genérica (se usa en resultados, beneficios, influencers) */
+.tarjeta {
+  @include mixins.tarjeta-base;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  margin-right: 5px;
+
+  /* Imagen */
+  .tarjeta-imagen {
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  /* Cuerpo */
+  .tarjeta-cuerpo {
+    padding: 10px;
+    font-size: 14px;
+
+    .tarjeta-etiqueta {
+      font-size: 12px;
+      color: variables.$violeta;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .tarjeta-titulo {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .tarjeta-sub {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .tarjeta-dato {
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: variables.$gris-texto;
+    }
+
+    .tarjeta-texto {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .tarjeta-datos {
+      font-size: 12px;
+      color: variables.$gris-texto;
+      opacity: 0.8;
+    }
+  }
+
+  /* Pie */
+  .tarjeta-pie {
+    padding: 8px;
+    border-top: 1px solid variables.$gris-claro;
+    @include mixins.flex(row, center, center);
+    gap: 8px;
+  }
+}

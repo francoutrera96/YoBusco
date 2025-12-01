@@ -1,0 +1,79 @@
+@use "../Utiles/variables";
+@use "../Utiles/mixins";
+
+
+.seccion-publicar {
+  padding: 60px 0;
+
+  /* Columna izquierda: texto */
+  .col-lg-5 {
+    h1 {
+      color: variables.$violeta-oscuro;
+      margin-bottom: 12px;
+    }
+
+    p,
+    ul li {
+      color: variables.$gris-texto;
+      font-size: 15px;
+    }
+
+    ul {
+      margin-bottom: 18px;
+      padding-left: 18px;
+
+      li {
+        margin-bottom: 6px;
+      }
+    }
+
+    .texto-chico {
+      margin-top: 10px;
+    }
+  }
+
+  /* Columna derecha: formulario */
+  .caja-publicar {
+    @include mixins.tarjeta-base;
+    border-radius: 12px;
+    padding: 24px;
+
+    .titulo-form {
+      color: variables.$violeta-oscuro;
+      margin-bottom: 14px;
+    }
+
+    /* Cada bloque del formulario */
+    .campo-formulario {
+      margin-bottom: 12px;
+
+      .form-label {
+        font-size: 14px;
+        margin-bottom: 4px;
+        color: variables.$gris-texto;
+      }
+
+      .form-control,
+      .form-select {
+        font-size: 14px;
+        border-radius: 10px;
+        border: 1px solid variables.$gris-claro;
+      }
+
+      textarea.form-control {
+        min-height: 100px;
+      }
+
+      .form-check-label {
+        font-size: 14px;
+        color: variables.$gris-texto;
+      }
+    }
+
+    /* Botón enviar */
+    .boton-tarjetas {
+      width: 100%;
+      margin-top: 8px;
+    }
+  }
+}

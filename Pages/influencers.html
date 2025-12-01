@@ -5,523 +5,457 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Yo Busco — Influencers</title>
-  <meta name="description" content="Descubrí influencers por nicho y localidad para impulsar tu marca en Yo Busco.">
+  <meta name="description" content="Listado de influencers por nicho y ciudad para conectar con marcas.">
 
   <!-- Favicon -->
-  <link rel="icon" href="../Assets/favicon.png" type="image/png">
+  <link rel="icon" href="../Assets/favicon1.png" type="image/png">
 
   <!-- Bootstrap -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    crossorigin="anonymous"
-  >
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous">
 
-  <!-- Íconos -->
+  <!-- Animate.css -->
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  >
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-  <!-- CSS general -->
+  <!-- CSS -->
   <link rel="stylesheet" href="../style.css">
 </head>
 
-<body class="yb-page-influencers">
+<body>
 
-  <!-- =========================================================
-       HEADER / NAVBAR 
-  ========================================================= -->
-  <header>
-    <nav class="navbar navbar-expand-lg yb-navbar sticky-top" aria-label="Navegación principal">
+  <!-- Header -->
+  <header class="encabezado">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
 
-        <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center" href="../index.html">
-          <img src="../Assets/logo-principal.png" alt="Yo Busco" height="46">
+        <!-- LOGO -->
+        <a class="navbar-brand" href="../index.html">
+          <img src="../Assets/logo-principal.png" alt="Yo Busco" />
         </a>
 
-        <!-- Botón mobile -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarYoBusco" aria-controls="navbarYoBusco"
-          aria-expanded="false" aria-label="Toggle navigation">
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menú -->
-        <div class="collapse navbar-collapse" id="navbarYoBusco">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <!-- MENÚ -->
+        <div class="collapse navbar-collapse" id="menu">
 
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="../index.html">Inicio</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold active" href="./influencers.html">Influencers</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./beneficios.html">Beneficios & Descuentos</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./about.html">Sobre Nosotros</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="./contacto.html">Contacto</a>
-            </li>
-
+          <!-- PAGINAS NAV -->
+          <ul class="navbar-nav nav-centro">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./influencers.html">Influencers</a></li>
+            <li class="nav-item"><a class="nav-link" href="./beneficios.html">Beneficios</a></li>
+            <li class="nav-item"><a class="nav-link" href="./about.html">Sobre Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
           </ul>
 
-          <!-- Botones derecha -->
-          <div class="d-flex gap-2">
-            <a href="./login.html" class="btn btn-ingresar btn-sm px-3">Ingresar</a>
-            <a href="./publicar.html" class="btn btn-publicar btn-sm px-3">Publicar</a>
+          <!-- BOTONES DERECHA -->
+          <div class="botones">
+            <a href="./login.html" class="boton-ingresar">Ingresar</a>
+            <a href="./publicar.html" class="boton-publicar">Publicar</a>
           </div>
 
         </div>
+
       </div>
     </nav>
   </header>
 
-  <!-- =========================================================
-       BUSCADOR INFLUENCERS
-  ========================================================= -->
-  <section class="yb-searchbar-influencers">
+  <!-- Buscador -->
+  <section class="seccion-buscador">
     <div class="container">
-      <form class="yb-search-wrapper" role="search" action="#" method="get">
+      <form action="#" method="get" class="formulario-buscador">
 
-        <!-- Localidad  -->
-        <div class="yb-input-pill yb-pill-location">
-          <span class="yb-pill-icon">
-            <i class="fa-solid fa-location-dot"></i>
-          </span>
+        <div class="row fila-buscador">
 
-          <select
-            name="location"
-            class="yb-pill-select"
-            aria-label="Filtrar influencers por localidad"
-          >
-            <option value="">Todas las localidades</option>
-            <option value="santa-fe">Santa Fe</option>
-            <option value="rosario">Rosario</option>
-            <option value="cordoba">Córdoba</option>
-            <option value="buenos-aires">Buenos Aires</option>
-            <option value="mendoza">Mendoza</option>
-          </select>
+          <div class="col-12 col-md-4">
+            <select name="localidad" class="form-select">
+              <option value="">Todas las localidades</option>
+              <option value="santa-fe">Santa Fe</option>
+              <option value="rosario">Rosario</option>
+              <option value="cordoba">Córdoba</option>
+              <option value="buenos-aires">Buenos Aires</option>
+              <option value="mendoza">Mendoza</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-md-5">
+            <input
+              type="text"
+              class="form-control"
+              name="busqueda"
+              placeholder="Buscar por nombre o @usuario..."
+            >
+          </div>
+
+          <div class="col-12 col-md-3">
+            <button class="boton-principal" type="submit">
+              Buscar
+            </button>
+          </div>
+
         </div>
-
-        <!-- Búsqueda -->
-        <div class="yb-input-pill yb-pill-search">
-          <span class="yb-pill-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </span>
-          <input
-            type="text"
-            class="yb-pill-input"
-            name="q"
-            placeholder="Buscar por nombre, @usuario o nicho..."
-            aria-label="Buscar influencers por nombre, usuario o nicho"
-          >
-        </div>
-
-        <!-- Botón buscar -->
-        <button class="yb-search-btn" type="submit">
-          Buscar
-        </button>
 
       </form>
     </div>
   </section>
 
-  <!-- =========================================================
-       CONTENIDO PRINCIPAL
-  ========================================================= -->
-  <main class="py-4 py-md-5">
+  <!-- Contenido principal  -->
+  <main class="cuerpo-pagina">
     <div class="container">
 
-      <!-- Título + resumen -->
-      <div class="mb-3">
-        <h1 class="yb-section-title mb-1">Influencers · Encontrá y conectá</h1>
-        <p class="yb-section-subtitle mb-0">
-          Buscá creadores por nicho, ciudad, tamaño de audiencia y tipo de colaboración.
-        </p>
-      </div>
+      <!-- Título de la página  -->
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <div class="bloque-titulo">
+            <h1 class="titulo-seccion">Influencers</h1>
+            <p class="subtitulo-seccion">
+              Encontrá creadores por nicho y ciudad para colaborar con tu marca.
+            </p>
+          </div>
+        </div>
 
-      <!-- =====================================================
-           TOOLBAR: FILTROS + ORDENAR 
-      ====================================================== -->
-      <div class="yb-toolbar d-flex align-items-center justify-content-between gap-3 mb-3">
-        <!-- Botón filtros (solo mobile/tablet) -->
-        <button
-          class="btn yb-filtros-toggle d-lg-none"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#filtrosInfluencersMobile"
-          aria-expanded="false"
-          aria-controls="filtrosInfluencersMobile"
-        >
-          <i class="fa-solid fa-sliders"></i>
-          Filtros
-        </button>
+        <!-- Desplegable Ordenar + botón Filtros -->
+        <div class="col-12 col-md-4">
+          <div class="bloque-orden">
+            <select class="form-select selector-orden">
+              <option value="relevancia">Relevancia</option>
+              <option value="descuento">Mayor descuento</option>
+              <option value="recientes">Más recientes</option>
+              <option value="cerca">Cerca mío</option>
+            </select>
 
-        <!-- Ordenar -->
-        <div class="yb-order-box mb-0 flex-grow-1 text-lg-end">
-          <select class="yb-order-select" aria-label="Ordenar influencers">
-            <option value="relevancia">Relevancia</option>
-            <option value="audiencia">Tamaño de audiencia</option>
-            <option value="engagement">Mayor engagement</option>
-            <option value="rating">Mejor rating</option>
-          </select>
+            <!-- Botón Filtros (solo mobile/tablet) -->
+            <button
+              type="button"
+              class="boton-filtros solo-mobile"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelFiltros">
+              Filtros
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- =====================================================
-           FILTROS + GRID
-      ====================================================== -->
-      <div class="yb-layout">
-        <div class="row g-4">
+      <div class="row fila-principal">
 
-          <!-- Filtros DESKTOP  -->
-          <div class="col-lg-3 d-none d-lg-block">
-            <aside class="yb-filtros">
-              <h4>Filtros</h4>
+        <!-- Filtros lateral-->
+        <div class="col-12 col-lg-3">
+          <aside class="filtros-lateral collapse" id="panelFiltros">
+            <h4 class="titulo-filtros">Filtros</h4>
 
-              <!-- Nicho -->
-              <div class="grupo mb-3">
-                <p class="fw-semibold mb-1">Nicho</p>
-                <span>Viajes</span>
-                <span>Gastronomía</span>
-                <span>Moda</span>
-                <span>Tech</span>
-                <span>Fitness</span>
-                <span>Hogar & deco</span>
-                <span>Emprendedores</span>
-              </div>
-
-              <!-- Localidad -->
-              <div class="grupo mb-3">
-                <p class="fw-semibold mb-1">Localidad</p>
-                <span>Santa Fe</span>
-                <span>Rosario</span>
-                <span>Córdoba</span>
-                <span>Buenos Aires</span>
-                <span>Otras ciudades</span>
-              </div>
-
-              <!-- Tamaño de audiencia -->
-              <div class="grupo mb-3">
-                <p class="fw-semibold mb-1">Tamaño de audiencia</p>
-                <span>Nano (1k–10k)</span>
-                <span>Micro (10k–100k)</span>
-                <span>Mid (100k–500k)</span>
-                <span>Macro (500k–1M)</span>
-                <span>Mega (+1M)</span>
-              </div>
-
-              <!-- Tipo de colaboración -->
-              <div class="grupo mb-3">
-                <p class="fw-semibold mb-1">Tipo de colaboración</p>
-                <span>Canje</span>
-                <span>Pago fijo</span>
-                <span>Comisión / Afiliado</span>
-                <span>Mixto</span>
-              </div>
-
-              <!-- Plataforma principal -->
-              <div class="grupo">
-                <p class="fw-semibold mb-1">Plataforma principal</p>
-                <span>Instagram</span>
-                <span>TikTok</span>
-                <span>YouTube</span>
-                <span>Twitch</span>
-                <span>Multiplataforma</span>
-              </div>
-            </aside>
-          </div>
-
-          <!-- Filtros MOBILE  -->
-          <div class="col-12 d-lg-none">
-            <div class="collapse mb-3" id="filtrosInfluencersMobile">
-              <aside class="yb-filtros">
-                <h4>Filtros</h4>
-
-                <!-- Nicho -->
-                <div class="grupo mb-3">
-                  <p class="fw-semibold mb-1">Nicho</p>
-                  <span>Viajes</span>
-                  <span>Gastronomía</span>
-                  <span>Moda</span>
-                  <span>Tech</span>
-                  <span>Fitness</span>
-                  <span>Hogar & deco</span>
-                  <span>Emprendedores</span>
-                </div>
-
-                <!-- Localidad -->
-                <div class="grupo mb-3">
-                  <p class="fw-semibold mb-1">Localidad</p>
-                  <span>Santa Fe</span>
-                  <span>Rosario</span>
-                  <span>Córdoba</span>
-                  <span>Buenos Aires</span>
-                  <span>Otras ciudades</span>
-                </div>
-
-                <!-- Tamaño de audiencia -->
-                <div class="grupo mb-3">
-                  <p class="fw-semibold mb-1">Tamaño de audiencia</p>
-                  <span>Nano (1k–10k)</span>
-                  <span>Micro (10k–100k)</span>
-                  <span>Mid (100k–500k)</span>
-                  <span>Macro (500k–1M)</span>
-                  <span>Mega (+1M)</span>
-                </div>
-
-                <!-- Tipo de colaboración -->
-                <div class="grupo mb-3">
-                  <p class="fw-semibold mb-1">Tipo de colaboración</p>
-                  <span>Canje</span>
-                  <span>Pago fijo</span>
-                  <span>Comisión / Afiliado</span>
-                  <span>Mixto</span>
-                </div>
-
-                <!-- Plataforma principal -->
-                <div class="grupo">
-                  <p class="fw-semibold mb-1">Plataforma principal</p>
-                  <span>Instagram</span>
-                  <span>TikTok</span>
-                  <span>YouTube</span>
-                  <span>Twitch</span>
-                  <span>Multiplataforma</span>
-                </div>
-              </aside>
+            <div class="bloque-filtro">
+              <p class="titulo-filtro-chico">Rubro</p>
+              <span class="item-filtro">Gastronomía</span>
+              <span class="item-filtro">Viajes</span>
+              <span class="item-filtro">Belleza</span>
+              <span class="item-filtro">Indumentaria</span>
+              <span class="item-filtro">Electrónica</span>
+              <span class="item-filtro">Entretenimiento</span>
+              <span class="item-filtro">Cafeterías</span>
             </div>
-          </div>
 
-          <!-- GRID DE TARJETAS -->
-          <div class="col-12 col-lg-9">
-            <div class="yb-grid">
+            <div class="bloque-filtro">
+              <p class="titulo-filtro-chico">Tipo de beneficio</p>
+              <span class="item-filtro">% OFF</span>
+              <span class="item-filtro">2x1</span>
+              <span class="item-filtro">Envío gratis</span>
+              <span class="item-filtro">Cashback</span>
+              <span class="item-filtro">Primera compra</span>
+              <span class="item-filtro">Socios / Membresía</span>
+            </div>
 
-              <!-- Card 1 -->
-              <article class="yb-card">
-                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80" alt="Mati Fernández">
-                <div class="yb-card-body">
-                  <span class="yb-tag">Viajes · Buenos Aires</span>
-                  <h3 class="yb-card-title">Mati Fernández</h3>
-                  <p class="yb-card-sub">@ViajesConMati</p>
+            <div class="bloque-filtro">
+              <p class="titulo-filtro-chico">Modalidad</p>
+              <span class="item-filtro">Online</span>
+              <span class="item-filtro">Presencial</span>
+              <span class="item-filtro">Mixto</span>
+            </div>
 
-                  <p class="mb-1">
-                    <strong>92k</strong> seguidores ·
-                    <strong>3,4%</strong> engagement ·
-                    <strong>4,8</strong> rating
-                  </p>
-                  <p class="mb-0 small text-muted">
-                    Experiencias de viaje, escapadas y recomendaciones de destinos en Argentina y el mundo.
-                  </p>
-                </div>
-                <div class="yb-card-footer">
-                  <button class="yb-btn-outline" type="button">Ver perfil</button>
-                  <button class="yb-btn-outline" type="button">Contactar</button>
-                </div>
-              </article>
+            <div class="bloque-filtro">
+              <p class="titulo-filtro-chico">Medio de pago</p>
+              <span class="item-filtro">Efectivo / débito</span>
+              <span class="item-filtro">Crédito</span>
+              <span class="item-filtro">Transferencia</span>
+              <span class="item-filtro">Billetera virtual</span>
+            </div>
 
-              <!-- Card 2 -->
-              <article class="yb-card">
-                <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=1200&q=80" alt="Paula Gómez">
-                <div class="yb-card-body">
-                  <span class="yb-tag">Gastronomía · Rosario</span>
-                  <h3 class="yb-card-title">Paula Gómez</h3>
-                  <p class="yb-card-sub">@FoodiePau</p>
+            <div class="bloque-filtro">
+              <p class="titulo-filtro-chico">Vigencia</p>
+              <span class="item-filtro">Solo hoy</span>
+              <span class="item-filtro">Este finde</span>
+              <span class="item-filtro">Este mes</span>
+            </div>
+          </aside>
+        </div>
 
-                  <p class="mb-1">
-                    <strong>87k</strong> seguidores ·
-                    <strong>4,1%</strong> engagement ·
-                    <strong>4,7</strong> rating
-                  </p>
-                  <p class="mb-0 small text-muted">
-                    Reseñas de restaurantes, bares y propuestas foodies con enfoque local y regional.
-                  </p>
-                </div>
-                <div class="yb-card-footer">
-                  <button class="yb-btn-outline" type="button">Ver perfil</button>
-                  <button class="yb-btn-outline" type="button">Contactar</button>
-                </div>
-              </article>
+<!-- Tarjetas influencers-->
+<div class="col-12 col-lg-9">
+  <div class="row lista-tarjetas">
 
-              <!-- Card 3 -->
-              <article class="yb-card">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80" alt="Nico Ríos">
-                <div class="yb-card-body">
-                  <span class="yb-tag">Lifestyle · Santa Fe</span>
-                  <h3 class="yb-card-title">Nico Ríos</h3>
-                  <p class="yb-card-sub">@SantaFeTips</p>
+    <!-- Tarjeta 1 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <article class="tarjeta animate__animated animate__fadeInUp">
+        <div class="tarjeta-imagen">
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde" alt="Mati Fernández">
+        </div>
 
-                  <p class="mb-1">
-                    <strong>81k</strong> seguidores ·
-                    <strong>5,2%</strong> engagement ·
-                    <strong>4,9</strong> rating
-                  </p>
-                  <p class="mb-0 small text-muted">
-                    Lifestyle, productividad y recomendaciones de comercios y servicios de la ciudad.
-                  </p>
-                </div>
-                <div class="yb-card-footer">
-                  <button class="yb-btn-outline" type="button">Ver perfil</button>
-                  <button class="yb-btn-outline" type="button">Contactar</button>
-                </div>
-              </article>
+        <div class="tarjeta-cuerpo">
+          <span class="tarjeta-etiqueta">Viajes · Buenos Aires</span>
+          <h3 class="tarjeta-titulo">Mati Fernández</h3>
+          <p class="tarjeta-sub">@ViajesConMati</p>
+          <p class="tarjeta-dato"><strong>92k</strong> seguidores</p>
+          <p class="tarjeta-texto">
+            Viajes, escapadas y recomendaciones de destinos en Argentina.
+          </p>
+        </div>
 
-              <!-- Card 4 -->
-              <article class="yb-card">
-                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80" alt="Cami López">
-                <div class="yb-card-body">
-                  <span class="yb-tag">Moda · Córdoba</span>
-                  <h3 class="yb-card-title">Cami López</h3>
-                  <p class="yb-card-sub">@CamiOutfits</p>
+        <div class="tarjeta-pie">
+          <button class="boton-tarjetas" type="button">Ver perfil</button>
+          <button class="boton-tarjetas" type="button">Contactar</button>
+        </div>
+      </article>
+    </div>
 
-                  <p class="mb-1">
-                    <strong>120k</strong> seguidores ·
-                    <strong>3,9%</strong> engagement ·
-                    <strong>4,6</strong> rating
-                  </p>
-                  <p class="mb-0 small text-muted">
-                    Looks urbanos, moda cotidiana y colaboraciones con marcas de indumentaria.
-                  </p>
-                </div>
-                <div class="yb-card-footer">
-                  <button class="yb-btn-outline" type="button">Ver perfil</button>
-                  <button class="yb-btn-outline" type="button">Contactar</button>
-                </div>
-              </article>
+    <!-- Tarjeta 2 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <article class="tarjeta animate__animated animate__fadeInUp">
+        <div class="tarjeta-imagen">
+          <img
+            src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=1200&q=80"
+            alt="Paula Gómez">
+        </div>
 
-              <!-- Card 5 -->
-              <article class="yb-card">
-                <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1200&q=80" alt="Lau Fit">
-                <div class="yb-card-body">
-                  <span class="yb-tag">Fitness · Córdoba</span>
-                  <h3 class="yb-card-title">Lau Fit</h3>
-                  <p class="yb-card-sub">@MoveWithLau</p>
+        <div class="tarjeta-cuerpo">
+          <span class="tarjeta-etiqueta">Gastronomía · Rosario</span>
+          <h3 class="tarjeta-titulo">Paula Gómez</h3>
+          <p class="tarjeta-sub">@FoodiePau</p>
+          <p class="tarjeta-dato"><strong>87k</strong> seguidores</p>
+          <p class="tarjeta-texto">
+            Reseñas de restaurantes, bares y propuestas foodies de la ciudad.
+          </p>
+        </div>
 
-                  <p class="mb-1">
-                    <strong>54k</strong> seguidores ·
-                    <strong>4,5%</strong> engagement ·
-                    <strong>4,8</strong> rating
-                  </p>
-                  <p class="mb-0 small text-muted">
-                    Entrenamientos simples, rutinas en casa y recomendaciones de gimnasios y clases grupales.
-                  </p>
-                </div>
-                <div class="yb-card-footer">
-                  <button class="yb-btn-outline" type="button">Ver perfil</button>
-                  <button class="yb-btn-outline" type="button">Contactar</button>
-                </div>
-              </article>
+        <div class="tarjeta-pie">
+          <button class="boton-tarjetas" type="button">Ver perfil</button>
+          <button class="boton-tarjetas" type="button">Contactar</button>
+        </div>
+      </article>
+    </div>
 
-              <!-- Card 6 -->
-              <article class="yb-card">
-                <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80" alt="Tech Apps">
-                <div class="yb-card-body">
-                  <span class="yb-tag">Tech · Todo el país</span>
-                  <h3 class="yb-card-title">Clau Tech</h3>
-                  <p class="yb-card-sub">@AppsQueSirven</p>
+    <!-- Tarjeta 3 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <article class="tarjeta animate__animated animate__fadeInUp">
+        <div class="tarjeta-imagen">
+          <img
+            src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80"
+            alt="Nico Ríos">
+        </div>
 
-                  <p class="mb-1">
-                    <strong>39k</strong> seguidores ·
-                    <strong>6,1%</strong> engagement ·
-                    <strong>4,9</strong> rating
-                  </p>
-                  <p class="mb-0 small text-muted">
-                    Recomendaciones de apps útiles para organizar gastos, entrenar, estudiar y trabajar mejor.
-                  </p>
-                </div>
-                <div class="yb-card-footer">
-                  <button class="yb-btn-outline" type="button">Ver perfil</button>
-                  <button class="yb-btn-outline" type="button">Contactar</button>
-                </div>
-              </article>
+        <div class="tarjeta-cuerpo">
+          <span class="tarjeta-etiqueta">Lifestyle · Santa Fe</span>
+          <h3 class="tarjeta-titulo">Nico Ríos</h3>
+          <p class="tarjeta-sub">@SantaFeTips</p>
+          <p class="tarjeta-dato"><strong>81k</strong> seguidores</p>
+          <p class="tarjeta-texto">
+            Recomendaciones de comercios, servicios y planes en la ciudad.
+          </p>
+        </div>
 
-              <!-- Card 7 -->
-              <article class="yb-card">
-                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Emprendedores">
-                <div class="yb-card-body">
-                  <span class="yb-tag">Emprendimientos · Región Centro</span>
-                  <h3 class="yb-card-title">Emprende Hoy</h3>
-                  <p class="yb-card-sub">@RedDeEmprendedores</p>
+        <div class="tarjeta-pie">
+          <button class="boton-tarjetas" type="button">Ver perfil</button>
+          <button class="boton-tarjetas" type="button">Contactar</button>
+        </div>
+      </article>
+    </div>
 
-                  <p class="mb-1">
-                    <strong>47k</strong> seguidores ·
-                    <strong>3,8%</strong> engagement ·
-                    <strong>4,7</strong> rating
-                  </p>
-                  <p class="mb-0 small text-muted">
-                    Casos reales, historias de negocio y difusión de marcas chicas con impacto local.
-                  </p>
-                </div>
-                <div class="yb-card-footer">
-                  <button class="yb-btn-outline" type="button">Ver perfil</button>
-                  <button class="yb-btn-outline" type="button">Contactar</button>
-                </div>
-              </article>
+    <!-- Tarjeta 4 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <article class="tarjeta animate__animated animate__fadeInUp">
+        <div class="tarjeta-imagen">
+          <img
+            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80"
+            alt="Cami López">
+        </div>
 
-              <!-- Card 8 -->
-              <article class="yb-card">
-                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80" alt="Viajes baratos">
-                <div class="yb-card-body">
-                  <span class="yb-tag">Viajes low-cost · Argentina</span>
-                  <h3 class="yb-card-title">Rutas Baratas</h3>
-                  <p class="yb-card-sub">@TrucosDeViaje</p>
+        <div class="tarjeta-cuerpo">
+          <span class="tarjeta-etiqueta">Moda · Córdoba</span>
+          <h3 class="tarjeta-titulo">Cami López</h3>
+          <p class="tarjeta-sub">@CamiOutfits</p>
+          <p class="tarjeta-dato"><strong>120k</strong> seguidores</p>
+          <p class="tarjeta-texto">
+            Looks urbanos y moda cotidiana con marcas de indumentaria.
+          </p>
+        </div>
 
-                  <p class="mb-1">
-                    <strong>65k</strong> seguidores ·
-                    <strong>4,3%</strong> engagement ·
-                    <strong>4,8</strong> rating
-                  </p>
-                  <p class="mb-0 small text-muted">
-                    Tips para viajar barato por Argentina: buses, hostels, escapadas y promos reales.
-                  </p>
-                </div>
-                <div class="yb-card-footer">
-                  <button class="yb-btn-outline" type="button">Ver perfil</button>
-                  <button class="yb-btn-outline" type="button">Contactar</button>
-                </div>
-              </article>
+        <div class="tarjeta-pie">
+          <button class="boton-tarjetas" type="button">Ver perfil</button>
+          <button class="boton-tarjetas" type="button">Contactar</button>
+        </div>
+      </article>
+    </div>
 
-            </div> 
-          </div> 
+    <!-- Tarjeta 5 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <article class="tarjeta animate__animated animate__fadeInUp">
+        <div class="tarjeta-imagen">
+          <img
+            src="https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1200&q=80"
+            alt="Lau Fit">
+        </div>
 
-        </div> 
-      </div> 
+        <div class="tarjeta-cuerpo">
+          <span class="tarjeta-etiqueta">Fitness · Córdoba</span>
+          <h3 class="tarjeta-titulo">Lau Fit</h3>
+          <p class="tarjeta-sub">@MoveWithLau</p>
+          <p class="tarjeta-dato"><strong>54k</strong> seguidores</p>
+          <p class="tarjeta-texto">
+            Entrenamientos simples, rutinas y recomendaciones de gimnasios.
+          </p>
+        </div>
+
+        <div class="tarjeta-pie">
+          <button class="boton-tarjetas" type="button">Ver perfil</button>
+          <button class="boton-tarjetas" type="button">Contactar</button>
+        </div>
+      </article>
+    </div>
+
+    <!-- Tarjeta 6 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <article class="tarjeta animate__animated animate__fadeInUp">
+        <div class="tarjeta-imagen">
+          <img
+            src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80"
+            alt="Clau Tech">
+        </div>
+
+        <div class="tarjeta-cuerpo">
+          <span class="tarjeta-etiqueta">Tech · Todo el país</span>
+          <h3 class="tarjeta-titulo">Clau Tech</h3>
+          <p class="tarjeta-sub">@AppsQueSirven</p>
+          <p class="tarjeta-dato"><strong>39k</strong> seguidores</p>
+          <p class="tarjeta-texto">
+            Recomendaciones de apps útiles para el día a día.
+          </p>
+        </div>
+
+        <div class="tarjeta-pie">
+          <button class="boton-tarjetas" type="button">Ver perfil</button>
+          <button class="boton-tarjetas" type="button">Contactar</button>
+        </div>
+      </article>
+    </div>
+
+    <!-- Tarjeta 7 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <article class="tarjeta animate__animated animate__fadeInUp">
+        <div class="tarjeta-imagen">
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+            alt="Emprende Hoy">
+        </div>
+
+        <div class="tarjeta-cuerpo">
+          <span class="tarjeta-etiqueta">Emprendimientos · Región Centro</span>
+          <h3 class="tarjeta-titulo">Emprende Hoy</h3>
+          <p class="tarjeta-sub">@RedDeEmprendedores</p>
+          <p class="tarjeta-dato"><strong>47k</strong> seguidores</p>
+          <p class="tarjeta-texto">
+            Historias de negocios y difusión de marcas chicas.
+          </p>
+        </div>
+
+        <div class="tarjeta-pie">
+          <button class="boton-tarjetas" type="button">Ver perfil</button>
+          <button class="boton-tarjetas" type="button">Contactar</button>
+        </div>
+      </article>
+    </div>
+
+    <!-- Tarjeta 8 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <article class="tarjeta animate__animated animate__fadeInUp">
+        <div class="tarjeta-imagen">
+          <img
+            src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80"
+            alt="Rutas Baratas">
+        </div>
+
+        <div class="tarjeta-cuerpo">
+          <span class="tarjeta-etiqueta">Viajes low-cost · Argentina</span>
+          <h3 class="tarjeta-titulo">Rutas Baratas</h3>
+          <p class="tarjeta-sub">@TrucosDeViaje</p>
+          <p class="tarjeta-dato"><strong>65k</strong> seguidores</p>
+          <p class="tarjeta-texto">
+            Tips para viajar barato: buses, hostels y escapadas.
+          </p>
+        </div>
+
+        <div class="tarjeta-pie">
+          <button class="boton-tarjetas" type="button">Ver perfil</button>
+          <button class="boton-tarjetas" type="button">Contactar</button>
+        </div>
+      </article>
+    </div>
+
+    <!-- Tarjeta 9 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <article class="tarjeta animate__animated animate__fadeInUp">
+        <div class="tarjeta-imagen">
+          <img
+            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80"
+            alt="Caro MakeUp">
+        </div>
+
+        <div class="tarjeta-cuerpo">
+          <span class="tarjeta-etiqueta">Belleza · Online</span>
+          <h3 class="tarjeta-titulo">Caro MakeUp</h3>
+          <p class="tarjeta-sub">@TipsDeBelleza</p>
+          <p class="tarjeta-dato"><strong>58k</strong> seguidores</p>
+          <p class="tarjeta-texto">
+            Maquillaje fácil, reseñas de productos y consejos para el día a día.
+          </p>
+        </div>
+
+        <div class="tarjeta-pie">
+          <button class="boton-tarjetas" type="button">Ver perfil</button>
+          <button class="boton-tarjetas" type="button">Contactar</button>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</div>
+
+
     </div>
   </main>
 
-  <!-- =========================================================
-       FOOTER 
-  ========================================================= -->
-  <footer class="yb-footer">
-    <div class="container">
-      <div class="yb-footer-copy">
-        © 2025 Yo Busco
-      </div>
+  <!-- Footer -->
+  <footer class="pie">
+    <div class="container pie-contenido">
 
-      <nav class="yb-footer-nav">
-        <a href="./preguntasfrecuentes.html">Preguntas frecuentes</a>
-        <a href="./about.html">Sobre nosotros</a>
-        <a href="./contacto.html">Contacto</a>
+      <span class="pie-texto">© 2025 Yo Busco</span>
+
+      <nav class="pie-nav">
+        <a href="../Pages/preguntasfrecuentes.html">Preguntas frecuentes</a>
+        <a href="../Pages/contacto.html">Contacto</a>
+        <a href="../Pages/about.html">Sobre nosotros</a>
       </nav>
 
-      <div class="yb-footer-made">
-        Hecho con <span class="yb-heart">♥</span> en Santa Fe
-      </div>
+      <span class="pie-texto">Hecho en Santa Fe</span>
+
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"
-  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

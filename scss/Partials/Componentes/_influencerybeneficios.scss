@@ -1,0 +1,139 @@
+@use "../Utiles/variables";
+@use "../Utiles/mixins";
+
+/* ===========================
+   BUSCADOR SUPERIOR
+=========================== */
+
+.seccion-buscador {
+  padding: 30px 0;
+  background-image: url("../Assets/hero2.jpg");
+  background-size: cover;
+  background-position: center;
+
+  .formulario-buscador {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    background-color: variables.$blanco;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px variables.$negro-oscuro;
+
+    .form-select,
+    .form-control {
+      background-color: variables.$violeta-claro;
+      height: 34px;
+      font-size: 14px;
+      border-radius: 20px;
+      border: 1px solid variables.$gris-claro;
+      padding: 4px 10px;
+      text-align: center;
+    }
+
+    .boton-principal {
+      width: 100%;
+      height: 34px;
+      font-size: 14px;
+    }
+
+    .fila-buscador {
+      row-gap: 8px;
+    }
+  }
+}
+
+/* ===========================
+   CUERPO GENERAL DE PÁGINA
+=========================== */
+
+.cuerpo-pagina {
+  padding: 30px 0 50px;
+  background-color: variables.$blanco;
+
+  .bloque-titulo {
+    margin-bottom: 15px;
+
+    .titulo-seccion {
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+
+    .subtitulo-seccion {
+      font-size: 14px;
+      color: variables.$gris-texto;
+      opacity: 0.8;
+    }
+  }
+}
+
+/* ===========================
+   ORDEN (select + botón filtros)
+=========================== */
+
+.bloque-orden {
+  @include mixins.flex(row, flex-end, center);
+  gap: 10px;
+  margin-top: 20px;
+
+  .selector-orden {
+    max-width: 220px;
+    margin-left: auto;
+    font-size: 14px;
+  }
+
+  .boton-filtros {
+    padding: 6px 14px;
+  }
+}
+
+.solo-mobile {
+  display: inline-block;
+}
+
+/* ===========================
+   LAYOUT PRINCIPAL
+=========================== */
+
+.fila-principal {
+  margin-top: 20px;
+}
+
+/* ===========================
+   FILTROS LATERALES
+=========================== */
+
+.filtros-lateral {
+  background-color: variables.$blanco;
+  border: 1px solid variables.$violeta;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 14px;
+  margin-bottom: 20px;
+
+  .titulo-filtros {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .bloque-filtro {
+    margin-bottom: 15px;
+
+    .texto-filtro-titulo,
+    .titulo-filtro-chico {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .item-filtro {
+      display: inline-block;
+      padding: 4px 9px;
+      margin: 0 6px 6px 0;
+      font-size: 12px;
+      color: variables.$gris-texto;
+      border: 1px solid variables.$gris-claro;
+      border-radius: 20px;
+      background-color: variables.$gris-claro;
+    }
+  }
+}

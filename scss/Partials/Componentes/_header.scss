@@ -1,0 +1,65 @@
+@use "../Utiles/variables";
+
+.encabezado {
+  background: variables.$violeta;
+  padding: 8px 0;
+  border-bottom: 1px solid variables.$violeta-claro;
+
+  /* NAVBAR */
+  .navbar {
+    padding: 0;
+
+    /* LOGO */
+    .navbar-brand {
+      img {
+        height: 40px;
+        width: auto;
+      }
+    }
+
+    /* LINKS */
+    .navbar-nav {
+      .nav-link {
+        color: variables.$blanco;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 15px;
+
+        &:hover {
+          background: variables.$violeta-claro;
+        }
+
+        &.active {
+          background: variables.$blanco;
+          color: variables.$violeta !important;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  /* BOTONES DERECHA */
+  .botones {
+    display: flex;
+    gap: 10px;
+
+    .boton-ingresar,
+    .boton-publicar {
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+  }
+
+  /* Hamburguesa */
+  .navbar-toggler {
+    border: 1px solid variables.$blanco;
+  }
+}
+
+/* Clase global para centrar navegación */
+.nav-centro {
+  margin-left: auto;
+  margin-right: auto;
+}

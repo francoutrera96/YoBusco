@@ -1,0 +1,33 @@
+
+@use "../Utiles/variables";
+
+
+/* Mixin para tarjetas */
+@mixin tarjeta-base {
+  background-color: variables.$blanco;
+  border: 1px solid variables.$gris-claro;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px variables.$negro-oscuro;
+  height: 100%;
+}
+
+/* Mixin para usar flex */
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+/* Mixin botones */
+@mixin boton-base($bg, $color, $border-color) {
+  background: $bg;
+  color: $color;
+  border: 1px solid $border-color;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+}

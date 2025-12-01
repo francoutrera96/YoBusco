@@ -1,0 +1,39 @@
+
+@use "../Utiles/variables";
+@use "../Utiles/mixins";
+
+
+.pie {
+  background: variables.$violeta;
+  padding: 20px 0;
+  margin-top: 40px;
+
+  .pie-contenido {
+    @include mixins.flex(row, space-between, center); 
+    flex-wrap: wrap;  
+    gap: 12px;        
+    padding: 0 16px;  
+
+    .pie-texto {
+      color: variables.$blanco;
+      font-size: 14px;
+    }
+
+    .pie-nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      a {
+        color: variables.$blanco;
+        font-size: 14px;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
